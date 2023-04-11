@@ -69,7 +69,7 @@ Development of Field Book has been supported by the [Collaborative Crop Research
 To submit code to Field Book:
 
 1. Create a feature branch based on the develop branch, and implement your feature.
-2. When finished merge the develop branch into your feature branch and resolve any conflicts.
+2. When finished, merge the latest version of the develop branch into your feature branch and resolve any conflicts.
 3. Create a pull request targeting the develop branch.
 4. Select 1-2 people to review your code.
 
