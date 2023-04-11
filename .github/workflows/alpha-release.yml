@@ -35,11 +35,11 @@ jobs:
       run: chmod +x ./gradlew
 
     - name: Build prod
-      run: ./gradlew app:bundleRelease --debug
+      run: ./gradlew app:bundleRelease
       env:
-        SIGNING_KEY_ALIAS: ${{ secrets.ALIAS }}
+        SIGNING_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
         SIGNING_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        SIGNING_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
+        SIGNING_STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
 
     - name: Upload build output
       uses: actions/upload-artifact@v2
