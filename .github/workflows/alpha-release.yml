@@ -60,8 +60,8 @@ jobs:
     #   with:
     #     serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
     #     packageName: com.example.MyApp
-    #     releaseFiles: app/build/outputs/bundle/release/app-release.aab
-    #     track: production
+    #     releaseFiles: app/build/outputs/apk/release/app-release.apk
+    #     track: alpha
     #     status: inProgress
     #     inAppUpdatePriority: 2
     #     userFraction: 0.33
