@@ -59,12 +59,7 @@ jobs:
       uses: r0adkll/upload-google-play@v1
       with:
         serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-        packageName: com.example.MyApp
+        packageName: com.fieldbook.tracker
         releaseFiles: app/build/outputs/apk/release/app-release-unsigned.apk
         track: alpha
-        status: inProgress
-        inAppUpdatePriority: 2
-        userFraction: 0.33
-        whatsNewDirectory: distribution/whatsnew
-        mappingFile: app/build/outputs/mapping/release/mapping.txt
-        debugSymbols: app/intermediates/merged_native_libs/release/out/lib
+    
