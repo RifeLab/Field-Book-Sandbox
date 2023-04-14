@@ -24,23 +24,14 @@ jobs:
       with:
         gradlePath: app/build.gradle
 
-    # - name: Decode Keystore
-    #   id: decode_keystore
-    #   uses: timheuer/base64-to-file@v1
-    #   with:
-    #     fileName: 'keystore/your_signing_keystore.jks'
-    #     encodedString: ${{ secrets.KEYSTORE }}
-
     - name: Make gradlew executable
       run: chmod +x ./gradlew
 
-       # Building and signing App
     - name: Build Android App Bundle
       run: ./gradlew app:assembleRelease 
 
     - name: Sign ABB
       uses: r0adkll/sign-android-release@v1
-      # ID used to access action output
       id: sign_app
       with:
         releaseDirectory: app/build/outputs/apk/release
