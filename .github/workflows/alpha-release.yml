@@ -24,7 +24,7 @@ jobs:
       with:
         target_directory: 'app'
         target_file: 'build.gradle'
-        prefix: 'versionCode":'
+        prefix: 'defaultConfig.versionCode":'
         suffix: '}'
         commit_message: 'Increment the versionCode to '
 
