@@ -1,4 +1,45 @@
-apply pluginNaN} else prinNaN} else println("Non-keystore build.")
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'com.google.dagger.hilt.android'
+
+Properties props = new Properties()
+props.load(new FileInputStream("$project.rootDir/version.properties"))
+props.each { prop ->
+    project.ext.set(prop.key, prop.value)
+}
+
+private Integer getVersionCode() {
+    int major = ext.majorVersion as Integer
+    int minor = ext.minorVersion as Integer
+    int patch = ext.patchVersion as Integer
+
+    return major * 10000 + minor * 100 + patch
+}
+
+private String getVersionName() {
+    if (ext.buildNumber) {
+        return "${ext.majorVersion}.${ext.minorVersion}.${ext.patchVersion}.${ext.buildNumber}"
+    }
+
+    return "${ext.majorVersion}.${ext.minorVersion}.${ext.patchVersion}"
+}
+
+android {
+    signingConfigs {
+        playStoreConfig {
+            Properties keystoreProps = new Properties()
+            if (file('keystore.config').exists()) {
+                keystoreProps.load(new FileInputStream(file('keystore.config')))
+
+                keyAlias keystoreProps['keyAlias']
+                keyPassword keystoreProps['keyPassword']
+                storePassword keystoreProps['storePassword']
+                storeFile file('keystore.keystore')
+            } else println("Non-keystore build.")
         }
         gitActionConfig {
             def tmpFilePath = System.getProperty("user.home") + "/work/_temp/keystore/"
@@ -22,8 +63,8 @@ apply pluginNaN} else prinNaN} else println("Non-keystore build.")
         applicationId "com.fieldbook.tracker"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode = 540
-        versionName = '5.4.0'
+        versionCode getVersionCode()
+        versionName getVersionName()
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

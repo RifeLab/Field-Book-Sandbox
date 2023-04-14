@@ -2,8 +2,6 @@ on:
   push:
     branches:
       - develop
-    paths-ignore:
-      - 'app/build.gradle'
 
 name: do-alpha-release
 
@@ -21,17 +19,16 @@ jobs:
       with:
         java-version: '11'
 
-    - name: Get Android version
-        id: test
-        uses: ltDino/android-get-version-action@v1.0
-        with:
-          gradlePath: app/build.gradle
-    
+    # Looks for commit intents following the conventional commits standard, bumps the patch version at minimum
+    # Details here https://github.com/oflynned/android-version-bump#workflow and here https://www.conventionalcommits.org/en/v1.0.0/
     - name: Bump version
-      uses: chkfung/android-version-actions@v1.2.1
+      id: bump_version
+      uses: oflynned/android-version-bump@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        gradlePath: app/build.gradle
-        versionCode: ${{ steps.test.outputs.versionCode }}+1
+        build_number: ${{ github.run_number }}
+        tag_prefix: 'v'
 
     - name: Make gradlew executable
       run: chmod +x ./gradlew
