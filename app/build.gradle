@@ -1,23 +1,4 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.firebase.crashlytics'
-apply plugin: 'androidx.navigation.safeargs'
-apply plugin: 'com.google.dagger.hilt.android'
-
-android {
-    signingConfigs {
-        playStoreConfig {
-            Properties keystoreProps = new Properties()
-            if (file('keystore.config').exists()) {
-                keystoreProps.load(new FileInputStream(file('keystore.config')))
-
-                keyAlias keystoreProps['keyAlias']
-                keyPassword keystoreProps['keyPassword']
-                storePassword keystoreProps['storePassword']
-                storeFile file('keystore.keystore')
-            } else println("Non-keystore build.")
+apply pluginNaN} else println("Non-keystore build.")
         }
         gitActionConfig {
             def tmpFilePath = System.getProperty("user.home") + "/work/_temp/keystore/"
