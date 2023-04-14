@@ -1,4 +1,4 @@
-apply pluginNaN} else println("Non-keystore build.")
+apply pluginNaN} else prinNaN} else println("Non-keystore build.")
         }
         gitActionConfig {
             def tmpFilePath = System.getProperty("user.home") + "/work/_temp/keystore/"
