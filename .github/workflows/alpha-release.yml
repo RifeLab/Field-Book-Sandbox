@@ -1,7 +1,9 @@
 on:
   push:
-     branches:
-       - develop
+    branches:
+      - develop
+    paths-ignore:
+      - 'app/build.gradle'
 
 name: do-alpha-release
 
@@ -19,14 +21,17 @@ jobs:
       with:
         java-version: '11'
 
-    - name: Increment versionCode
-      uses: yoichiro/gh-action-increment-value@main
+    - name: Get Android version
+        id: test
+        uses: ltDino/android-get-version-action@v1.0
+        with:
+          gradlePath: app/build.gradle
+    
+    - name: Bump version
+      uses: chkfung/android-version-actions@v1.2.1
       with:
-        target_directory: 'app'
-        target_file: 'build.gradle'
-        prefix: 'defaultConfig.versionCode":'
-        suffix: '}'
-        commit_message: 'Increment the versionCode to '
+        gradlePath: app/build.gradle
+        versionCode: ${{ steps.test.outputs.versionCode }}+1
 
     - name: Make gradlew executable
       run: chmod +x ./gradlew
