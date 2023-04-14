@@ -19,18 +19,22 @@ jobs:
       with:
         java-version: '11'
 
-    - name: Bump version
-      uses: chkfung/android-version-actions@v1.2.1
+    - name: Increment versionCode
+      uses: yoichiro/gh-action-increment-value@main
       with:
-        gradlePath: app/build.gradle
+        target_directory: 'app'
+        target_file: 'build.gradle'
+        prefix: 'versionCode":'
+        suffix: '}'
+        commit_message: 'Increment the versionCode to '
 
     - name: Make gradlew executable
       run: chmod +x ./gradlew
 
-    - name: Build Android App Bundle
+    - name: Build APK
       run: ./gradlew app:assembleRelease 
 
-    - name: Sign ABB
+    - name: Sign APK
       uses: r0adkll/sign-android-release@v1
       id: sign_app
       with:
@@ -46,7 +50,7 @@ jobs:
         name: Build Artifacts
         path: app/build/outputs/
 
-    - name: Release to Play Store
+    - name: Release APK to Play Store
       uses: r0adkll/upload-google-play@v1
       with:
         serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
