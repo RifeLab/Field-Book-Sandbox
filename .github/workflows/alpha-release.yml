@@ -48,7 +48,7 @@ jobs:
         keyStorePassword: ${{ secrets.STORE_PASSWORD }}
         keyPassword: ${{ secrets.KEY_PASSWORD }}
 
-    - name: Upload build output
+    - name: Upload built APK
       uses: actions/upload-artifact@v2
       with:
         name: Build Artifacts
