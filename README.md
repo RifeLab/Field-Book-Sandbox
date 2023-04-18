@@ -68,7 +68,7 @@ Development of Field Book has been supported by the [Collaborative Crop Research
 ## Develop
 To submit code changes to Field Book:
 
-1. Create a feature branch based on the develop branch, and use it to implement your feature.
+1. Create a feature branch based on the develop branch, and implement your feature.
 2. When finished, merge the latest version of the develop branch into your feature branch and resolve any conflicts.
 3. Create a pull request to merge your feature branch into the develop branch.
 4. Finally, select 1-2 people from the PhenoApps org to review your code.
