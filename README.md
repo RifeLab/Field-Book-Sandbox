@@ -70,7 +70,7 @@ To submit code changes to Field Book:
 
 1. Create a feature branch based on the develop branch, and implement your feature.
 2. When finished, merge the latest version of the develop branch into your feature branch and resolve any conflicts.
-3. Create a pull request to merge your feature branch in to the develop branch.
+3. Create a pull request to merge your feature branch into the develop branch.
 4. Select 1-2 people to review your code.
 
 
