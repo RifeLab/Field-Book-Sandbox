@@ -42,8 +42,14 @@ jobs:
     - name: Make gradlew executable
       run: chmod +x ./gradlew
 
-    - name: Get versionName
-      run: echo "VERSION_NAME=$(${{github.workspace}}/gradlew -q makeVersionName)" >> $GITHUB_ENV
+    - name: Get Android version
+      id: test
+      uses: ltDino/android-get-version-action@v1.0
+      with:
+        gradlePath: app/build.gradle
+
+    # - name: Get versionName
+    #   run: echo "VERSION_NAME=$(${{github.workspace}}/gradlew -q makeVersionName)" >> $GITHUB_ENV
 
     - name: Build APK
       run: ./gradlew app:assembleRelease 
@@ -65,7 +71,7 @@ jobs:
         path: app/build/outputs/
     
     - name: Rename APK file
-      run: mv app/build/outputs/apk/release/app-release-unsigned-signed.apk app/build/outputs/apk/release/Field-Book-v${{ env.VERSION_NAME }}-prerelease.apk
+      run: mv app/build/outputs/apk/release/app-release-unsigned-signed.apk app/build/outputs/apk/release/Field-Book-v${{ steps.test.outputs.versionName }}-prerelease.apk
 
     - name: Attach APK to PR
       uses: gavv/pull-request-artifacts@v1.0.0
@@ -73,6 +79,6 @@ jobs:
         commit: ${{ env.pr_ref }}
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: |
-          app/build/outputs/apk/release/Field-Book-v${{ env.VERSION_NAME }}-prerelease.apk
+          app/build/outputs/apk/release/Field-Book-v${{ steps.test.outputs.versionName }}-prerelease.apk
 
     
