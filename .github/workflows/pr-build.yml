@@ -29,8 +29,8 @@ jobs:
         MINOR=$(cat version.properties | grep minorVersion | cut -d = -f 2)
         PATCH=$(cat version.properties | grep patchVersion | cut -d = -f 2)
         BUILD=$(cat version.properties | grep buildNumber | cut -d = -f 2)
+        echo "The version is $MAJOR.$MINOR.$PATCH.$BUILD"
         echo "VERSION=$MAJOR.$MINOR.$PATCH.$BUILD" >> $GITHUB_ENV
-        echo "The version is ${{ env.VERSION }}"
 
     - name: Build APK
       run: ./gradlew app:assembleRelease 
@@ -61,5 +61,3 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: |
           app/build/outputs/apk/release/Field-Book-v${{ env.VERSION }}-prerelease.apk
-
-    
