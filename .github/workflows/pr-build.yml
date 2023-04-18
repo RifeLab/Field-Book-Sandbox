@@ -25,8 +25,11 @@ jobs:
 
     - name: Get Android version
       run: |
-        export `cat version.properties`
-        echo "VERSION=$majorVersion.$minorVersion.$patchVersion.$buildNumber" >> $GITHUB_ENV
+        MAJOR=$(cat version.properties | grep majorVersion | cut -d = -f 2)
+        MINOR=$(cat version.properties | grep minorVersion | cut -d = -f 2)
+        PATCH=$(cat version.properties | grep patchVersion | cut -d = -f 2)
+        BUILD=$(cat version.properties | grep buildNumber | cut -d = -f 2)
+        echo "VERSION=$MAJOR.$MINOR.$PATCH.$BUILD" >> $GITHUB_ENV
         echo "The version is ${{ env.VERSION }}"
 
     - name: Build APK
