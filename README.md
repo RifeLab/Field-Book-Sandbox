@@ -66,7 +66,7 @@ Development of Field Book has been supported by the [Collaborative Crop Research
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Develop
-To submit code changes to Field Book App:
+To submit code changes to Field Book:
 
 1. Create a feature branch based on the develop branch, and use it to implement your feature.
 2. When finished, merge the latest version of the develop branch into your feature branch and resolve any conflicts.
