@@ -28,6 +28,14 @@ private String makeVersionName() {
     return "${ext.majorVersion}.${ext.minorVersion}.${ext.patchVersion}"
 }
 
+task printVersionName {
+     println "v" + defaultConfig.versionName
+}
+
+task printVersionCode {
+     println defaultConfig.versionCode
+}
+
 android {
     signingConfigs {
         playStoreConfig {
