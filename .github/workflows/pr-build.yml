@@ -39,16 +39,13 @@ jobs:
       with:
         java-version: '11'
 
-    # Looks for commit intents following the conventional commits standard, bumps the patch version at minimum
-    # Details here https://github.com/oflynned/android-version-bump#workflow and here https://www.conventionalcommits.org/en/v1.0.0/
-    - name: Bump version
-      id: bump_version
-      uses: oflynned/android-version-bump@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        build_number: ${{ github.run_number }}
-        tag_prefix: 'v'
+    - name: Get version
+      id: get_version
+      uses: battila7/get-version-action@v2
+
+    - run: echo ${{ steps.get_version.outputs.version }}
+
+    - run: echo ${{ steps.get_version.outputs.version-without-v }}
 
     - name: Make gradlew executable
       run: chmod +x ./gradlew
@@ -73,14 +70,14 @@ jobs:
         path: app/build/outputs/
     
     - name: Rename APK file
-      run: mv app/build/outputs/apk/release/app-release-unsigned-signed.apk app/build/outputs/apk/release/Field-Book-v${{ steps.bump_version.outputs.new_tag }}-prerelease.apk
+      run: mv app/build/outputs/apk/release/app-release-unsigned-signed.apk app/build/outputs/apk/release/Field-Book-${{ steps.get_version.outputs.version }}-prerelease.apk
 
     - name: Attach APK to PR
       uses: gavv/pull-request-artifacts@v1.0.0
       with:
-        commit: ${{ github.event.pull_request.head.sha }}
+        commit: ${{ env.pr_ref }}
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: |
-          app/build/outputs/apk/release/Field-Book-v${{ steps.bump_version.outputs.new_tag }}-prerelease.apk
+          app/build/outputs/apk/release/Field-Book-${{ steps.get_version.outputs.version }}-prerelease.apk
 
     
