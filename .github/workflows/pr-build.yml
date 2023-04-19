@@ -28,7 +28,7 @@ jobs:
         MAJOR=$(cat version.properties | grep majorVersion | cut -d = -f 2)
         MINOR=$(cat version.properties | grep minorVersion | cut -d = -f 2)
         PATCH=$(cat version.properties | grep patchVersion | cut -d = -f 2)
-        BUILD=$(cat version.properties | grep buildNumber | cut -d = -f 2)
+        BUILD=${{ github.run_number }}
         echo "The version is $MAJOR.$MINOR.$PATCH.$BUILD"
         echo "VERSION=$MAJOR.$MINOR.$PATCH.$BUILD" >> $GITHUB_ENV
 

@@ -31,7 +31,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         build_number: ${{ github.run_number }}
-        tag_prefix: 'v'
+        tag_prefix: 'alpha-v'
 
     - name: Make gradlew executable
       run: chmod +x ./gradlew
@@ -62,10 +62,4 @@ jobs:
         packageName: com.fieldbook.tracker
         releaseFiles: app/build/outputs/apk/release/app-release-unsigned-signed.apk
         track: alpha
-
-    - name: Create Version Tag
-      uses: rickstaa/action-create-tag@v1
-      id: "tag_create"
-      with:
-        tag: ${{ steps.bump_version.outputs.new_tag }}-alpha
     
