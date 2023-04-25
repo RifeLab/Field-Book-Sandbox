@@ -1,0 +1,54 @@
+on:
+  pull_request:
+    branches:
+      - develop
+
+name: do-pr-prerelease
+
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+  build:
+    uses: ./.github/workflows/build-apk.yml
+    secrets: inherit
+    with:
+      ref: ${{ github.event.pull_request.head.sha }}
+      bump_version: false
+
+  release:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout yet again
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+
+    - name: Download built APK
+      uses: actions/download-artifact@v3
+      with:
+        name: Signed APK
+
+    - name: Get Android version
+      run: |
+        MAJOR=$(cat version.properties | grep majorVersion | cut -d = -f 2)
+        MINOR=$(cat version.properties | grep minorVersion | cut -d = -f 2)
+        PATCH=$(cat version.properties | grep patchVersion | cut -d = -f 2)
+        BUILD=${{ steps.build.outputs.build_number }}
+        echo "The version is $MAJOR.$MINOR.$PATCH.$BUILD"
+        echo "VERSION=$MAJOR.$MINOR.$PATCH.$BUILD" >> $GITHUB_ENV
+    
+    - name: Rename APK file
+      run: mv app-release-unsigned-signed.apk Field-Book-v${{ env.VERSION }}-prerelease.apk
+
+    - name: Attach APK to PR
+      uses: gavv/pull-request-artifacts@v1.0.0
+      with:
+        commit: ${{ github.event.pull_request.head.sha }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: |
+          Field-Book-v${{ env.VERSION }}-prerelease.apk
