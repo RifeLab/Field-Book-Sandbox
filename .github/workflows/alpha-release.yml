@@ -1,5 +1,4 @@
 on:
-  workflow_dispatch:
   push:
     branches:
       - develop
@@ -9,11 +8,10 @@ on:
 name: do-alpha-release
 
 jobs:
-  build:
-
+  build-and-release:
     runs-on: ubuntu-latest
-
     steps:
+
     - name: Checkout the code
       uses: actions/checkout@v2
 
@@ -21,6 +19,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: '11'
+    
+    - name: Retrieve incremented build number
+      run: |
+         BUILD=$(cat version.properties | grep buildNumber | cut -d = -f 2 | awk '{print $1 + 1}')
+         echo "BUILD=$BUILD" >> $GITHUB_ENV
 
     # Looks for commit intents following the conventional commits standard, bumps the patch version at minimum
     # Details here https://github.com/oflynned/android-version-bump#workflow and here https://www.conventionalcommits.org/en/v1.0.0/
@@ -30,8 +33,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        build_number: ${{ github.run_number }}
-        tag_prefix: 'v'
+        build_number: ${{ env.BUILD }}and increment
 
     - name: Make gradlew executable
       run: chmod +x ./gradlew
@@ -55,12 +57,10 @@ jobs:
         name: Build Artifacts
         path: app/build/outputs/
 
-# Commenting out for further testing
-    #- name: Release APK to Play Store
-     # uses: r0adkll/upload-google-play@v1
-     # with:
-     #   serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-     #   packageName: com.fieldbook.tracker
-     #   releaseFiles: app/build/outputs/apk/release/app-release-unsigned-signed.apk
-     #   track: alpha
-    
+    - name: Release APK to Play Store
+      uses: r0adkll/upload-google-play@v1
+      with:
+        serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+        packageName: com.fieldbook.tracker
+        releaseFiles: app/build/outputs/apk/release/app-release-unsigned-signed.apk
+        track: alpha
