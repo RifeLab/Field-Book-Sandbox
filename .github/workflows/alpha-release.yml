@@ -41,3 +41,4 @@ jobs:
           packageName: com.fieldbook.tracker
           releaseFiles: app-release-unsigned-signed.apk
           track: alpha
+    
