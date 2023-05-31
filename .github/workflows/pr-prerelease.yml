@@ -57,7 +57,7 @@ jobs:
           FULL_BRANCH=${{ steps.branch-name.outputs.current_branch }}
           BRANCH=${FULL_BRANCH##*/}
           APK_NUMBER=${{ env.APK_NUMBER }}
-          echo "BRANCH=BRANCH" >> $GITHUB_ENV
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
           echo "APK NUMBER is $APK_NUMBER and BRANCH is $BRANCH"
           mv app/build/outputs/apk/release/app-release-unsigned-signed.apk "app/build/outputs/apk/release/${APK_NUMBER}-${BRANCH}-Field-Book.apk"
 
