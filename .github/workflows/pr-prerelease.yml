@@ -56,10 +56,10 @@ jobs:
         run: |
           FULL_BRANCH=${{ steps.branch-name.outputs.current_branch }}
           BRANCH=${FULL_BRANCH##*/}
+          APK_NUMBER=${{ env.APK_NUMBER }}
           echo "BRANCH=BRANCH >> $GITHUB_ENV
-          echo "BRANCH is $BRANCH"
-          echo "env.BRANCH is ${{ env.BRANCH}}"
-          mv app/build/outputs/apk/release/app-release-unsigned-signed.apk app/build/outputs/apk/release/${{ env.APK_NUMBER }}-${{ env.BRANCH }}-Field-Book.apk
+          echo "APK NUMBER is $APK_NUMBER and BRANCH is $BRANCH"
+          mv app/build/outputs/apk/release/app-release-unsigned-signed.apk "app/build/outputs/apk/release/${APK_NUMBER}-${BRANCH}-Field-Book.apk"
 
       - name: Attach APK to PR using artifacts branch
         uses: gavv/pull-request-artifacts@v1.0.0
