@@ -52,14 +52,19 @@ jobs:
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
           echo "BUMP_TYPE=$BUMP_TYPE" >> $GITHUB_ENV
 
-      - name: Extract changelog message
-        id: extract_changelog
+      - name: Get PR details
+        id: pr_details
         run: |
-          CHANGELOG_LINE=$(grep -oP "(?<=\`release-note\n\n).*" ${{ github.event.pull_request.body }})
-          PR_NUMBER=${{ github.event.pull_request.number }}
-          CHANGELOG_MSG="${CHANGELOG_LINE} (#${PR_NUMBER})"
-          echo "CHANGELOG MSG IS: $CHANGELOG_MSG"
-          echo "CHANGELOG_MSG=$CHANGELOG_MSG" >> $GITHUB_ENV
+          PR_NUMBER=$(jq --raw-output .pull_request.number "${{ github.event_path }}")
+          PR_BODY=$(curl --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --header "Accept: application/vnd.github.v3+json" --silent "${{ github.api_url }}/repos/${{ github.repository }}/pulls/${PR_NUMBER}" | jq --raw-output .body)
+          echo "PR_NUMBER=${PR_NUMBER}" >> $GITHUB_ENV
+          echo "PR_BODY=${PR_BODY}" >> $GITHUB_ENV
+
+      - name: Extract release note
+        id: release_note
+        run: |
+          RELEASE_NOTE=$(echo "${{ env.PR_BODY }}" | grep -oP "(?<=\`release-note\n\n).*")
+          echo "RELEASE_NOTE=${RELEASE_NOTE} (#${{ env.PR_NUMBER }})" >> $GITHUB_ENV
 
       - name: Commit version changes
         uses: EndBug/add-and-commit@v7
@@ -128,7 +133,7 @@ jobs:
           prerelease: ${{ env.BUMP_TYPE != 'patchVersion' }}
           body: |
             ${{ steps.matching_release.outputs.body }}
-            ${{ env.CHANGELOG_MSG }}
+            ${{ env.RELEASE_NOTE }}
     
       # - name: Release APK to Play Store
       #   uses: r0adkll/upload-google-play@v1
