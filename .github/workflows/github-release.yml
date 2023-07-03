@@ -55,24 +55,11 @@ jobs:
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
           echo "BUMP_TYPE=$BUMP_TYPE" >> $GITHUB_ENV
 
-      - name: Get PR details
-        id: pr_details
-        uses: octokit/request-action@v2.x
-        with:
-          route: GET /repos/:owner/:repo/pulls/:pull_number
-          owner: FieldPheno
-          repo: ${{ github.repository }}
-          pull_number: ${{ github.event.pull_request.number }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          PR_BODY: ${{ steps.pr_details.outputs.data.body }}
-
       - name: Extract release note
         id: release_note
         run: |
-          RELEASE_NOTE=$(echo "${{ env.PR_BODY }}" | grep -oP "(?<=\`release-note\n\n).*")
-          echo "RELEASE_NOTE=${RELEASE_NOTE} (#${{ env.PR_NUMBER }})" >> $GITHUB_ENV
+          RELEASE_NOTE=$(echo "${{ github.event.pull_request.body }}" | grep -oP "(?<=\`release-note\n\n).*")
+          echo "RELEASE_NOTE=${RELEASE_NOTE} (#${{ github.event.pull_request.number }})" >> $GITHUB_ENV
 
       - name: Commit version changes
         uses: EndBug/add-and-commit@v7
