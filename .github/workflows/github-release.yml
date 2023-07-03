@@ -1,6 +1,8 @@
 on:
   workflow_dispatch:
-  push:
+  pull_request:
+    types:
+      - closed
     branches:
       - main
     paths:
@@ -10,6 +12,7 @@ name: do-github-release
 
 jobs:
   build-and-release:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
 
@@ -54,11 +57,16 @@ jobs:
 
       - name: Get PR details
         id: pr_details
-        run: |
-          PR_NUMBER=$(jq --raw-output .pull_request.number "${{ github.event_path }}")
-          PR_BODY=$(curl --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --header "Accept: application/vnd.github.v3+json" --silent "https://api.github.com/repos/${{ github.repository }}/pulls/${PR_NUMBER}" | jq --raw-output .body)
-          echo "PR_NUMBER=${PR_NUMBER}" >> $GITHUB_ENV
-          echo "PR_BODY=${PR_BODY}" >> $GITHUB_ENV
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/:owner/:repo/pulls/:pull_number
+          owner: FieldPheno
+          repo: ${{ github.repository }}
+          pull_number: ${{ github.event.pull_request.number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BODY: ${{ steps.pr_details.outputs.data.body }}
 
       - name: Extract release note
         id: release_note
