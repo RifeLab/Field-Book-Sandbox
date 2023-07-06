@@ -58,7 +58,7 @@ jobs:
       - name: Extract release note
         id: release_note
         run: |
-          RELEASE_NOTE=$(echo "${{ github.event.pull_request.body }}" | grep -oP "(?<=\`release-note\n\n).*")
+          RELEASE_NOTE=$(echo "${{ github.event.pull_request.body }}" | grep -oP "(?<=\`release-note)[^\`]*")
           echo "RELEASE_NOTE=${RELEASE_NOTE} (#${{ github.event.pull_request.number }})" >> $GITHUB_ENV
 
       - name: Commit version changes
