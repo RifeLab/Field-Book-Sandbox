@@ -57,7 +57,7 @@ jobs:
         id: release_note
         run: |
           RELEASE_NOTE=$(echo "${{ github.event.pull_request.body }}" | awk '/```release-note/{flag=1;next}/```/{flag=0}flag'
-          echo "RELEASE_NOTE=${RELEASE_NOTE} >> $GITHUB_ENV
+          echo "$RELEASE_NOTE" >> $GITHUB_ENV
 
       - name: Commit version changes
         uses: EndBug/add-and-commit@v7
