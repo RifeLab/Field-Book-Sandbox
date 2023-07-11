@@ -1,22 +1,21 @@
 on:
   workflow_dispatch:
-  push:
+  pull_request:
+    types:
+      - closed
     branches:
       - main
-    paths:
-      - 'app/**'
 
 name: do-github-release
 
 jobs:
   build-and-release:
+    # if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
 
       - name: Checkout repo
         uses: actions/checkout@v2
-        with:
-          token: ${{secrets.ACTIONS_PAT}}
 
       # Uses semantic commits to automate version bumping.
       # No scope or "fix:" = PATCH, "feat:" or "minor:" = MINOR, "BREAKING CHANGE:", "major:", or fix/feat with appended "!" = MAJOR
@@ -54,6 +53,12 @@ jobs:
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
           echo "BUMP_TYPE=$BUMP_TYPE" >> $GITHUB_ENV
 
+      - name: Extract release note
+        id: release_note
+        run: |
+          RELEASE_NOTE=$(echo "${{ github.event.pull_request.body }}" | awk '/```release-note/{flag=1;next}/```/{flag=0}flag')
+          echo "$RELEASE_NOTE" >> $GITHUB_ENV
+
       - name: Commit version changes
         uses: EndBug/add-and-commit@v7
         with:
@@ -83,9 +88,9 @@ jobs:
         uses: r0adkll/sign-android-release@v1
         with:
           releaseDirectory: app/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          signingKeyBase64: ${{ secrets.KEYSTORE }}
+          alias: ${{ secrets.KEY_ALIAS }}
+          keyStorePassword: ${{ secrets.STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
 
       - name: Upload built APK
@@ -121,7 +126,7 @@ jobs:
           prerelease: ${{ env.BUMP_TYPE != 'patchVersion' }}
           body: |
             ${{ steps.matching_release.outputs.body }}
-            ${{ env.COMMIT_MSG }}
+            ${{ env.RELEASE_NOTE }}
     
       # - name: Release APK to Play Store
       #   uses: r0adkll/upload-google-play@v1
