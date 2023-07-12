@@ -5,12 +5,14 @@ on:
       - closed
     branches:
       - main
+    paths:
+      - 'app/**'
 
 name: do-github-release
 
 jobs:
   build-and-release:
-    # if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
 
@@ -57,7 +59,7 @@ jobs:
         id: release_note
         run: |
           RELEASE_NOTE=$(echo "${{ github.event.pull_request.body }}" | awk '/```release-note/{flag=1;next}/```/{flag=0}flag')
-          echo "$RELEASE_NOTE" >> $GITHUB_ENV
+          echo "RELEASE_NOTE=${RELEASE_NOTE} (#${{ github.event.pull_request.number }})" >> $GITHUB_ENV
 
       - name: Commit version changes
         uses: EndBug/add-and-commit@v7
