@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: FieldPheno/Field-Book-Sandbox
-          token: ${{secrets.GITHUB_TOKEN }}
+          token: ${{secrets.ACTIONS_STEP_DEBUG }}
 
       # Uses semantic commits to automate version bumping.
       # No scope or "fix:" = PATCH, "feat:" or "minor:" = MINOR, "BREAKING CHANGE:", "major:", or fix/feat with appended "!" = MAJOR
