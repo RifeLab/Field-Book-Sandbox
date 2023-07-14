@@ -60,6 +60,9 @@ jobs:
           echo "${RELEASE_NOTE}" >> $GITHUB_ENV
           echo "${RELEASE_NOTE}"
 
+      - name: Print inputs
+        run: echo "${{github.event.pull_request.body}}"
+
       - name: Commit version changes
         uses: EndBug/add-and-commit@v7
         with:
