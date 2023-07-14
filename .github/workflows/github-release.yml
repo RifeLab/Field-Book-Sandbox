@@ -55,7 +55,8 @@ jobs:
       - name: Extract release note
         id: release_note
         run: |
-          RELEASE_NOTE=$(echo "${{ github.event.pull_request.body }}" | awk '/```release-note/{flag=1;next}/```/{flag=0}flag')
+          echo ${{github.event.pull_request.body}}
+          RELEASE_NOTE=$(echo "${{github.event.pull_request.body}}" | awk '/```release-note/{flag=1;next}/```/{flag=0}flag')
           echo "${RELEASE_NOTE}" >> $GITHUB_ENV
           echo "${RELEASE_NOTE}"
 
