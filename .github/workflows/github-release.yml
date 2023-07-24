@@ -52,13 +52,13 @@ jobs:
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
           echo "BUMP_TYPE=$BUMP_TYPE" >> $GITHUB_ENV
 
-      - name: Extract release note
-        id: release_note
-        run: |
-          echo ${{github.event.head_commit.message}}
-          RELEASE_NOTE=$(echo "${{github.event.head_commit.message}}" | awk '/```release-note/{flag=1;next}/```/{flag=0}flag')
-          echo "${RELEASE_NOTE}" >> $GITHUB_ENV
-          echo "${RELEASE_NOTE}"
+      #- name: Extract release note
+      #  id: release_note
+      #  run: |
+      #    echo ${{github.event.head_commit.message}}
+      #    RELEASE_NOTE=$(echo "${{github.event.head_commit.message}}" | awk '/```release-note/{flag=1;next}/```/{flag=0}flag')
+      #    echo "${RELEASE_NOTE}" >> $GITHUB_ENV
+      #    echo "${RELEASE_NOTE}"
 
       - name: Commit version changes
         uses: EndBug/add-and-commit@v7
