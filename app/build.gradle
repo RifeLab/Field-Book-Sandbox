@@ -12,7 +12,7 @@ props.each { prop ->
     project.ext.set(prop.key, prop.value)
 }
 
-//comment11
+//comment12
 
 private Integer makeVersionCode() {
     int major = ext.majorVersion as Integer
