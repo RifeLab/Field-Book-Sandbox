@@ -11,6 +11,7 @@ on:
 name: do-github-release
 
 jobs:
+
   check-app-changes:
     runs-on: ubuntu-latest
     steps:
@@ -20,14 +21,22 @@ jobs:
       - name: Check if app directory changed
         id: check_app_changes
         run: |
-          git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep '^app/' > changed_files.txt
-          if [ -s changed_files.txt ]; then
-            echo "App directory has changed."
+          # Fetch the tag names and their commit hashes
+          git fetch --tags
+          LAST_RELEASE_COMMIT=$(git rev-list -n 1 ${{ env.RELEASE_TAG }})
+
+          # Compare changes between the last release commit and the current commit
+          changed_files=$(git diff-tree --no-commit-id --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep '^app/')
+
+          if [ -n "$changed_files" ]; then
+            echo "App directory has changed since the last release."
             echo "::set-output name=app_changed::true"
           else
-            echo "App directory hasn't changed."
+            echo "App directory hasn't changed since the last release."
             echo "::set-output name=app_changed::false"
           fi
+        env:
+          RELEASE_TAG: ${{ env.RELEASE }}
 
   build-and-release:
     runs-on: ubuntu-latest
