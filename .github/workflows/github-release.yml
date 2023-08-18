@@ -30,11 +30,10 @@ jobs:
           LAST_RELEASE_COMMIT=$(git rev-list -n 1 $LAST_RELEASE_TAG)
           echo "LAST_RELEASE_COMMIT was $LAST_RELEASE_COMMIT"
     
-          # Compare changes between the last release commit and the current commit
-          changed_files=$(git diff-tree --no-commit-id --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep '^app')
+          changed_files=$(git diff-tree --no-commit-id --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep '^app' || echo "none")
           echo "Changed files: $changed_files"
 
-          if [ -n "$changed_files" ]; then
+          if [ "$changed_files" != "none" ]; then
             echo "App directory has changed since the last release."
             echo "app_changed=true" >> "$GITHUB_OUTPUT"
           else
