@@ -2,7 +2,6 @@
 <resources>
 
     <!-- Common -->
-    <!-- Test Comment -->
     <string name="field_book">Field Book</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_ok">OK</string>
