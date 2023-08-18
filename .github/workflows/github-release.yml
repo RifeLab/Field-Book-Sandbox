@@ -18,16 +18,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Set last release tag
-        id: set_last_release_tag
-        run: echo "::set-env name=LAST_RELEASE_TAG::$(git describe --tags $(git rev-list --tags --max-count=1))"
-
       - name: Check if app directory changed
         id: check_app_changes
         run: |
-          # Fetch the tag names and their commit hashes
-          git fetch --tags
-          LAST_RELEASE_COMMIT=$(git rev-list -n 1 ${{ env.LAST_RELEASE_TAG }})
+          lastTag=git describe --tags $(git rev-list --tags --max-count=1)
+          echo "LAST_RELEASE_TAG was $lastTag"
+          LAST_RELEASE_COMMIT=$(git rev-list -n 1 lastTag)
 
           # Compare changes between the last release commit and the current commit
           changed_files=$(git diff-tree --no-commit-id --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep '^app/')
