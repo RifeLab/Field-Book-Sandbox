@@ -34,16 +34,16 @@ jobs:
 
           if [ -n "$changed_files" ]; then
             echo "App directory has changed since the last release."
-            echo "::set-output name=app_changed::true"
+            echo "APP_CHANGED=true" >> $GITHUB_ENV
           else
             echo "App directory hasn't changed since the last release."
-            echo "::set-output name=app_changed::false"
+            echo "APP_CHANGED=false" >> $GITHUB_ENV
           fi
 
   build-and-release:
     runs-on: ubuntu-latest
     needs: check-app-changes
-    if: needs.check-app-changes.outputs.app_changed == 'true' || github.event_name == 'workflow_dispatch'
+    if: ${{ env.APP_CHANGED == 'true' || github.event_name == 'workflow_dispatch' }}
     steps:
       - name: Checkout repo 
         uses: actions/checkout@v2
