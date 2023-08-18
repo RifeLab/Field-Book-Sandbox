@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Common -->
+    <!-- Common Strings-->
     <string name="field_book">Field Book</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_ok">OK</string>
