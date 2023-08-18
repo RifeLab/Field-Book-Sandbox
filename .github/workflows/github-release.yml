@@ -2,11 +2,6 @@ on:
   schedule:
     - cron: "0 20 * * *"
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'app/**'
 
 name: do-github-release
 
@@ -19,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Check if app directory changed
         id: check_app_changes
@@ -29,7 +26,7 @@ jobs:
           echo "LAST_RELEASE_COMMIT was $LAST_RELEASE_COMMIT"
     
           changed_files=$(git diff-tree --no-commit-id --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep '^app' || echo "none")
-          echo "Changed files: $changed_files"
+          echo "Changed app files: $changed_files"
 
           if [ "$changed_files" != "none" ]; then
             echo "App directory has changed since the last release."
