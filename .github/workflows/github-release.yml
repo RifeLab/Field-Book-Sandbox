@@ -20,7 +20,7 @@ jobs:
 
       - name: Get latest tag
         id: get_latest_tag
-        run: echo "::set-output name=tag::$(git describe --tags $(git rev-list --tags --max-count=1))"
+        run: echo "::set-output name=tag::$(git tag --sort=-creatordate | head -n 1)"
 
       - name: Check if app directory changed
         id: check_app_changes
