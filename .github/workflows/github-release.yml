@@ -29,7 +29,7 @@ jobs:
           echo "LAST_RELEASE_COMMIT was $LAST_RELEASE_COMMIT"
     
           # Compare changes between the last release commit and the current commit
-          changed_files=$(git diff-tree --no-commit-id --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep '^app/')
+          changed_files=$(git diff-tree --no-commit-id --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep '^app')
           echo "Changed files: $changed_files"
 
           if [ -n "$changed_files" ]; then
@@ -45,7 +45,7 @@ jobs:
     needs: check-app-changes
     if: needs.check-app-changes.outputs.app_changed == 'true' || github.event_name == 'workflow_dispatch'
     steps:
-      - name: Checkout repo
+      - name: Checkout repo 
         uses: actions/checkout@v2
 
       # Uses semantic commits to automate version bumping.
