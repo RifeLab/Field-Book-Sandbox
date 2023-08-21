@@ -50,6 +50,8 @@ jobs:
       - name: Increment version
         run: |
           #!/bin/bash
+          echo "app_changed is ${{ needs.check-app-changes.outputs.app_changed }}"
+          echo "github event name is ${{ github.event_name }}"
           COMMIT_MSG=$(git log -1 --pretty=format:"%b" || git log -1 --pretty=format:"%B")
           source version.properties
           BUMP_TYPE="patchVersion"
