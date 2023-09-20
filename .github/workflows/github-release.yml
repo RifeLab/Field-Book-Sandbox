@@ -159,10 +159,23 @@ jobs:
             ${{ steps.matching_release.outputs.body }}
             ${{ env.RELEASE_NOTE }}
     
-      # - name: Release APK to Play Store
-      #   uses: r0adkll/upload-google-play@v1
-      #   with:
-      #     serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-      #     packageName: com.fieldbook.tracker
-      #     releaseFiles: app/build/outputs/apk/release/app-release-unsigned-signed.apk
-      #     track: alpha
+      - name: Field season check
+        id: date_check
+        run: |
+          current_date=$(date +'%m%d')
+          if [[ "$current_date" -gt "0915" && "$current_date" -lt "0415" ]]; then
+            echo "Date is outside of field season. Proceeding with play store alpha release."
+            echo "release_to_play_store=true" >> "$GITHUB_ENV"
+          else
+            echo "Date is within field season. Skipping play store release."
+            echo "release_to_play_store=false" >> "$GITHUB_ENV"
+          fi
+
+      - name: Release APK to Play Store
+        uses: r0adkll/upload-google-play@v1
+        if: env.release_to_play_store == 'true'
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+          packageName: com.fieldbook.tracker
+          releaseFiles: app/build/outputs/apk/release/app-release-unsigned-signed.apk
+          track: alpha
