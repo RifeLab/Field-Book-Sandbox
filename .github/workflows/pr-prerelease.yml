@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: 'pull/${{ github.event.inputs.pr_number }}/head'
-          token: ${{secrets.ACTIONS_STEP_DEBUG}}
+          token: ${{ github.token }}
 
       - name: Get branch name
         id: branch-name
