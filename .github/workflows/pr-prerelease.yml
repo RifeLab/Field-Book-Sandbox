@@ -10,10 +10,6 @@ name: do-pr-prerelease
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
-    inputs:
-      pr_number:
-        description: 'PR Number'
-        required: true
     steps:
       - name: Checkout PR Head
         uses: actions/checkout@v2
