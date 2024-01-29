@@ -7,7 +7,6 @@ apply plugin: 'androidx.navigation.safeargs'
 apply plugin: 'com.google.dagger.hilt.android'
 
 // test comment
-// another test change
 
 Properties props = new Properties()
 props.load(new FileInputStream("$project.rootDir/version.properties"))
