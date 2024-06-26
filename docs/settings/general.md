@@ -1,3 +1,3 @@
-# About This Site
+# General Settings
 
-This site content was generated using Docify and went to demo in Opensource.com
+General Settings allow modification of system defaults and optional collection tools

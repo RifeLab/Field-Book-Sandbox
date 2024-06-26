@@ -1,5 +1,5 @@
 
-# Tutorials for every technologist
+# Numeric Trait
 
 Learn about all these great technologies:
 
