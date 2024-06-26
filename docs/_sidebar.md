@@ -1,7 +1,3 @@
-<!-- docs/_sidebar.md -->
-
-
-* [HOME](./)
 
 - Quick start
 
