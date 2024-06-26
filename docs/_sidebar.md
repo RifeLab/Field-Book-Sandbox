@@ -3,12 +3,20 @@
 
 * [HOME](./)
 
-* [Tutorials](./tutorials/index)
-  * [Tomcat](./tutorials/tomcat/index)
-  * [Cloud](./tutorials/cloud/index)
-  * [Java](./tutorials/java/index)
+- Quick start
 
-* [About](./about/index)
+  - [Introduction](introduction.md)
+  - [Getting started](getting-started.md)
+  - [Structure](structure.md)
 
-* [Contact](./contact/index)
+- Layouts
 
+  - [Numeric](./traits/numeric.md)
+
+- Settings
+
+  - [General](./settings/general.md)
+
+- About
+
+  - [Funding](funding.md)
