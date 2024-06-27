@@ -15,19 +15,19 @@
     window.$docsify = {
       el: "#app",
       name: 'Field Book',
+      loadSidebar: true,
       search: 'auto',
       search: {
-          noData: {
-            '/': 'No results!',
-          },
-          paths: 'auto',
-          placeholder: {
-            '/': 'Search',
-          },
-        },
+        maxAge: 86400000, // Expiration time, the default one day
+        paths: 'auto',
+        placeholder: 'Search',
+        noData: 'No Results.',
+        // Headline depth, 1 - 6
+        depth: 6,
+        hideOtherSidebarContent: false, // whether or not to hide other sidebar content
+      },
       coverpage: true,
-      repo: 'https://github.com/RifeLab/Field-Book-Sandbox',
-      loadSidebar: true
+      repo: 'https://github.com/RifeLab/Field-Book-Sandbox'
     }
   </script>
 
