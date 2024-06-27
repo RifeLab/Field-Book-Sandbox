@@ -11,14 +11,14 @@ Field Book can be downloaded from the Google Play Store or can be installed manu
 
 Field Book contains a home screen with links to the major sections of the app. To use Field Book:
 
-    Import your fields Fields
+Import your fields Fields
 
-    Create traits Traits
+Create traits Traits
 
-    Optionally modify any settings Settings
+Optionally modify any settings Settings
 
-    Navigate to collect Collect
+Navigate to collect Collect
 
-    export Export data to a CSV (comma separated value) file
+Export data to a CSV (comma separated value) file
 
 The changelog Changelog can be accessed from the top toolbar to see new features and additions to the app.

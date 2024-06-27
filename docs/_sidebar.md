@@ -8,6 +8,7 @@
 - Layouts
 
   - [Numeric](./traits/numeric.md)
+  - [Categorical](./traits/categorical.md)
 
 - Settings
 
