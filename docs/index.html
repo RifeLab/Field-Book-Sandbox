@@ -13,28 +13,20 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      el: "#app",
       name: 'Field Book',
       loadSidebar: true,
-      executeScript: true,
-      subMaxLevel: 3,
+      subMaxLevel: 4,
       search: 'auto',
-      search: {
-        maxAge: 86400000, // Expiration time, the default one day
-        paths: 'auto',
-        placeholder: 'Search',
-        noData: 'No Results.',
-        depth: 6,
-        hideOtherSidebarContent: false, // whether or not to hide other sidebar content
-      },
       coverpage: true,
+      subMaxLevel: 4,
+      sidebarDisplayLevel: 1,
       repo: 'https://github.com/RifeLab/Field-Book-Sandbox'
     }
   </script>
 
-  <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/external-script.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/external-script.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
 
 </body>
