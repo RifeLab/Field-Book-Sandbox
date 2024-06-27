@@ -11,4 +11,4 @@
 [GitHub](https://github.com/PhenoApps/Field-Book)
 [Getting Started](#field-book)
 
-![color](#DAF2AB)
+![color](#F9FFF0)
