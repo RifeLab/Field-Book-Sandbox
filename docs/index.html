@@ -15,12 +15,21 @@
     window.$docsify = {
       el: "#app",
       name: 'Field Book',
+      search: {
+          noData: {
+            '/': 'No results!',
+          },
+          paths: 'auto',
+          placeholder: {
+            '/': 'Search',
+          },
+        },
       coverpage: true,
       repo: 'https://github.com/RifeLab/Field-Book-Sandbox',
       loadSidebar: true
     }
   </script>
-  
+
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/search.min.js"></script>
 
