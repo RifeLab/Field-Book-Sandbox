@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Common Strings-->
-    <string name="field_book">Field Book</string>
+    <string name="field_book">Field Book Sandbox</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_ok">OK</string>
     <string name="dialog_yes">Yes</string>
