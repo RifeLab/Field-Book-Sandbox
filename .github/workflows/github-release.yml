@@ -11,7 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       app_changed: ${{ steps.check_app_changes.outputs.app_changed }}
+      changelog_additions: ${{ steps.check_changelog.outputs.changelog_additions }}
+      version_changed: ${{ steps.check_version.outputs.version_changed }}
     steps:
+
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
@@ -37,10 +40,43 @@ jobs:
             echo "app_changed=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Check if changelog.md changed
+        id: check_changelog
+        run: |
+          LAST_RELEASE_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+          LAST_RELEASE_COMMIT=$(git rev-list -n 1 $LAST_RELEASE_TAG)
+          changelog_changed=$(git diff --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep 'CHANGELOG.md' || echo "none")
+          if [ "$changelog_changed" != "none" ]; then
+            changelog_additions=$(git diff $LAST_RELEASE_COMMIT $GITHUB_SHA -- CHANGELOG.md)
+            echo "changelog_additions=$changelog_additions" >> "$GITHUB_OUTPUT"
+          else
+            echo "changelog_additions=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check if version.properties changed
+        id: check_version
+        run: |
+          LAST_RELEASE_COMMIT=$(git rev-list -n 1 $LAST_RELEASE_TAG)
+          version_changed=$(git diff --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep 'version.properties' || echo "none")
+          if [ "$version_changed" != "none" ]; then
+            echo "version_changed=true" >> "$GITHUB_OUTPUT"
+            source version.properties
+            OLD_VERSION=$(git show $LAST_RELEASE_COMMIT:version.properties | grep 'version' | awk -F= '{print $2}')
+            NEW_VERSION=$majorVersion.$minorVersion.$patchVersion
+            if [[ "$NEW_VERSION" <= "$OLD_VERSION" ]]; then
+              echo "New version must be higher than the old version."
+              exit 1
+            else
+              echo "VERSION=$NEW_VERSION" >> $GITHUB_ENV
+            fi
+          else
+            echo "version_changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
   build-and-release:
     runs-on: ubuntu-latest
     needs: check-app-changes
-    if: ${{ needs.check-app-changes.outputs.app_changed == 'true' }}
+    if: ${{ needs.check-app-changes.outputs.app_changed == 'true' }} && needs.check-app-changes.outputs.changelog_additions != ''
     steps:
 
       - name: Checkout repo
@@ -64,6 +100,7 @@ jobs:
       # No scope or "fix:" = PATCH, "feat:" or "minor:" = MINOR, "BREAKING CHANGE:", "major:", or fix/feat with appended "!" = MAJOR
       # Additional details: https://www.conventionalcommits.org/en/v1.0.0/
       - name: Increment version
+        if: needs.check-app-changes.outputs.version_changed == 'false'
         run: |
           #!/bin/bash
           COMMIT_MSG=$(git log -1 --pretty=format:"%b" || git log -1 --pretty=format:"%B")
@@ -88,13 +125,11 @@ jobs:
           echo "patchVersion=$patchVersion" >> version.properties
 
           VERSION=$majorVersion.$minorVersion.$patchVersion
-          RELEASE=$majorVersion.$minorVersion
-          echo "COMMIT_MSG=$COMMIT_MSG" >> $GITHUB_ENV
           echo "VERSION=$VERSION" >> $GITHUB_ENV
-          echo "RELEASE=$RELEASE" >> $GITHUB_ENV
           echo "BUMP_TYPE=$BUMP_TYPE" >> $GITHUB_ENV
 
       - name: Commit version changes
+        if: needs.check-app-changes.outputs.version_changed == 'false'
         uses: EndBug/add-and-commit@v7
         with:
           add: 'version.properties'
@@ -103,6 +138,7 @@ jobs:
           author_name: Git Action Bot
 
       - name: Push changes
+        if: needs.check-app-changes.outputs.version_changed == 'false'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -148,15 +184,13 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          release_name: v${{ env.RELEASE }}
+          release_name: v${{ env.VERSION }}
           tag: ${{ env.VERSION }}
           file: app/build/outputs/apk/release/app-release-unsigned-signed.apk
           asset_name: Field-Book-v${{ env.RELEASE }}.apk
-          overwrite: ${{ env.BUMP_TYPE == 'patchVersion' }}
-          prerelease: ${{ env.BUMP_TYPE != 'patchVersion' }}
-          body: |
-            ${{ steps.matching_release.outputs.body }}
-            ${{ env.COMMIT_MSG }}
+          # overwrite: ${{ env.BUMP_TYPE == 'patchVersion' }}
+          # prerelease: ${{ env.BUMP_TYPE != 'patchVersion' }}
+          body: ${{ needs.check-app-changes.outputs.changelog_additions }}
       
       - name: Check date for Google Play upload
           id: date_check
