@@ -157,11 +157,21 @@ jobs:
           body: |
             ${{ steps.matching_release.outputs.body }}
             ${{ env.COMMIT_MSG }}
+      
+      - name: Check date for Google Play upload
+          id: date_check
+          run: |
+            CURRENT_DATE=$(date +%m%d)
+            if [ "$CURRENT_DATE" -ge 0415 ] && [ "$CURRENT_DATE" -le 0915 ]; then
+              echo "UPLOAD_TO_PLAY_STORE=false" >> $GITHUB_ENV
+            else
+              echo "UPLOAD_TO_PLAY_STORE=true" >> $GITHUB_ENV
     
-#      - name: Release APK to Play Store
-#        uses: r0adkll/upload-google-play@v1
-#        with:
-#          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-#          packageName: com.fieldbook.tracker
-#          releaseFiles: app/build/outputs/apk/release/app-release-unsigned-signed.apk
-#          track: alpha
+      - name: Release APK to Play Store
+        if: env.UPLOAD_TO_PLAY_STORE == 'true'
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+          packageName: com.fieldbook.tracker
+          releaseFiles: app/build/outputs/apk/release/app-release-unsigned-signed.apk
+          track: alpha
