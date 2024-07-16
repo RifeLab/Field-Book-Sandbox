@@ -1,6 +1,16 @@
-# Funding
+Funding
+=======
 
-## Current
+ : {.note}
+ : {.title}
+Note
+ : 
+
+This project is under active development.
+ : 
+
+Current
+-------
 
 USAID No. 7200AA‐19LE‐00005
 
@@ -8,7 +18,8 @@ USDA NIFA SCRI No. 2022-51181-38449
 
 USDA NIFA AG2PI No. 2022-70412-38454
 
-## Previous
+Previous
+--------
 
 McKnight Foundation
 
