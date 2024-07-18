@@ -50,18 +50,18 @@ _field\_sample.csv*, *field\_sample2.csv*, and *field\_sample3.csv_
 represent typical wheat breeding fields, while _rtk\_sample.csv_
 demonstrates the import format for entry location data (an additional
 _*geo\_coordinates*_ column). Imported entry coordinates can then be
-used with the <a href="geonav.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/map-search.png" width="25px"></a> [Geonav](geonav.md) feature.
+used with the <a href="geonav.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/map-search.png" width="20px"></a> [Geonav](geonav.md) feature.
 
 Importing a new field
 ---------------------
 
-To import a new field into Field Book press the <img ref="add" style="vertical-align: middle;" src="/_static/icons/fields/plus-circle.png" width="25px"></a> icon in the
+To import a new field into Field Book press the <img ref="add" style="vertical-align: middle;" src="/_static/icons/fields/plus-circle.png" width="20px"> icon in the
 upper right-hand corner of the toolbar in the Fields section. Then, in
 the resulting dialog, select whether to import from a local file, from
-cloud storage (Dropbox, Google Drive, etc.), or via a <a href="brapi.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/server-network.png" width="25px"></a> [Brapi](brapi.md) connection.
+cloud storage (Dropbox, Google Drive, etc.), or via a <a href="brapi.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/server-network.png" width="20px"></a> [Brapi](brapi.md) connection.
 
 A default import source can be set in
-<a href="settings-general.md"><img style="vertical-align: middle;" src="/_static/icons/home/cog.png" width="25px"></a> [General Settings](settings-general.md) to skip this dialog.
+<a href="settings-general.md"><img style="vertical-align: middle;" src="/_static/icons/home/cog.png" width="20px"></a> [General Settings](settings-general.md) to skip this dialog.
 
 <figure align="center" class="image">
   <img src="/_static/images/fields/fields_import_joined.png" width="100%"> 
@@ -80,7 +80,7 @@ names</i></figcaption>
 </figure>
 
 Files can be added to the import folder by downloading or transferring
-from a computer, as described in <a href="storage.md"></a>.
+from a computer, as described in <a href="#/storage">Storage</a>.
 
 Once a file has been selected, the dropdown menus the dropdown menus
 allow selection of the column names that correspond to Field Book\'s
@@ -105,7 +105,7 @@ Creating a field
   <figcaption><i>The Field creation process</i></figcaption> 
 </figure>
 
-To create a new field directly within Field Book press the <img ref="create" style="vertical-align: middle;" src="/_static/icons/fields/table-large-plus.png" width="25px"></a> icon
+To create a new field directly within Field Book press the <img ref="create" style="vertical-align: middle;" src="/_static/icons/fields/table-large-plus.png" width="20px"> icon
 on the toolbar. Set your field name and dimensions, choose which corner
 of the field will contain the first plot, and select zigzag or
 serpentine plot numbering. Unique IDs will be generated automatically.
@@ -124,16 +124,16 @@ Date exported, and Number of entries.
   <figcaption><i>Field management sorting steps</i></figcaption> 
 </figure>
 
-Pressing the <img ref="menu" style="vertical-align: middle;" src="/_static/icons/traits/dots-vertical.png" width="25px"></a> icon to the right of the trial info opens a list of options:
+Pressing the <img ref="menu" style="vertical-align: middle;" src="/_static/icons/traits/dots-vertical.png" width="20px"> icon to the right of the trial info opens a list of options:
 
 > -   _*Sort*_ provides a dialog to update the plot ordering. Populate
->     the sort menu by pressing the <img ref="plus" style="vertical-align: middle;" src="/_static/icons/fields/plus.png" width="25px"></a> 
+>     the sort menu by pressing the <img ref="plus" style="vertical-align: middle;" src="/_static/icons/fields/plus.png" width="20px"> 
 >     icon, and selecting from the list of imported columns. Once columns have been added, change their relative priority by using the
->     <img ref="reorder" style="vertical-align: middle;" src="/_static/icons/traits/reorder-horizontal.png" width="25px"></a>
->     icon to drag and reorder them. Press the <img ref="sort" style="vertical-align: middle;" src="/_static/icons/fields/sort-ascending.png" width="25px"></a>
->     icon to toggle the sort between ascending and descending. Press the <img ref="delete" style="vertical-align: middle;" src="/_static/icons/settings/sounds/delete.png" width="25px"></a> icon to remove a column.
+>     <img ref="reorder" style="vertical-align: middle;" src="/_static/icons/traits/reorder-horizontal.png" width="20px">
+>     icon to drag and reorder them. Press the <img ref="sort" style="vertical-align: middle;" src="/_static/icons/fields/sort-ascending.png" width="20px">
+>     icon to toggle the sort between ascending and descending. Press the <img ref="delete" style="vertical-align: middle;" src="/_static/icons/settings/sounds/delete.png" width="20px"> icon to remove a column.
 > 
-> -   _*Sync*_ connects to the server specified in <a href="settings-brapi.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/server-network.png" width="25px"></a> [Brapi settings](settings-brapi.md), updating the trial
+> -   _*Sync*_ connects to the server specified in <a href="settings-brapi.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/server-network.png" width="20px"></a> [Brapi settings](settings-brapi.md), updating the trial
 >     with new data that has been added from other sources since the
 >     last sync or import. This option will not work for trials imported
 >     from a file.

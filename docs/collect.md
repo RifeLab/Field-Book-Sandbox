@@ -14,9 +14,10 @@ black arrows are used to navigate between entries. Data is entered in
 the bottom area of the screen using a layout determined by the current
 trait. Data is saved to an internal database as it is collected.
 
-![Data collection
-screen](/_static/images/collect/collect_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/collect/collect_framed.png" width="40%"> 
+  <figcaption><i>Data collection screen</i></figcaption> 
+</figure>
 
 Collect Screen Details
 ----------------------
@@ -26,12 +27,12 @@ Collect Screen Details
 By default there are four buttons at the top of the screen (in addtion
 to the back navigation arrow).
 
--   ![search](/_static/icons/collect/magnify.png){width="20px"} Search
-    opens a dialog to search for a specific entry.
+-   <img ref="search" style="vertical-align: middle;" src="/_static/icons/collect/magnify.png" width="20px"> Search opens a dialog to search for a specific entry.
 
-    ![The collect screen search
-    tool](/_static/images/collect/collect_search_dialog.png){.align-center
-    width="60.0%"}
+    <figure align="center" class="image">
+      <img src="/_static/images/collect/collect_search_dialog.png" width="60%"> 
+      <figcaption><i>The collect screen search tool</i></figcaption> 
+    </figure>
 
 The search dialog provides a flexible interface for finding a specific
 entry within the current field. Select which imported data field to
@@ -39,15 +40,13 @@ search by, what strategy to use to find a match, and enter a search
 string. Press Add to construct a complex search with an additional field
 and search string, or press OK to execute the search.
 
--   ![resources](/_static/icons/collect/folder-star.png){width="20px"}
-    Resources opens the `resources` directory and can be used to load
-    reference images.
--   ![summary](/_static/icons/collect/file-document.png){width="20px"}
-    Summary opens a dialog that displays all info for the current entry.
+-   <img ref="resources" style="vertical-align: middle;" src="/_static/icons/collect/folder-star.png" width="20px"> Resources opens the `resources` directory and can be used to load reference images.
+-   <img ref="summary" style="vertical-align: middle;" src="/_static/icons/collect/file-document.png" width="20px"> Summary opens a dialog that displays all info for the current entry.
 
-![The collect screen summary
-tool](/_static/images/collect/collect_summary_screen.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/collect/collect_summary_screen.png" width="40%"> 
+  <figcaption><i>The collect screen summary tool</i></figcaption> 
+</figure>
 
 Summary shows detailed information for the current entry. Arrows at the
 bottom navigate forwards or backwards to other entries. By default the
@@ -57,61 +56,58 @@ toolbar opens a dialog to customize which data fields and traits are
 shown. Selecting a trait from the summary screen navigates to that
 trait.
 
-![Customizing the summary
-display](/_static/images/collect/collect_summary_edit.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/collect/collect_summary_edit.png" width="40%"> 
+  <figcaption><i>Customizing the summary display</i></figcaption> 
+</figure>
 
--   ![unlocked](/_static/icons/collect/lock-open-outline.png){width="20px"}
-    Locking adds restrictions about data input section to prevent
-    accidental changes. Pressing this icon multiple times will cycle
-    through three states:
-    -   ![unlocked](/_static/icons/collect/lock-open-outline.png){width="20px"}
-        Unlocked is the default, unfrozen state that allows trait values
-        to be entered, edited, or deleted.
-    -   ![locked](/_static/icons/collect/lock.png){width="20px"} freezes
-        the collect input so no values can be entered, modified, or
-        deleted.
-    -   ![partial](/_static/icons/collect/lock-clock.png){width="20px"}
-        freezes existing data but allows entry of new values.
+  <img ref="unlocked" style="vertical-align: middle;" src="/_static/icons/collect/lock-open-outline.png" width="20px"> Locking adds restrictions about data input section to prevent accidental changes. Pressing this icon multiple times will cycle
+through three states:
+-   <img ref="unlocked" style="vertical-align: middle;" src="/_static/icons/collect/lock-open-outline.png" width="20px"> Unlocked is the default, unfrozen state that allows trait values to be entered, edited, or deleted.
+-   <img ref="locked" style="vertical-align: middle;" src="/_static/icons/collect/lock.png" width="20px"> freezes the collect input so no values can be entered, modified, or deleted.
+-   <img ref="partial" style="vertical-align: middle;" src="/_static/icons/collect/lock-clock.png" width="20px"> freezes existing data but allows entry of new values.
 
 More features and tools can be added to the toolbar in the
-![settings](/_static/icons/settings/main/cog-outline.png){width="20px"}
-`settings-general`{.interpreted-text role="doc"}. Default icons can be
-removed from the toolbar in the `settings-appearance`{.interpreted-text
-role="doc"}.
+<a href="settings-general.md"><img style="vertical-align: middle;" src="/_static/icons/home/cog.png" width="20px"></a> [General Settings](settings-general.md). Default icons can be removed from the toolbar in <a href="settings-appearance.md"><img style="vertical-align: middle;" src="/_static/icons/settings/appearance/view-grid-outline.png" width="20px"></a> [Appearance Settings](settings-appearance.md).
 
 ### InfoBars
 
-![The collect screen InfoBar
-section](/_static/images/collect/collect_infobars_section.png){.align-center
-width="60.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/collect/collect_infobars_section.png" width="60%"> 
+  <figcaption><i>The collect screen InfoBar section</i></figcaption> 
+</figure>
 
 InfoBars display information about the current plot. InfoBar prefixes
 can be pressed to adjust which data field is displayed.
 
-![Selecting which data field is shown in the
-InfoBars](/_static/images/collect/collect_infobar_menu_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/collect/collect_infobar_menu_framed.png" width="40%"> 
+  <figcaption><i>Selecting which data field is shown in the InfoBars</i></figcaption> 
+</figure>
 
 ### Trait navigation
 
-![The collect screen trait navigation
-section](/_static/images/collect/collect_trait_navigation_section.png){.align-center
-width="60.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/collect/collect_trait_navigation_section.png" width="60%"> 
+  <figcaption><i>The collect screen trait navigation section</i></figcaption> 
+</figure>
 
 The small, green arrows are used to move between the different traits
 that are currently active. Pressing the current trait will show a
 dropdown of all currently active traits.
 
-![Pressing the active trait to see the trait
-dropdown](/_static/images/collect/collect_trait_menu_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/collect/collect_trait_menu_framed.png" width="40%"> 
+  <figcaption><i>Pressing the active trait to see the trait
+dropdown</i></figcaption> 
+</figure>
 
 ### Entry navigation
 
-![The collect screen entry navigation
-section](/_static/images/collect/collect_entry_navigation_section.png){.align-center
-width="60.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/collect/collect_entry_navigation_section.png" width="60%"> 
+  <figcaption><i>The collect screen entry navigation section</i></figcaption> 
+</figure>
 
 The large, black arrows navigate between different entries. Pressing and
 holding these arrows will continuously scroll. The longer the arrows are
@@ -128,9 +124,6 @@ Formats pages.
 
 The bottom toolbar contains three buttons for data input:
 
--   ![scan](/_static/icons/collect/barcode-scan.png){width="20px"}
-    enters data by scanning a barcode.
--   ![na](/_static/icons/collect/not-applicable.png){width="20px"}
-    enters NA for when a phenotype is not available.
--   ![delete](/_static/icons/collect/delete-outline.png){width="20px"}
-    deletes the entered data.
+-   <img ref="scan" style="vertical-align: middle;" src="/_static/icons/collect/barcode-scan.png" width="20px"> enters data by scanning a barcode.
+-   <img ref="na" style="vertical-align: middle;" src="/_static/icons/collect/not-applicable.png" width="20px"> enters NA for when a phenotype is not available.
+-   <img ref="delete" style="vertical-align: middle;" src="/_static/icons/collect/delete-outline.png" width="20px"> deletes the entered data.
