@@ -1,4 +1,4 @@
-![gopro](/_static/icons/formats/camera-gopro.png){width="20px"} GoPro Trait
+<img ref="gopro" style="vertical-align: middle;" src="/_static/icons/formats/camera-gopro.png" width="40px"> GoPro Trait
 ===========================================================================
 
 Overview
@@ -10,10 +10,8 @@ optional details.
 
 On the collect screen, once a GoPro is connected via Bluetooth, it can
 be opened using the
-![connect](/_static/icons/formats/connection.png){width="20px"} button.
-Once connected, press the
-![gopro](/_static/icons/formats/camera-gopro.png){width="20px"} icon to
-access it and capture images. Multiple photos can be captured for each
+<img ref="connect" style="vertical-align: middle;" src="/_static/icons/formats/connection.png" width="20px"> button. Once connected, press the
+<img ref="gopro" style="vertical-align: middle;" src="/_static/icons/formats/camera-gopro.png" width="20px"> icon to access it and capture images. Multiple photos can be captured for each
 entry.
 
 Photo files are named with the entry\'s unique identifier, the trait
@@ -24,11 +22,15 @@ in a field-specific subdirectory
 Creation
 --------
 
-![](/_static/images/traits/formats/create_gopro.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/create_gopro.png" width="40%"> 
+  <figcaption><i>Gopro trait creation dialog</i></figcaption> 
+</figure>
 
 Collect layout
 --------------
 
-![](/_static/images/traits/formats/collect_gopro_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/collect_gopro_framed.png" width="40%"> 
+  <figcaption><i>Gopro trait collection interface</i></figcaption> 
+</figure>

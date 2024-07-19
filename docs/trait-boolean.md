@@ -1,4 +1,4 @@
-![boolean](/_static/icons/formats/close-circle.png){width="20px"} Boolean Trait
+<img ref="audio" style="vertical-align: middle;" src="/_static/icons/formats/close-circle.png" width="40px"> Boolean Trait
 ===============================================================================
 
 Overview
@@ -12,11 +12,15 @@ text is displayed under the trait name on the collect page.
 Creation
 --------
 
-![](/_static/images/traits/formats/create_boolean.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/create_boolean.png" width="40%"> 
+  <figcaption><i>Boolean trait creation dialog</i></figcaption> 
+</figure>
 
 Collect layout
 --------------
 
-![](/_static/images/traits/formats/collect_boolean_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/collect_boolean_framed.png" width="40%"> 
+  <figcaption><i>Boolean trait collection interface</i></figcaption> 
+</figure>

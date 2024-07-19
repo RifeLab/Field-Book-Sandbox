@@ -1,4 +1,4 @@
-![multicat](/_static/icons/formats/view-comfy.png){width="20px"} Multicat Trait
+<img ref="multicat" style="vertical-align: middle;" src="/_static/icons/formats/view-comfy.png" width="40px"> Multicat Trait
 ===============================================================================
 
 Overview
@@ -16,11 +16,15 @@ Multiple categories can be selected per entry.
 Creation
 --------
 
-![](/_static/images/traits/formats/create_multicat.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/create_multicat.png" width="40%"> 
+  <figcaption><i>Multicat trait creation dialog</i></figcaption> 
+</figure>
 
 Collect layout
 --------------
 
-![](/_static/images/traits/formats/collect_multicat_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/collect_multicat_framed.png" width="40%"> 
+  <figcaption><i>Multicat trait collection interface</i></figcaption> 
+</figure>

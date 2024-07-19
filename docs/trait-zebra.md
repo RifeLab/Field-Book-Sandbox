@@ -1,4 +1,4 @@
-![print](/_static/icons/formats/printer.png){width="20px"} Zebra Label Print Trait
+<img ref="print" style="vertical-align: middle;" src="/_static/icons/formats/printer.png" width="40px"> Zebra Label Print Trait
 ==================================================================================
 
 Overview
@@ -19,14 +19,18 @@ specific entry, along with any additional selected data.
 Creation
 --------
 
-![](/_static/images/traits/formats/create_zebra_label_print.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/create_zebra_label_print.png" width="40%"> 
+  <figcaption><i>Zebra Label Print trait creation dialog</i></figcaption> 
+</figure>
 
 Collect layout
 --------------
 
-![](/_static/images/traits/formats/collect_label_print_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/collect_zebra_label_print_framed.png" width="40%"> 
+  <figcaption><i>Zebra Label Print trait collection interface</i></figcaption> 
+</figure>
 
 Troubleshooting
 ---------------
@@ -41,12 +45,12 @@ and try the following steps:
     \[Zebra support
     page\](<https://www.zebra.com/us/en/support-downloads/printers.html>),
     unzip it, and send the unzipped [.zpl]{.title-ref} file to the
-    printer using the _*Available Files*_ option in the Zebra Printer
+    printer using the `Available Files` option in the Zebra Printer
     Setup Utility.
 2.  With the firmware updated, ensure the media type settings in __Media
     Settings__ is correct for the type of label being used (usually
     [MARK]{.title-ref}).
 
 If the above steps don\'t fix the problem, printing a configuration
-label using _*Printer Actions*_ in the Zebra Printer Setup Utility can
+label using `Printer Actions` in the Zebra Printer Setup Utility can
 help with further troubleshooting.

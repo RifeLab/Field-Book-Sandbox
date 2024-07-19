@@ -1,4 +1,4 @@
-![percent](/_static/icons/formats/percent.png){width="20px"} Percent Trait
+<img ref="percent" style="vertical-align: middle;" src="/_static/icons/formats/percent.png" width="40px"> Percent Trait
 ==========================================================================
 
 Overview
@@ -15,11 +15,15 @@ percent slider.
 Creation
 --------
 
-![](/_static/images/traits/formats/create_percent.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/create_percent.png" width="40%"> 
+  <figcaption><i>Percent trait creation dialog</i></figcaption> 
+</figure>
 
 Collect layout
 --------------
 
-![](/_static/images/traits/formats/collect_percent_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/collect_percent_framed.png" width="40%"> 
+  <figcaption><i>Percent trait collection interface</i></figcaption> 
+</figure>

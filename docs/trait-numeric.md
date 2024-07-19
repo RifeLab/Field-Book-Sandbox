@@ -1,4 +1,4 @@
-![numeric](/_static/icons/formats/numeric.png){width="20px"} Numeric Trait
+<img ref="numeric" style="vertical-align: middle;" src="/_static/icons/formats/numeric.png" width="40px"> Numeric Trait
 ==========================================================================
 
 Overview
@@ -11,11 +11,15 @@ Details text is displayed under the trait name on the collect page.
 Creation
 --------
 
-![](/_static/images/traits/formats/create_numeric.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/create_numeric.png" width="40%"> 
+  <figcaption><i>Numeric trait creation dialog</i></figcaption> 
+</figure>
 
 Collect layout
 --------------
 
-![](/_static/images/traits/formats/collect_numeric_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/collect_numeric_framed.png" width="40%"> 
+  <figcaption><i>Numeric trait collection interface</i></figcaption> 
+</figure>

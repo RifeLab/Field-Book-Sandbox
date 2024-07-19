@@ -1,4 +1,4 @@
-![camera](/_static/icons/formats/webcam.png){width="20px"} USB Camera Trait
+<img ref="usb_camera" style="vertical-align: middle;" src="/_static/icons/formats/webcam.png" width="40px"> USB Camera Trait
 ===========================================================================
 
 Overview
@@ -9,9 +9,9 @@ camera. It is created with a trait name and optional details.
 
 On the collect screen, once a camera is connected via USB, it can be
 opened using
-![connect](/_static/icons/formats/connection.png){width="20px"}. Once
+<img ref="connect" style="vertical-align: middle;" src="/_static/icons/formats/connection.png" width="20px">. Once
 connected, press the
-![camera](/_static/icons/formats/webcam.png){width="20px"} icon to
+<img ref="usb_camera" style="vertical-align: middle;" src="/_static/icons/formats/webcam.png" width="20px"> icon to
 access it and capture images. Multiple photos can be captured for each
 entry.
 
@@ -23,11 +23,15 @@ in a field-specific subdirectory
 Creation
 --------
 
-![](/_static/images/traits/formats/create_usb_camera.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/create_usb_camera.png" width="40%"> 
+  <figcaption><i>USB Camera trait creation dialog</i></figcaption> 
+</figure>
 
 Collect layout
 --------------
 
-![](/_static/images/traits/formats/collect_usb_camera_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/collect_usb_camera_framed.png" width="40%"> 
+  <figcaption><i>USB Camera trait collection interface</i></figcaption> 
+</figure>

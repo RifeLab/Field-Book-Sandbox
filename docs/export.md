@@ -7,8 +7,10 @@ Overview
 Collected data is exported to CSV files. The Export dialog allows the
 user to customize how collected data is exported.
 
-![](/_static/images/export/export_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="_static/images/export/export_framed.png" width="40%"> 
+  <figcaption><i>Export dialog details</i></figcaption> 
+</figure>
 
 Options
 -------
@@ -23,9 +25,11 @@ creating a matrix of observed values. Metadata such as person and
 timestamp are excluded. If repeated measures have been collected, only
 the first value will be exported when using the table format.
 
-![Sample data exported in both
-formats](/_static/images/export/export_file_formats.png){.align-center
-width="100.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/export/export_file_formats.png" width="100%"> 
+  <figcaption><i>Sample data exported in both
+formats</i></figcaption> 
+</figure>
 
 _*Database*_ format exports each individual observation as a spreadsheet
 row, and includes columns for collected metadata such as the name of the
@@ -57,5 +61,4 @@ data along with images and audio files that have also been collected.
 _*Overwrite previous export*_ moves old files to `archive` directory.
 
 The default export location can be modified in
-![settings](/_static/icons/settings/main/cog-outline.png){width="20px"}
-`settings-general`{.interpreted-text role="doc"}.
+<a href="settings-general.md"><img style="vertical-align: middle;" src="/_static/icons/home/cog.png" width="20px"></a> [General Settings](settings-general.md).

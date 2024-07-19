@@ -1,4 +1,4 @@
-![text](/_static/icons/formats/format-letter-matches.png){width="20px"} Text Trait
+<img ref="text" style="vertical-align: middle;" src="/_static/icons/formats/format-letter-matches.png" width="40px"> Text Trait
 ==================================================================================
 
 Overview
@@ -13,11 +13,15 @@ keyboard.
 Creation
 --------
 
-![](/_static/images/traits/formats/create_text.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/create_text.png" width="40%"> 
+  <figcaption><i>Text trait creation dialog</i></figcaption> 
+</figure>
 
 Collect layout
 --------------
 
-![](/_static/images/traits/formats/collect_text_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/collect_text_framed.png" width="40%"> 
+  <figcaption><i>Text trait collection interface</i></figcaption> 
+</figure>

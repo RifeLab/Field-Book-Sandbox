@@ -1,4 +1,4 @@
-![categorical](/_static/icons/formats/view-agenda.png){width="20px"} Categorical Trait
+<img ref="categorical" style="vertical-align: middle;" src="/_static/icons/formats/view-agenda.png" width="40px"> Categorical Trait
 ======================================================================================
 
 Overview
@@ -15,11 +15,15 @@ single category can be selected per entry.
 Creation
 --------
 
-![](/_static/images/traits/formats/create_categorical.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/create_categorical.png" width="40%"> 
+  <figcaption><i>Categorical trait creation dialog</i></figcaption> 
+</figure>
 
 Collect layout
 --------------
 
-![](/_static/images/traits/formats/collect_categorical_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/collect_categorical_framed.png" width="40%"> 
+  <figcaption><i>Categorical trait collection interface</i></figcaption> 
+</figure>

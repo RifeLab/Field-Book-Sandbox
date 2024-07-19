@@ -1,4 +1,4 @@
-![date](/_static/icons/formats/calendar-range.png){width="20px"} Date Trait
+<img ref="date" style="vertical-align: middle;" src="/_static/icons/formats/calendar-range.png" width="40px"> Date Trait
 ===========================================================================
 
 Overview
@@ -14,11 +14,15 @@ date picker allows selection of a specific date.
 Creation
 --------
 
-![](/_static/images/traits/formats/create_date.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/create_date.png" width="40%"> 
+  <figcaption><i>Date trait creation dialog</i></figcaption> 
+</figure>
 
 Collect layout
 --------------
 
-![](/_static/images/traits/formats/collect_date_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/collect_date_framed.png" width="40%"> 
+  <figcaption><i>Date trait collection interface</i></figcaption> 
+</figure>

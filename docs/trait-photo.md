@@ -1,4 +1,4 @@
-![photo](/_static/icons/formats/camera.png){width="20px"} Photo Trait
+<img ref="photo" style="vertical-align: middle;" src="/_static/icons/formats/camera.png" width="40px"> Photo Trait
 =====================================================================
 
 Overview
@@ -9,7 +9,7 @@ trait name and optional details.
 
 On the collect page, the camera icon opens the device camera to capture
 images. Multiple photos can be captured for each entry. Photo files are
-named with the entry\'s _*unique\_id*_, the trait name, the photo
+named with the entry\'s `unique_id`, the trait name, the photo
 number, and a timestamp. They are stored as .jpg files in a
 field-specific subdirectory
 (`plot_data/FIELD_NAME/picture/PHOTO_FILE_NAME.jpg`).
@@ -17,11 +17,15 @@ field-specific subdirectory
 Creation
 --------
 
-![](/_static/images/traits/formats/create_photo.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/create_photo.png" width="40%"> 
+  <figcaption><i>Photo trait creation dialog</i></figcaption> 
+</figure>
 
 Collect layout
 --------------
 
-![](/_static/images/traits/formats/collect_photo_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/traits/formats/collect_photo_framed.png" width="40%"> 
+  <figcaption><i>Photo trait collection interface</i></figcaption> 
+</figure>
