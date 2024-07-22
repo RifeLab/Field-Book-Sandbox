@@ -20,21 +20,27 @@ values. Attaching the Android device to the stick makes it possible to
 accurately capture height without having to hold both the height stick
 and the device.
 
-![Plant height measurement via barcoded height
-stick](/_static/images/barcodes/barcodes_plant_height.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/barcodes/barcodes_plant_height.png" width="400px"> 
+  <figcaption><i>Plant height measurement via barcoded height
+stick</i></figcaption> 
+</figure>
 
 ### Leaf length
 
-![Example leaf length collection via length
-barcodes](/_static/images/barcodes/barcodes_leaf_length.png){.align-center
-width="90.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/barcodes/barcodes_leaf_length.png" width="900px"> 
+  <figcaption><i>Example leaf length collection via length
+barcodes</i></figcaption> 
+</figure>
 
 ### Leaf angle
 
-![Example leaf angle
-barcodes](/_static/images/barcodes/barcodes_leaf_angle.png){.align-center
-width="60.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/barcodes/barcodes_leaf_angle.png" width="600px"> 
+  <figcaption><i>Example leaf angle
+barcodes</i></figcaption> 
+</figure>
 
 Resources
 ---------

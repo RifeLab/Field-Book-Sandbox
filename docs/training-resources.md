@@ -13,5 +13,7 @@ The exercises in the the training slides are based on the
 [training\_sample.csv]{.title-ref} field file which is copied into the
 field\_import directory on install and is imported as part training.
 
-![The training sample field in exercise
-3](/_static/images/training_field.png){.align-center width="100.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/training_field.png" width="1000px"> 
+  <figcaption><i>The training sample field in exercise 3</i></figcaption> 
+</figure>

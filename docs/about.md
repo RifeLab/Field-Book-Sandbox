@@ -1,8 +1,10 @@
 About
 =====
 
-![About screen](/_static/images/about/about_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/about/about_framed.png" width="400px"> 
+  <figcaption><i>The About screen</i></figcaption> 
+</figure>
 
 The About screen provides helpful information about Field Book including
 the version number and changelog. It also includes an update tool to

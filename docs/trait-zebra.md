@@ -36,14 +36,14 @@ Troubleshooting
 ---------------
 
 Issues with label printing are often caused by incompatible Zebra mobile
-printer configurations. To troubleshoot, install the \[Zebra Printer
+printer configurations. To troubleshoot, install the [Zebra Printer
 Setup
-Utility\](<https://play.google.com/store/apps/details?id=com.zebra.printersetup>)
+Utility](<https://play.google.com/store/apps/details?id=com.zebra.printersetup>)
 and try the following steps:
 
 1.  Download the latest firmware for the mobile printer model from the
-    \[Zebra support
-    page\](<https://www.zebra.com/us/en/support-downloads/printers.html>),
+    [Zebra support
+    page](<https://www.zebra.com/us/en/support-downloads/printers.html>),
     unzip it, and send the unzipped [.zpl]{.title-ref} file to the
     printer using the `Available Files` option in the Zebra Printer
     Setup Utility.
