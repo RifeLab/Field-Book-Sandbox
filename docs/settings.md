@@ -1,41 +1,28 @@
 Settings
 ========
 
-![Settings screen
-layout](/_static/images/settings/settings_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/settings/settings_framed.png" width="350px"> 
+  <figcaption><i>Settings screen layout</i></figcaption> 
+</figure>
 
 Field Book settings are grouped into eight subcategories:
 
--   ![general](/_static/icons/settings/main/cog-outline.png){width="20px"}
-    `settings-general`{.interpreted-text role="doc"} allow modification
+-   <a href="settings-general.md"><img style="vertical-align: middle;" src="/_static/icons/home/cog.png" width="20px"></a> [General Settings](settings-general.md) allow modification
     of system defaults and optional collection tools
--   ![profile](/_static/icons/settings/main/account.png){width="20px"}
-    `settings-profile`{.interpreted-text role="doc"} set the identity of
-    the person collecting data.
--   ![appearance](/_static/icons/settings/main/view-grid-outline.png){width="20px"}
-    `settings-appearance`{.interpreted-text role="doc"} change language,
+-   <a href="settings-profile.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/account.png" width="20px"></a> [Profile Settings](settings-profile.md) set the identity of the person collecting data.
+-   <a href="settings-appearance.md"><img style="vertical-align: middle;" src="/_static/icons/settings/appearance/view-grid-outline.png" width="20px"></a> [Appearance Settings](settings-appearance.md) change language,
     app colors, icons, or layouts.
--   ![behavior](/_static/icons/settings/main/directions.png){width="20px"}
-    `settings-behavior`{.interpreted-text role="doc"} change default
-    collecting and file sharing actions.
--   ![geonav](/_static/icons/settings/main/map-search.png){width="20px"}
-    `settings-geonav`{.interpreted-text role="doc"} allow a positioning
-    device to be paired and used for field navigation.
--   ![sounds](/_static/icons/settings/main/volume-high.png){width="20px"}
-    `settings-sounds`{.interpreted-text role="doc"} toggle sound
+-   <a href="settings-behavior.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/directions.png" width="20px"></a> [Behavior Settings](settings-behavior.md) change default collecting and file sharing actions.
+-   <a href="settings-geonav.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/map-search.png" width="20px"></a> [Geonav Settings](settings-geonav.md) allow a positioning device to be paired and used for field navigation.
+-  <a href="settings-sounds.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/volume-high.png" width="20px"></a> [Sound Settings](settings-sound.md) toggle sound
     notifications for collection activities.
--   ![brapi](/_static/icons/settings/main/server-network.png){width="20px"}
-    `settings-brapi`{.interpreted-text role="doc"} connect to an
-    external data source using the Breeding API (BrAPI).
--   ![database](/_static/icons/settings/main/database.png){width="20px"}
-    `settings-database`{.interpreted-text role="doc"} allow the database
-    to be imported, exported, or reset.
+-   <a href="settings-brapi.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/server-network.png" width="20px"></a> [Brapi settings](settings-brapi.md) connect to an external data source using the Breeding API (BrAPI).
+-   <a href="settings-database.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/database.png" width="20px"></a> [Database settings](settings-database.md) allow the database to be imported, exported, or reset.
 
-![search](/_static/icons/collect/magnify.png){width="20px"} at the top
-of the screen can be used to quickly find and navigate to a specific
-setting.
+<img ref="search" style="vertical-align: middle;" src="/_static/icons/collect/magnify.png" width="20px"> at the top of the screen can be used to quickly find and navigate to a specific setting.
 
-![Searching for a specific
-setting](/_static/images/settings/settings_search_example.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/settings/settings_search_example.png" width="350px"> 
+  <figcaption><i>Searching for a specific setting</i></figcaption> 
+</figure>

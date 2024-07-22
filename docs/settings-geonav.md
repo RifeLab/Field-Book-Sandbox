@@ -1,42 +1,46 @@
 GeoNav Settings
 ===============
 
-![GeoNav settings screen
-layout](/_static/images/settings/geonav/settings_geonav_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/settings/geonav/settings_geonav_framed.png" width="350px"> 
+  <figcaption><i>GeoNav settings screen
+layout</i></figcaption> 
+</figure>
 
-![geonav](/_static/icons/settings/geonav/map-search.png){width="20px"} Enable Geonav
+<img ref="geonav" style="vertical-align: middle;" src="/_static/icons/settings/geonav/map-search.png" width="20px"> Enable Geonav
 ------------------------------------------------------------------------------------
 
 Enables the device to move between entires based on GPS data. Requires
 entries to have GNSS data.
 
-![method](/_static/icons/settings/geonav/function-variant.png){width="20px"} Search Method
+<img ref="method" style="vertical-align: middle;" src="/_static/icons/settings/geonav/function-variant.png" width="20px"> Search Method
 ------------------------------------------------------------------------------------------
 
 The method used to match GPS location to entry. Defaults to the distance
 method.
 
-![GeoNav search method
-options](/_static/images/settings/geonav/settings_geonav_search_method.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/settings/geonav/settings_geonav_search_method.png" width="350px"> 
+  <figcaption><i>GeoNav search method options</i></figcaption> 
+</figure>
 
-![log](/_static/icons/settings/geonav/script-text-outline.png){width="20px"} GeoNav Log
+<img ref="log" style="vertical-align: middle;" src="/_static/icons/settings/geonav/script-text-outline.png" width="20px"> GeoNav Log
 ---------------------------------------------------------------------------------------
 
 Turns on GeoNav logging to a logfile stored in `/storage/geonav/log.txt`
 
-![interval](/_static/icons/settings/geonav/timer-sand-empty.png){width="20px"} Update Interval
+<img ref="interval" style="vertical-align: middle;" src="/_static/icons/settings/geonav/timer-sand-empty.png" width="20px"> Update Interval
 ----------------------------------------------------------------------------------------------
 
 Changes the time between GeoNav location updates. Can be set to 1s
 (default), 5s, or 10s
 
-![Geonav interval
-options](/_static/images/settings/geonav/settings_geonav_update_intervals.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/settings/geonav/settings_geonav_update_intervals.png" width="350px"> 
+  <figcaption><i>GeoNav interval options</i></figcaption> 
+</figure>
 
-![bluetooth](/_static/icons/settings/geonav/bluetooth.png){width="20px"} Pair Device
+<img ref="bluetooth" style="vertical-align: middle;" src="/_static/icons/settings/geonav/bluetooth.png" width="20px"> Pair Device
 ------------------------------------------------------------------------------------
 
 Opens Bluetooth interface to pair to an external GPS device

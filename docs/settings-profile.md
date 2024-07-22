@@ -1,44 +1,47 @@
 Profile Settings
 ================
 
-![Profile settings screen
-layout](/_static/images/settings/profile/settings_profile_framed.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/settings/profile/settings_profile_framed.png" width="350px"> 
+  <figcaption><i>Profile settings screen
+layout</i></figcaption> 
+</figure>
 
 Profile
 -------
 
-### ![person](/_static/icons/settings/profile/account.png){width="20px"} Person
+### <img ref="person" style="vertical-align: middle;" src="/_static/icons/settings/profile/account.png" width="20px"> Person
 
 Sets the first and last name of the person operating Field Book. This
 information is stored with each collected measurement as metadata and is
 included in the database
-![export](/_static/icons/settings/profile/content-save.png){width="20px"}
-`export`{.interpreted-text role="doc"} format.
+<a href="export.md"><img style="vertical-align: middle;" src="/_static/icons/home/save.png" width="20px"></a> [Export](export.md) format.
 
-![Set person
-dialog](/_static/images/settings/profile/settings_profile_set_person.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/settings/profile/settings_profile_set_person.png" width="350px"> 
+  <figcaption><i>Set person dialog</i></figcaption> 
+</figure>
 
-### ![reset](/_static/icons/settings/profile/delete.png){width="20px"} Reset Profile
+### <img ref="reset" style="vertical-align: middle;" src="/_static/icons/settings/profile/delete.png" width="20px"> Reset Profile
 
 Unsets the first and last name of the person operating Field Book.
 
-### ![verify](/_static/icons/settings/profile/account-clock-outline.png){width="20px"} Require Person
+### <img ref="verify" style="vertical-align: middle;" src="/_static/icons/settings/profile/account-clock-outline.png" width="20px"> Require Person
 
-If enabled, prevents using Field Book unless Person is set. And adds a
-![interval](/_static/icons/settings/profile/hours-24.png){width="20px"}
+If enabled, prevents using Field Book unless Person is set. And adds a <img ref="interval" style="vertical-align: middle;" src="/_static/icons/settings/profile/hours-24.png" width="20px">
 time between verification setting, which can be set to one of three
 intervals.
 
-![Choice of profile verification
-intervals](/_static/images/settings/profile/settings_profile_verification_times.png){.align-center
-width="40.0%"}
+<figure align="center" class="image">
+  <img src="/_static/images/settings/profile/settings_profile_verification_times.png" width="350px"> 
+  <figcaption><i>Choice of profile verification
+intervals</i></figcaption> 
+</figure>
 
 Crashlytics
 -----------
 
-### ![id](/_static/icons/settings/profile/card-account-details-outline.png){width="20px"} Unique ID
+### <img ref="id" style="vertical-align: middle;" src="/_static/icons/settings/profile/card-account-details-outline.png" width="20px"> Unique ID
 
 Creates a unique ID for use in generating more specific crash logs. This
 helps the development team when troubleshooting and improving Field Book

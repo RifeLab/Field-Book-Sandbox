@@ -46,5 +46,5 @@ the app. To use Field Book:
 5.  <a href="export.md"><img style="vertical-align: middle;" src="/_static/icons/home/save.png" width="20px"></a> [Export](export.md) data to a CSV (comma
     separated value) file
 
-The <img style="vertical-align: middle;" src="/_static/icons/home/history.png" width="20px"> Changelog can be accessed from the top toolbar to see new features and
+The <img ref="changelog" style="vertical-align: middle;" src="/_static/icons/home/history.png" width="20px"> Changelog can be accessed from the top toolbar to see new features and
 additions to the app.
