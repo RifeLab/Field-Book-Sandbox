@@ -15,16 +15,13 @@ connected, press the
 access it and capture images. Multiple photos can be captured for each
 entry.
 
-Photo files are named with the entry\'s unique identifier, the trait
-name, the photo number, and a timestamp. They are stored as .jpg files
-in a field-specific subdirectory
-(`plot_data/FIELD_NAME/usb-camera/PHOTO_FILE_NAME.jpg`).
+Captured photos are stored in `.jpg` format, and named by using underscores to join the entry's unique_id, the trait name, the photo number, and a timestamp. The resulting files are stored in a usb-camera directory within a field-specific subdirectory of `plot_data`. An example photo filepath would be `plot_data/FIELD_NAME/usb-camera/PHOTO_FILE_NAME.jpg`.
 
 Creation
 --------
 
 <figure align="center" class="image">
-  <img src="/_static/images/traits/formats/create_usb_camera.png" width="40%"> 
+  <img src="/_static/images/traits/formats/create_usb_camera.png" width="325px"> 
   <figcaption><i>USB Camera trait creation dialog</i></figcaption> 
 </figure>
 
@@ -32,6 +29,6 @@ Collect layout
 --------------
 
 <figure align="center" class="image">
-  <img src="/_static/images/traits/formats/collect_usb_camera_framed.png" width="40%"> 
+  <img src="/_static/images/traits/formats/collect_usb_camera_framed.png" width="350px"> 
   <figcaption><i>USB Camera trait collection interface</i></figcaption> 
 </figure>

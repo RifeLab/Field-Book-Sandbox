@@ -5,7 +5,7 @@ Overview
 --------
 
 The Zebra Label print trait format is used to print labels from an
-external printer. The trait is designed to work with Zebra\'s [ZQ500
+external printer. The trait is designed to work with Zebra's [ZQ500
 Series](https://www.zebra.com/us/en/products/printers/mobile/zq500.html)
 of ruggedized, mobile printers. It is created with a trait name and
 optional details.
@@ -20,7 +20,7 @@ Creation
 --------
 
 <figure align="center" class="image">
-  <img src="/_static/images/traits/formats/create_zebra_label_print.png" width="40%"> 
+  <img src="/_static/images/traits/formats/create_zebra_label_print.png" width="325px"> 
   <figcaption><i>Zebra Label Print trait creation dialog</i></figcaption> 
 </figure>
 
@@ -28,7 +28,7 @@ Collect layout
 --------------
 
 <figure align="center" class="image">
-  <img src="/_static/images/traits/formats/collect_zebra_label_print_framed.png" width="40%"> 
+  <img src="/_static/images/traits/formats/collect_zebra_label_print_framed.png" width="400px"> 
   <figcaption><i>Zebra Label Print trait collection interface</i></figcaption> 
 </figure>
 
@@ -44,13 +44,13 @@ and try the following steps:
 1.  Download the latest firmware for the mobile printer model from the
     [Zebra support
     page](<https://www.zebra.com/us/en/support-downloads/printers.html>),
-    unzip it, and send the unzipped [.zpl]{.title-ref} file to the
+    unzip it, and send the unzipped `.zpl` file to the
     printer using the `Available Files` option in the Zebra Printer
     Setup Utility.
-2.  With the firmware updated, ensure the media type settings in __Media
-    Settings__ is correct for the type of label being used (usually
-    [MARK]{.title-ref}).
+2.  With the firmware updated, ensure the media type settings in **Media
+    Settings** is correct for the type of label being used (usually
+    **MARK**).
 
-If the above steps don\'t fix the problem, printing a configuration
+If the above steps don't fix the problem, printing a configuration
 label using `Printer Actions` in the Zebra Printer Setup Utility can
 help with further troubleshooting.

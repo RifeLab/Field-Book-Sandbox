@@ -12,7 +12,7 @@ Pressing an individual cell moves the collect screen directly to the
 corresponding entry and trait.
 
 <figure align="center" class="image">
-  <img src="/_static/images/datagrid/datagrid_view_framed.png" width="400px"> 
+  <img src="/_static/images/datagrid/datagrid_view_framed.png" width="350px"> 
   <figcaption><i>The Datagrid tool, showing a grid of entries, traits, and collected
 values</i></figcaption> 
 </figure>
@@ -25,6 +25,6 @@ The column used for the row header can be changed by pressing the
 icon in the toolbar.
 
 <figure align="center" class="image">
-  <img src="/_static/images/datagrid/datagrid_edit_rows_joined.png" width="800px"> 
+  <img src="/_static/images/datagrid/datagrid_edit_rows_joined.png" width="700px"> 
   <figcaption><i>Changing the row header from plot_id to plot</i></figcaption> 
 </figure>

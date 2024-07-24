@@ -13,7 +13,7 @@ that uses the device keyboard, including many traits.
 Examples
 --------
 
-### Plant height
+#### Plant height
 
 Barcoded height sticks can be used to rapidly capture plot height
 values. Attaching the Android device to the stick makes it possible to
@@ -26,7 +26,7 @@ and the device.
 stick</i></figcaption> 
 </figure>
 
-### Leaf length
+#### Leaf length
 
 <figure align="center" class="image">
   <img src="/_static/images/barcodes/barcodes_leaf_length.png" width="900px"> 
@@ -34,7 +34,7 @@ stick</i></figcaption>
 barcodes</i></figcaption> 
 </figure>
 
-### Leaf angle
+#### Leaf angle
 
 <figure align="center" class="image">
   <img src="/_static/images/barcodes/barcodes_leaf_angle.png" width="600px"> 

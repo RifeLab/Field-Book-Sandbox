@@ -5,13 +5,13 @@ Storage Location Definer
 ------------------------
 
 After installing and opening the app, you will be asked to create a new
-folder and define it as the _*Storage location*_ on the device where
+folder and define it as the **Storage location** on the device where
 files will be written. In Field Book this step is required. The selected
-\'Storage location\' can be changed in the
+**Storage location** can be changed in the
 <a href="settings-general.md"><img style="vertical-align: middle;" src="/_static/icons/home/cog.png" width="20px"></a> [General Settings](settings-general.md).
 
 <figure align="center" class="image">
-  <img src="/_static/images/storage_definer_framed.png" width="40%"> 
+  <img src="/_static/images/storage_definer_framed.png" width="400px"> 
   <figcaption><i>Storage location definer layout</i></figcaption> 
 </figure>
 
@@ -20,7 +20,7 @@ Subdirectories
 --------------
 
 Fieldbook will create the following subdirectories within the selected
-\'Storage location\' directory:
+**Storage location** directory:
 
 -   `field_import`: contains files to be imported into Field Book
 -   `field_export`: contains exported data files
@@ -43,7 +43,7 @@ file transfer. Each device manufacturer has slight variations for the
 appearance of this dialog.
 
 <figure align="center" class="image">
-  <img src="/_static/images/fields/fields_transfer.png" width="40%"> 
+  <img src="/_static/images/fields/fields_transfer.png" width="325px"> 
   <figcaption><i>Example settings for USB file transfer</i></figcaption> 
 </figure>
 

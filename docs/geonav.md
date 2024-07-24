@@ -15,13 +15,12 @@ single `geo_coordinates` column. Refer to the
 To use GeoNav, navigate to the
 <a href="settings-geonav.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/map-search.png" width="20px"></a> [Geonav Settings](settings-geonav.md) and enable GeoNav. Turn
 on Bluetooth, and pair your external reciever. Navigate to the Collect
-screen and look for a confirmation message that says \'Rover
-communications estabished\'
+screen and look for a confirmation message that says **Rover
+communications estabished**
 
 <figure align="center" class="image">
-  <img src="/_static/images/geonav/connect_cropped.png" width="600px"> 
-  <figcaption><i>The Collect screen GeoNav confirmation
-message</i></figcaption> 
+  <img src="/_static/images/geonav/connect_cropped.png" width="325px"> 
+  <figcaption><i>The GeoNav confirmation message</i></figcaption> 
 </figure>
 
 Once the rover is connected, Field Book will automatically display the
@@ -29,8 +28,8 @@ nearest plot in the bottom toolbar. Press the
 <img ref="navigate" style="vertical-align: middle;" src="/_static/icons/collect/send-outline.png" width="20px"> icon on the right to jump to the plot.
 
 <figure align="center" class="image">
-  <img src="/_static/images/geonav/goto_cropped.png" width="600px"> 
-  <figcaption><i>The Collect screen bottom toolbar showing the nearest plot for manual
+  <img src="/_static/images/geonav/goto_cropped.png" width="325px"> 
+  <figcaption><i>The bottom toolbar showing the nearest plot for manual
 geonavigation</i></figcaption> 
 </figure>
 
@@ -42,16 +41,15 @@ automatically switch to the nearest entry as the device moves around the
 field, displaying the following message on each switch.
 
 <figure align="center" class="image">
-  <img src="/_static/images/geonav/navigated_cropped.png" width="600px"> 
-  <figcaption><i>The Collect screen message when the entry changes during automatic
-geonavigation</i></figcaption> 
+  <img src="/_static/images/geonav/navigated_cropped.png" width="325px"> 
+  <figcaption><i>The automatic geonavigation notification</i></figcaption> 
 </figure>
 
 Example
 -------
 
 <figure align="center" class="image">
-  <img src="/_static/gifs/GeoNavDemo.gif" width="900px"> 
+  <img src="/_static/gifs/GeoNavDemo.gif" width="1100px"> 
   <figcaption><i>GeoNav automatic navigation demonstration</i></figcaption> 
 </figure>
 
@@ -63,13 +61,13 @@ the Geonav feature was first developed in conjunction with the Breeding
 Insight OnRamp project. It also includes instructions for deploying the
 suggested devices to use the GeoNav feature in the field.
 
-While not covered in the original recommendations, Emlid\'s new [Reach
+While not covered in the original recommendations, Emlid's new [Reach
 RX](https://emlid.com/reachrx/) device is also suitable for Geonav, and
 comes with a simplified setup process. Devices from other manufacturers
 should also work with the Geonav feature, as long as they broadcast
 using the NMEA protocol.
 
-### Supplies
+#### Supplies
 
 -   Survey tripod
 -   Survey post (optional depending on rover case)
@@ -81,7 +79,7 @@ using the NMEA protocol.
     -   [Emlid M2](https://emlid.com/reach/) + Antenna + cable + LoRa
         radio + microUSB cable + battery
 
-### Instructions (field use)
+#### Instructions (field use)
 
 1.  Turn on BASE and ROVER, wait for both to broadcast WIFI hotspots
 2.  In TABLET settings, join ROVER WIFI.
@@ -99,11 +97,11 @@ using the NMEA protocol.
 8.  Finally, navigate to FIELDBOOK. Start collecting data. When prompted
     for GNSS trait, select ROVER.
 
-Emlid\'s own documentation for the RS2 and M2 can be found here [(RS2
+Emlid's own documentation for the RS2 and M2 can be found here [(RS2
 docs)](https://docs.emlid.com/reachrs2/) and here [(M2
 docs)](https://docs.emlid.com/reach/)
 
-### Kits and Cases
+#### Kits and Cases
 
 Complete kits and matching 3D Cases for M2 hardware are available for
 purchase online:

@@ -2,7 +2,7 @@ Settings
 ========
 
 <figure align="center" class="image">
-  <img src="/_static/images/settings/settings_framed.png" width="350px"> 
+  <img src="/_static/images/settings/settings_framed.png" width="400px"> 
   <figcaption><i>Settings screen layout</i></figcaption> 
 </figure>
 
@@ -20,7 +20,7 @@ Field Book settings are grouped into eight subcategories:
 -   <a href="settings-brapi.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/server-network.png" width="20px"></a> [Brapi settings](settings-brapi.md) connect to an external data source using the Breeding API (BrAPI).
 -   <a href="settings-database.md"><img style="vertical-align: middle;" src="/_static/icons/settings/main/database.png" width="20px"></a> [Database settings](settings-database.md) allow the database to be imported, exported, or reset.
 
-<img ref="search" style="vertical-align: middle;" src="/_static/icons/collect/magnify.png" width="20px"> at the top of the screen can be used to quickly find and navigate to a specific setting.
+The <img ref="search" style="vertical-align: middle;" src="/_static/icons/collect/magnify.png" width="20px"> **Search Bar** at the top of the screen can be used to quickly find and navigate to a specific setting.
 
 <figure align="center" class="image">
   <img src="/_static/images/settings/settings_search_example.png" width="350px"> 

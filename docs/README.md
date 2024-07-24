@@ -27,7 +27,7 @@ Structure
 ---------
 
 <figure align="center" class="image">
-  <img src="/_static/images/home_framed.png" width="40%"> 
+  <img src="/_static/images/home_framed.png" width="400px"> 
   <figcaption><i>Primary Field Book screen</i></figcaption> 
 </figure>
 
@@ -41,7 +41,7 @@ the app. To use Field Book:
    
 3.  Optionally modify any <a href="settings.md"><img style="vertical-align: middle;" src="/_static/icons/home/cog.png" width="20px"></a> [Settings](settings.md)
    
-4.  Navigate to <a href="collect.md"><img style="vertical-align: middle;" src="/_static/icons/home/barley.png" width="20px"></a> [Collect](collect.md)
+4.  Navigate to <a href="collect.md"><img style="vertical-align: middle;" src="/_static/icons/home/barley.png" width="20px"></a>[Collect](collect.md)
    
 5.  <a href="export.md"><img style="vertical-align: middle;" src="/_static/icons/home/save.png" width="20px"></a> [Export](export.md) data to a CSV (comma
     separated value) file

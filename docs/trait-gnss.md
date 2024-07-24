@@ -16,7 +16,7 @@ Creation
 --------
 
 <figure align="center" class="image">
-  <img src="/_static/images/traits/formats/create_gnss.png" width="40%"> 
+  <img src="/_static/images/traits/formats/create_gnss.png" width="325px"> 
   <figcaption><i>GNSS trait creation dialog</i></figcaption> 
 </figure>
 
@@ -24,7 +24,7 @@ Collect layout
 --------------
 
 <figure align="center" class="image">
-  <img src="/_static/images/traits/formats/collect_gnss_framed.png" width="40%"> 
+  <img src="/_static/images/traits/formats/collect_gnss_framed.png" width="400px"> 
   <figcaption><i>GNSS trait collection interface</i></figcaption> 
 </figure>
 
@@ -37,7 +37,7 @@ button that will show a list of devices that can be accessed to provide
 a location for this trait.
 
 <figure align="center" class="image">
-  <img src="/_static/images/traits/formats/collect_gnss_select_device.png" width="60%"> 
+  <img src="/_static/images/traits/formats/collect_gnss_select_device.png" width="325px"> 
   <figcaption><i>GNSS device select dialog</i></figcaption> 
 </figure>
 
@@ -49,7 +49,7 @@ satellite positioning in the sky, ideally 1 or below), the number of
 available satellites, the altitude, and accuracy.
 
 <figure align="center" class="image">
-  <img src="/_static/images/traits/formats/collect_gnss_receiver_output.png" width="60%"> 
+  <img src="/_static/images/traits/formats/collect_gnss_receiver_output.png" width="325px"> 
   <figcaption><i>GNSS receiver output</i></figcaption> 
 </figure>
 
@@ -60,7 +60,7 @@ record an average of incoming location data for 5s, 10s, or manually
 representative value).
 
 <figure align="center" class="image">
-  <img src="/_static/images/traits/formats/collect_gnss_average_options.png" width="60%"> 
+  <img src="/_static/images/traits/formats/collect_gnss_average_options.png" width="325px"> 
   <figcaption><i>GNSS average options</i></figcaption> 
 </figure>
 
@@ -69,7 +69,7 @@ message will be displayed to confirm that the existing coordinates will
 be updated.
 
 <figure align="center" class="image">
-  <img src="/_static/images/traits/formats/collect_gnss_update_warning.png" width="60%"> 
+  <img src="/_static/images/traits/formats/collect_gnss_update_warning.png" width="325px"> 
   <figcaption><i>GNSS update warning</i></figcaption> 
 </figure>
 
