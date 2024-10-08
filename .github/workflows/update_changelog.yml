@@ -17,8 +17,8 @@ jobs:
       - name: Extract changelog entry from PR body
         id: extract_changelog
         run: |
-          # Use regex to extract the release note from the PR body
-          changelog_entry=$(echo "${{ github.event.pull_request.body }}" | sed -n '/```release-note/,/```/p' | sed '1d;$d' | sed '/^$/d')
+          # Use awk to extract the release note content between ```release-note and ```
+          changelog_entry=$(echo "${{ github.event.pull_request.body }}" | awk '/```release-note/,/```/' | sed '1d;$d')
           echo "Changelog Entry: $changelog_entry"
 
           if [ -z "$changelog_entry" ]; then
@@ -26,7 +26,8 @@ jobs:
             exit 1
           fi
 
-          echo "::set-output name=changelog::$changelog_entry"
+          # Store the changelog entry as an environment variable
+          echo "changelog=$changelog_entry" >> $GITHUB_ENV
 
       - name: Checkout the main branch
         run: |
