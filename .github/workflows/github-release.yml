@@ -13,6 +13,9 @@ jobs:
       app_changed: ${{ steps.check_app_changes.outputs.app_changed }}
       changelog_additions: ${{ steps.check_changelog.outputs.changelog_additions }}
       version_changed: ${{ steps.check_version.outputs.version_changed }}
+    env:
+      LAST_RELEASE_TAG: ""
+      LAST_RELEASE_COMMIT: ""
     steps:
 
       - name: Checkout repo
@@ -21,14 +24,21 @@ jobs:
           token: ${{secrets.ACTIONS_PAT}}
           fetch-depth: 0
 
-      - name: Check if app directory changed
-        id: check_app_changes
+      - name: Determine last release tag and commit
+        id: set_commit_vars
         run: |
           LAST_RELEASE_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
           echo "LAST_RELEASE_TAG was $LAST_RELEASE_TAG"
-          LAST_RELEASE_COMMIT=$(git rev-list --max-count=1 $LAST_RELEASE_TAG)
+
+          LAST_RELEASE_COMMIT=$(git rev-list -n 1 $LAST_RELEASE_TAG)
           echo "LAST_RELEASE_COMMIT was $LAST_RELEASE_COMMIT"
-    
+
+          echo "LAST_RELEASE_TAG=$LAST_RELEASE_TAG" >> $GITHUB_ENV
+          echo "LAST_RELEASE_COMMIT=$LAST_RELEASE_COMMIT" >> $GITHUB_ENV
+
+      - name: Check if app directory changed
+        id: check_app_changes
+        run: |
           changed_files=$(git diff-tree --no-commit-id --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep '^app' || echo "none")
           echo "Changed app files: $changed_files"
 
@@ -43,8 +53,6 @@ jobs:
       - name: Check if changelog.md changed
         id: check_changelog
         run: |
-          LAST_RELEASE_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
-          LAST_RELEASE_COMMIT=$(git rev-list --max-count=1 $LAST_RELEASE_TAG)
           changelog_changed=$(git diff --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep 'CHANGELOG.md' || echo "none")
           if [ "$changelog_changed" != "none" ]; then
             changelog_additions=$(git diff $LAST_RELEASE_COMMIT $GITHUB_SHA -- CHANGELOG.md)
@@ -56,7 +64,6 @@ jobs:
       - name: Check if version.properties changed
         id: check_version
         run: |
-          LAST_RELEASE_COMMIT=$(git rev-list --max-count=1 $LAST_RELEASE_TAG)
           version_changed=$(git diff --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep 'version.properties' || echo "none")
           if [ "$version_changed" != "none" ]; then
             echo "version_changed=true" >> "$GITHUB_OUTPUT"
