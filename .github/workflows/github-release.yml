@@ -26,7 +26,7 @@ jobs:
         run: |
           LAST_RELEASE_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
           echo "LAST_RELEASE_TAG was $LAST_RELEASE_TAG"
-          LAST_RELEASE_COMMIT=$(git rev-list -n 1 $LAST_RELEASE_TAG)
+          LAST_RELEASE_COMMIT=$(git rev-list --max-count=1 $LAST_RELEASE_TAG)
           echo "LAST_RELEASE_COMMIT was $LAST_RELEASE_COMMIT"
     
           changed_files=$(git diff-tree --no-commit-id --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep '^app' || echo "none")
@@ -173,8 +173,6 @@ jobs:
           tag: ${{ env.VERSION }}
           file: app/build/outputs/apk/release/app-release-unsigned-signed.apk
           asset_name: Field-Book-v${{ env.VERSION }}.apk
-          # overwrite: ${{ env.BUMP_TYPE == 'patchVersion' }}
-          # prerelease: ${{ env.BUMP_TYPE != 'patchVersion' }}
           body: ${{ needs.check-app-changes.outputs.changelog_additions }}
       
       - name: Check date for Google Play upload
