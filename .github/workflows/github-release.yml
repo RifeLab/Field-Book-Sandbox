@@ -65,11 +65,26 @@ jobs:
         id: check_version
         run: |
           version_changed=$(git diff --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep 'version.properties' || echo "none")
+          echo "version_changed: $version_changed"
           if [ "$version_changed" != "none" ]; then
             echo "version_changed=true" >> "$GITHUB_OUTPUT"
-            source version.properties
+            if [ -f version.properties ]; then
+              source version.properties
+            else
+              echo "version.properties file not found. Exiting."
+              exit 1
+            fi
             OLD_VERSION=$(git show $LAST_RELEASE_COMMIT:version.properties | grep 'version' | awk -F= '{print $2}')
+            echo "OLD_VERSION: $OLD_VERSION"
             NEW_VERSION=$majorVersion.$minorVersion.$patchVersion
+            echo "NEW_VERSION: $NEW_VERSION"
+
+            # Ensure NEW_VERSION and OLD_VERSION are valid before comparing
+            if [[ -z "$NEW_VERSION" || -z "$OLD_VERSION" ]]; then
+              echo "Either NEW_VERSION or OLD_VERSION is empty. Exiting."
+              exit 1
+            fi
+
             if [[ "$NEW_VERSION" <= "$OLD_VERSION" ]]; then
               echo "New version must be higher than the old version."
               exit 1
