@@ -187,7 +187,7 @@ jobs:
           release_name: v${{ env.VERSION }}
           tag: ${{ env.VERSION }}
           file: app/build/outputs/apk/release/app-release-unsigned-signed.apk
-          asset_name: Field-Book-v${{ env.RELEASE }}.apk
+          asset_name: Field-Book-v${{ env.VERSION }}.apk
           # overwrite: ${{ env.BUMP_TYPE == 'patchVersion' }}
           # prerelease: ${{ env.BUMP_TYPE != 'patchVersion' }}
           body: ${{ needs.check-app-changes.outputs.changelog_additions }}
