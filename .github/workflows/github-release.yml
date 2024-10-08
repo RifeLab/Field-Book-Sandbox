@@ -85,10 +85,11 @@ jobs:
               exit 1
             fi
 
-            if [[ "$NEW_VERSION" <= "$OLD_VERSION" ]]; then
-              echo "New version must be higher than the old version."
+            if [[ "$NEW_VERSION" == "$OLD_VERSION" || "$NEW_VERSION" < "$OLD_VERSION" ]]; then
+              echo "New version is not higher than the old version. Exiting."
               exit 1
             else
+              # New version is higher than the old version
               echo "VERSION=$NEW_VERSION" >> $GITHUB_ENV
             fi
           else
