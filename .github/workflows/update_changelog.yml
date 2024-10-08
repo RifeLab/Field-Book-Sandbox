@@ -1,0 +1,53 @@
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  update-changelog:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{secrets.ACTIONS_PAT}}
+          fetch-depth: 0
+
+      - name: Extract changelog entry from PR body
+        id: extract_changelog
+        run: |
+          # Use regex to extract the release note from the PR body
+          changelog_entry=$(echo "${{ github.event.pull_request.body }}" | sed -n '/```release-note/,/```/p' | sed '1d;$d' | sed '/^$/d')
+          echo "Changelog Entry: $changelog_entry"
+
+          if [ -z "$changelog_entry" ]; then
+            echo "No changelog entry found in the PR body."
+            exit 1
+          fi
+
+          echo "::set-output name=changelog::$changelog_entry"
+
+      - name: Checkout the main branch
+        run: |
+          git checkout ${{ github.event.pull_request.base.ref }}
+
+      - name: Append changelog entry to CHANGELOG.md
+        run: |
+          # Check if CHANGELOG.md exists, create if not
+          if [ ! -f CHANGELOG.md ]; then
+            echo "# Changelog" > CHANGELOG.md
+          fi
+          # Append the changelog entry
+          echo "${{ steps.extract_changelog.outputs.changelog }}" >> CHANGELOG.md
+          cat CHANGELOG.md
+
+      - name: Commit and push updated changelog
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: 'CHANGELOG.md'
+          message: Update CHANGELOG.md with entry from PR ${{ github.event.pull_request.number }}
+          author_email: git-action-bot@example.com
+          author_name: Git Action Bot
+          token: ${{secrets.ACTIONS_PAT}}
+          push: true
