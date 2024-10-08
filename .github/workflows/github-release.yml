@@ -165,21 +165,6 @@ jobs:
           name: Signed APK
           path: app/build/outputs/
 
-      # - name: Get matching release
-      #   uses: cardinalby/git-get-release-action@1.2.4
-      #   id: matching_release
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     releaseName: v${{ env.RELEASE }}
-      #     doNotFailIfNotFound: 'true'
-
-      # - name: Delete matching release if exists
-      #   if: steps.matching_release.outputs.id != ''
-      #   run: |
-      #     curl -X DELETE -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/releases/${{ steps.matching_release.outputs.id}}"
-
-      # Updates the latest release if just a new patch, drafts a new prerelease if major or minor version has changed 
       - name: Make github release
         uses: svenstaro/upload-release-action@v2
         with:
@@ -193,13 +178,13 @@ jobs:
           body: ${{ needs.check-app-changes.outputs.changelog_additions }}
       
       - name: Check date for Google Play upload
-          id: date_check
-          run: |
-            CURRENT_DATE=$(date +%m%d)
-            if [ "$CURRENT_DATE" -ge 0415 ] && [ "$CURRENT_DATE" -le 0915 ]; then
-              echo "UPLOAD_TO_PLAY_STORE=false" >> $GITHUB_ENV
-            else
-              echo "UPLOAD_TO_PLAY_STORE=true" >> $GITHUB_ENV
+        id: date_check
+        run: |
+          CURRENT_DATE=$(date +%m%d)
+          if [ "$CURRENT_DATE" -ge 0415 ] && [ "$CURRENT_DATE" -le 0915 ]; then
+            echo "UPLOAD_TO_PLAY_STORE=false" >> $GITHUB_ENV
+          else
+            echo "UPLOAD_TO_PLAY_STORE=true" >> $GITHUB_ENV
     
       - name: Release APK to Play Store
         if: env.UPLOAD_TO_PLAY_STORE == 'true'
