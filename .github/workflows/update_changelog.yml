@@ -1,24 +1,53 @@
 on:
-  pull_request:
-    types: [closed]
+  push:
+    branches:
+      - main
 
 jobs:
   update-changelog:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{secrets.ACTIONS_PAT}}
-          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0  # Ensure the entire repo is fetched, including all branches
+
+      - name: Get PR number
+        id: get_pr_number
+        run: |
+          # Get the latest commit SHA that triggered the push event
+          commit_sha=$(git log -1 --format="%H")
+          echo "Commit SHA: $commit_sha"
+          
+          # Use the GitHub API to find the pull request associated with the commit SHA
+          pr_number=$(gh api -X GET "repos/${{ github.repository }}/commits/$commit_sha/pulls" --jq '.[0].number')
+          
+          # If a PR number is found, save it as an output
+          if [ -n "$pr_number" ]; then
+            echo "PR Number: $pr_number"
+            echo "::set-output name=pr_number::$pr_number"
+          else
+            echo "No associated PR found for commit $commit_sha."
+            exit 1
+          fi
+
+      - name: Get PR body
+        id: get_pr_body
+        run: |
+          # Retrieve the PR body using the GitHub API
+          pr_body=$(gh api -X GET "repos/${{ github.repository }}/pulls/${{ steps.get_pr_number.outputs.pr_number }}" --jq '.body')
+          echo "PR Body Content: $pr_body"
+          
+          # Save the PR body as an environment variable
+          echo "pr_body=$pr_body" >> $GITHUB_ENV
 
       - name: Extract changelog entry from PR body
         id: extract_changelog
         run: |
           # Use awk to extract the release note content between ```release-note and ```
-          changelog_entry=$(echo "${{ github.event.pull_request.body }}" | awk '/```release-note/,/```/' | sed '1d;$d')
+          changelog_entry=$(echo "${{ env.pr_body }}" | awk '/```release-note/,/```/' | sed '1d;$d' | sed '/^$/d')
           echo "Changelog Entry: $changelog_entry"
 
           if [ -z "$changelog_entry" ]; then
@@ -29,26 +58,22 @@ jobs:
           # Store the changelog entry as an environment variable
           echo "changelog=$changelog_entry" >> $GITHUB_ENV
 
-      - name: Checkout the main branch
-        run: |
-          git checkout ${{ github.event.pull_request.base.ref }}
-
       - name: Append changelog entry to CHANGELOG.md
         run: |
           # Check if CHANGELOG.md exists, create if not
           if [ ! -f CHANGELOG.md ]; then
             echo "# Changelog" > CHANGELOG.md
           fi
-          # Append the changelog entry
-          echo "${{ steps.extract_changelog.outputs.changelog }}" >> CHANGELOG.md
+          # Append the changelog entry with a date header
+          echo -e "\n## $(date +'%Y-%m-%d')\n${{ env.changelog }}" >> CHANGELOG.md
           cat CHANGELOG.md
 
       - name: Commit and push updated changelog
         uses: EndBug/add-and-commit@v7
         with:
           add: 'CHANGELOG.md'
-          message: Update CHANGELOG.md with entry from PR ${{ github.event.pull_request.number }}
+          message: "Update CHANGELOG.md with entry from PR ${{ steps.get_pr_number.outputs.pr_number }}"
           author_email: git-action-bot@example.com
           author_name: Git Action Bot
-          token: ${{secrets.ACTIONS_PAT}}
+          token: ${{ secrets.GITHUB_TOKEN }}
           push: true
