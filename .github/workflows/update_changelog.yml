@@ -43,8 +43,8 @@ jobs:
           echo "Full PR Body Content:"
           echo "$pr_body"
 
-           # Use awk and sed to extract the release note content between ```release-note and ```
-          changelog_entry=$(echo "$pr_body" | awk 'BEGIN {RS="```";FS="\n"} /release-note/ {getline; print}' | sed 's/\r//g' | sed '/^$/d')
+          # Use sed to extract the release note content between ```release-note and ``` markers
+          changelog_entry=$(echo "$pr_body" | sed -n 's/.*```release-note\(.*\)```.*/\1/p')
 
           # Debugging: Print the changelog entry
           echo "Changelog Entry: $changelog_entry"
