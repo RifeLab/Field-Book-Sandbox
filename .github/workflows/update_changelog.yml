@@ -36,9 +36,16 @@ jobs:
           fi
           echo "PR Number: $pr_number"
 
-          # Retrieve the PR body using the GitHub API and process the release note directly
-          changelog_entry=$(gh api -X GET "repos/${{ github.repository }}/pulls/$pr_number" --jq '.body' | awk '/```release-note/,/```/' | sed '1d;$d' | sed '/^$/d' | sed 's/\r$//')
+          # Retrieve the PR body using the GitHub API
+          pr_body=$(gh api -X GET "repos/${{ github.repository }}/pulls/$pr_number" --jq '.body')
 
+          # Print the PR body for debugging
+          echo "Full PR Body Content:"
+          echo "$pr_body"
+
+          # Use grep and sed to extract the release note content between ```release-note and ```
+          changelog_entry=$(echo "$pr_body" | grep -oP '(?<=```release-note)[\s\S]*(?=```)' | sed 's/\r//g' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+          
           # Debugging: Print the changelog entry
           echo "Changelog Entry: $changelog_entry"
 
