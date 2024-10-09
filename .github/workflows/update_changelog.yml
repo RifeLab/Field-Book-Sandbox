@@ -41,6 +41,9 @@ jobs:
         run: |
           # Retrieve the PR body using the GitHub API
           pr_body=$(gh api -X GET "repos/${{ github.repository }}/pulls/${{ steps.get_pr_number.outputs.pr_number }}" --jq '.body')
+          
+          # Convert Windows-style line endings to Unix-style line endings using sed
+          pr_body=$(echo "$pr_body" | sed 's/\r$//')
           echo "PR Body Content: $pr_body"
           
           # Save the PR body as an environment variable
@@ -51,6 +54,9 @@ jobs:
         run: |
           # Use awk to extract the release note content between ```release-note and ```
           changelog_entry=$(echo "${{ env.pr_body }}" | awk '/```release-note/,/```/' | sed '1d;$d' | sed '/^$/d')
+
+          # Remove Windows-style line endings using sed
+          changelog_entry=$(echo "$changelog_entry" | sed 's/\r$//')
           echo "Changelog Entry: $changelog_entry"
 
           if [ -z "$changelog_entry" ]; then
