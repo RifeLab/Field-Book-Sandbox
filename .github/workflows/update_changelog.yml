@@ -7,6 +7,9 @@ jobs:
   update-changelog:
     runs-on: ubuntu-latest
 
+    env:
+      GH_TOKEN: ${{secrets.ACTIONS_PAT}}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
