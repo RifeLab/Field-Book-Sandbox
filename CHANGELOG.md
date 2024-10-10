@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-Here is an old changelog line
-## 2024-10-09
-still debugging extraction
-=======
 # Changelog
 
 All notable changes to Field Book app will be documented in this file.
