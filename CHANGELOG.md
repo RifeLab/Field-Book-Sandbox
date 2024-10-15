@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix pr number and release note location (PR #54)
 
 ### Fixed
+- adjust change type extraction (PR #61)
 
 ## [v5.6] - 2023-12-08
 
