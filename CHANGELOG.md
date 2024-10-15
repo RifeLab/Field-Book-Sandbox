@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - second string change (PR #58)
 - test string change (PR #57)
-- Test branch string change (PR #55)
+- Test branch string change (PR #55 )
 - fix pr number and release note location (PR #54)
 
 ### Fixed
