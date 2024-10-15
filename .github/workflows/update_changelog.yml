@@ -49,8 +49,14 @@ jobs:
           changelog_entry=$(echo "$changelog_entry" | sed '/^$/d' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
           # Extract the type of change (CHANGE, FEATURE, BUGFIX, ENHANCEMENT, NONE)
-          change_type=$(echo "$clean_pr_body" | awk 'BEGIN { FS="\n"; ORS="" } /Type of change/ { found=1 } /## Checklist/ { found=0 } found { print $0 }' | grep -Eo 'CHANGE|FEATURE|BUGFIX|ENHANCEMENT|NONE')
+          change_type=$(echo "$clean_pr_body" | awk 'BEGIN { found=0 } /Type of change/ { found=1 } /## Checklist/ { found=0 } found { print }' | grep -Eo 'CHANGE|FEATURE|BUGFIX|ENHANCEMENT|NONE')
 
+          # Ensure the section is properly set
+          if [ -z "$change_type" ]; then
+            echo "Could not determine the type of change from PR body."
+            exit 1
+          fi
+          
           # Define the section based on the type of change
           case "$change_type" in
             "FEATURE"|"ENHANCEMENT")
