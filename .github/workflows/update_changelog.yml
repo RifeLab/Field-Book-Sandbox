@@ -53,8 +53,11 @@ jobs:
 
           # Define the section based on the type of change
           case "$change_type" in
-            "CHANGE"|"FEATURE"|"ENHANCEMENT")
+            "FEATURE"|"ENHANCEMENT")
               section="### Added"
+              ;;
+            "CHANGE")
+              section="### Changed"
               ;;
             "BUGFIX")
               section="### Fixed"
@@ -62,9 +65,6 @@ jobs:
             "NONE")
               echo "No notable changelog entry needed."
               exit 0
-              ;;
-            *)
-              section="### Changed"
               ;;
           esac
 
