@@ -82,6 +82,7 @@ jobs:
           # Store the changelog entry and section as environment variables
           echo "changelog=$changelog_entry" >> $GITHUB_ENV
           echo "section=$section" >> $GITHUB_ENV
+          echo "pr_number=$pr_number" >> $GITHUB_ENV
 
 
       - name: Append changelog entry to CHANGELOG.md under Unreleased
@@ -95,15 +96,13 @@ jobs:
             echo -e "## [Unreleased]\n" >> CHANGELOG.md
           fi
 
-          # Ensure "Unreleased" section exists
+          # Ensure the "Unreleased" section exists
           if ! grep -q "## \[Unreleased\]" CHANGELOG.md; then
             echo -e "\n## [Unreleased]\n" >> CHANGELOG.md
           fi
 
-          # Ensure the appropriate section exists under "Unreleased"
-          if ! grep -q "${{ env.section }}" CHANGELOG.md; then
-            sed -i "/## \[Unreleased\]/a ${{ env.section }}\n" CHANGELOG.md
-          fi
+          # Ensure the correct section exists under the "Unreleased" section
+          sed -i '/## \[Unreleased\]/,/^## / { /'${{ env.section }}'/!b; :a; n; /^\n*$/b; :b; p; d; n; ba; }' CHANGELOG.md || sed -i "/## \[Unreleased\]/a ${{ env.section }}\n" CHANGELOG.md
 
           # Append the changelog entry to the correct section under "Unreleased"
           sed -i "/${{ env.section }}/a - ${{ env.changelog }}" CHANGELOG.md
@@ -114,7 +113,7 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           add: 'CHANGELOG.md'
-          message: "Update CHANGELOG.md with entry from PR #${{ steps.extract_changelog.outputs.pr_number }}"
+          message: "Update CHANGELOG.md with entry from PR #${{ env.pr_number }}"
           author_email: git-action-bot@example.com
           author_name: Git Action Bot
           token: ${{ secrets.GITHUB_TOKEN }}
