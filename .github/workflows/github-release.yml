@@ -107,7 +107,7 @@ jobs:
   build-and-release:
     runs-on: ubuntu-latest
     needs: check-app-changes
-    if: ${{ needs['check-app-changes'].outputs.app_changed == 'true' && needs['check-app-changes'].outputs.changelog_additions != '' }}
+    if: ${{ needs['check-app-changes'].outputs.app_changed == 'true' }}
     steps:
 
       - name: Checkout repo
