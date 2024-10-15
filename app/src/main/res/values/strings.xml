@@ -15,7 +15,7 @@
     <string name="dialog_go">Go</string>
 
     <!-- Startup  -->
-    <string name="startup_sample_data_title">Sample data here's yet another string change again</string>
+    <string name="startup_sample_data_title">Sample data here's yet another string change again twice</string>
     <string name="startup_sample_data_message">Load sample data?</string>
 
     <!-- Permissions  -->
