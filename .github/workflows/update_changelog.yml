@@ -22,6 +22,8 @@ jobs:
       - name: Extract changelog entry from merged PR
         id: extract_changelog
         run: |
+          set -e  # Ensure the script exits on errors
+
           # Get the latest commit SHA that triggered the push event
           commit_sha=$(git log -1 --format="%H")
           echo "Commit SHA: $commit_sha"
@@ -32,7 +34,7 @@ jobs:
           # Graceful exit if no PR is found for the commit
           if [ -z "$pr_number" ]; then
             echo "No associated PR found for commit $commit_sha."
-            exit 1
+            exit 0
           fi
           echo "PR Number: $pr_number"
 
