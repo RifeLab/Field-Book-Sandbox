@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+- Test branch string change (PR #55)
 - fix pr number and release note location (PR #54)
 
 ### Fixed
@@ -30,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Datagrid and BrAPI sorting improvements
 
 ### Changed
+- Test branch string change (PR #55)
 - fix pr number and release note location (PR #54)
 - test string change twice (PR #53)
 - Beta settings renamed to Experimental
