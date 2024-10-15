@@ -170,7 +170,7 @@ jobs:
           add: |
             version.properties
             CHANGELOG.md
-          message: message: Bump ${{ env.BUMP_TYPE }} and update changelog for v${{ env.VERSION }}
+          message: Bump ${{ env.BUMP_TYPE }} and update changelog for v${{ env.VERSION }}
           author_email: git-action-bot@example.com
           author_name: Git Action Bot
 
