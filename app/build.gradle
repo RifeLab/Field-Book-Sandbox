@@ -6,13 +6,13 @@ apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'androidx.navigation.safeargs'
 apply plugin: 'com.google.dagger.hilt.android'
 
+// test comment
+
 Properties props = new Properties()
 props.load(new FileInputStream("$project.rootDir/version.properties"))
 props.each { prop ->
     project.ext.set(prop.key, prop.value)
 }
-
-//comment12
 
 private Integer makeVersionCode() {
     int major = ext.majorVersion as Integer
@@ -23,10 +23,6 @@ private Integer makeVersionCode() {
 }
 
 private String makeVersionName() {
-    if (ext.buildNumber) {
-        return "${ext.majorVersion}.${ext.minorVersion}.${ext.patchVersion}.${ext.buildNumber}"
-    }
-
     return "${ext.majorVersion}.${ext.minorVersion}.${ext.patchVersion}"
 }
 

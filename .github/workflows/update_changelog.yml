@@ -1,0 +1,120 @@
+name: Update Changelog
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-changelog:
+    runs-on: ubuntu-latest
+
+    env:
+      GH_TOKEN: ${{ secrets.ACTIONS_PAT }}  # Use GitHub Personal Access Token for `gh` CLI
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ACTIONS_PAT }}
+          fetch-depth: 0  # Ensure the entire repo is fetched, including all branches
+
+      - name: Extract changelog entry from merged PR
+        id: extract_changelog
+        run: |
+          # Get the latest commit SHA that triggered the push event
+          commit_sha=$(git log -1 --format="%H")
+          echo "Commit SHA: $commit_sha"
+          
+          # Use the GitHub API to find the pull request associated with the commit SHA
+          pr_number=$(gh api -X GET "repos/${{ github.repository }}/commits/$commit_sha/pulls" --jq '.[0].number')
+
+          # Exit if no PR is found
+          if [ -z "$pr_number" ]; then
+            echo "No associated PR found for commit $commit_sha."
+            exit 1
+          fi
+          echo "PR Number: $pr_number"
+
+          # Retrieve the PR body using the GitHub API
+          pr_body=$(gh api -X GET "repos/${{ github.repository }}/pulls/$pr_number" --jq '.body')
+
+            # Print the cleaned PR body
+          clean_pr_body=$(echo "$pr_body" | sed 's/\r//g')
+
+          # Extract the release note content
+          changelog_entry=$(echo "$clean_pr_body" | awk 'BEGIN { found=0 } /```release-note/ { found=1; next } /```/ { found=0 } found { print }')
+          changelog_entry=$(echo "$changelog_entry" | sed '/^$/d' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+
+          # Extract the type of change (CHANGE, FEATURE, BUGFIX, ENHANCEMENT, NONE)
+          change_type=$(echo "$clean_pr_body" | awk 'BEGIN { FS="\n"; ORS="" } /Type of change/ { found=1 } /## Checklist/ { found=0 } found { print $0 }' | grep -Eo 'CHANGE|FEATURE|BUGFIX|ENHANCEMENT|NONE')
+
+          # Define the section based on the type of change
+          case "$change_type" in
+            "CHANGE"|"FEATURE"|"ENHANCEMENT")
+              section="### Added"
+              ;;
+            "BUGFIX")
+              section="### Fixed"
+              ;;
+            "NONE")
+              echo "No notable changelog entry needed."
+              exit 0
+              ;;
+            *)
+              section="### Changed"
+              ;;
+          esac
+
+          # Add the PR number to the changelog entry
+          changelog_entry="$changelog_entry (PR #$pr_number)"
+          
+          # Print the changelog entry and section for debugging
+          echo "Changelog Entry: $changelog_entry"
+          echo "Section: $section"
+
+          # Exit if the changelog entry is empty
+          if [ -z "$changelog_entry" ]; then
+            echo "No changelog entry found in the PR body."
+            exit 1
+          fi
+
+          # Store the changelog entry and section as environment variables
+          echo "changelog=$changelog_entry" >> $GITHUB_ENV
+          echo "section=$section" >> $GITHUB_ENV
+          echo "pr_number=$pr_number" >> $GITHUB_ENV
+
+
+      - name: Append changelog entry to CHANGELOG.md under Unreleased
+        run: |
+          # Check if CHANGELOG.md exists, create it if not
+          if [ ! -f CHANGELOG.md ]; then
+            echo "# Changelog" > CHANGELOG.md
+            echo -e "\nAll notable changes to Field Book app will be documented in this file." >> CHANGELOG.md
+            echo -e "\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)," >> CHANGELOG.md
+            echo -e "and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n" >> CHANGELOG.md
+            echo -e "## [Unreleased]\n### Added\n\n### Changed\n\n### Fixed\n" >> CHANGELOG.md
+          fi
+
+          # Check if the entry already exists in the Unreleased section
+          if ! grep -q "${{ env.changelog }}" CHANGELOG.md; then
+            # Append the changelog entry to the correct section under "Unreleased"
+            sed -i "/${{ env.section }}/a - ${{ env.changelog }}" CHANGELOG.md
+          else
+            echo "Entry already exists in Unreleased, skipping."
+          fi
+
+          # Ensure correct spacing by removing redundant empty lines
+          sed -i '/^$/N;/^\n$/D' CHANGELOG.md
+
+          cat CHANGELOG.md
+
+      - name: Commit and push updated changelog
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: 'CHANGELOG.md'
+          message: "Update CHANGELOG.md with note from PR #${{ env.pr_number }}"
+          author_email: git-action-bot@example.com
+          author_name: Git Action Bot
+          token: ${{ secrets.GITHUB_TOKEN }}
+          push: true

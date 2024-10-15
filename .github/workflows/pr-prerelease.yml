@@ -1,9 +1,9 @@
 on:
-  pull_request:
-    branches:
-      - main-disabled
-    paths:
-      - 'app/**'
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR Number'
+        required: true
 
 name: do-pr-prerelease
 
@@ -11,12 +11,11 @@ jobs:
   build-and-upload:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout PR Head
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          token: ${{secrets.ACTIONS_STEP_DEBUG}}
+          ref: 'pull/${{ github.event.inputs.pr_number }}/head'
+          token: ${{ github.token }}
 
       - name: Get branch name
         id: branch-name
@@ -66,7 +65,7 @@ jobs:
       - name: Attach APK to PR using artifacts branch
         uses: gavv/pull-request-artifacts@v1.0.0
         with:
-          commit: ${{ github.event.pull_request.head.sha }}
+          commit: 'pull/${{ github.event.inputs.pr_number }}/head'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           artifacts-branch: artifacts
           artifacts: |
