@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Datagrid and BrAPI sorting improvements
 
 ### Changed
+- test string change twice (PR #53)
 - Beta settings renamed to Experimental
 - Upgraded to API 34
 
