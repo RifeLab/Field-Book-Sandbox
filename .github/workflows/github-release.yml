@@ -163,8 +163,8 @@ jobs:
           today=$(date +'%Y-%m-%d')
           sed -i "s/## \[Unreleased\]/## \[v$VERSION\] - $today/" CHANGELOG.md
           
-          # Add a new Unreleased section at the top of CHANGELOG.md
-          sed -i '1s/^/## [Unreleased]\n### Added\n\n### Changed\n\n### Fixed\n\n/' CHANGELOG.md
+          # Insert a new Unreleased section
+          sed -i '/## \[v'$VERSION'\]/i ## [Unreleased]\n### Added\n\n### Changed\n\n### Fixed\n\n' CHANGELOG.md
 
           # Add the link to the release at the end of CHANGELOG.md
           echo -e "[v$VERSION]: https://github.com/PhenoApps/Field-Book/releases/tag/v$VERSION" >> CHANGELOG.md
