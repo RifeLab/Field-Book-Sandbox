@@ -93,19 +93,19 @@ jobs:
             echo -e "\nAll notable changes to Field Book app will be documented in this file." >> CHANGELOG.md
             echo -e "\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)," >> CHANGELOG.md
             echo -e "and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n" >> CHANGELOG.md
-            echo -e "## [Unreleased]\n" >> CHANGELOG.md
+            echo -e "## [Unreleased]\n### Added\n\n### Changed\n\n### Fixed\n" >> CHANGELOG.md
           fi
 
-          # Ensure the "Unreleased" section exists
-          if ! grep -q "## \[Unreleased\]" CHANGELOG.md; then
-            echo -e "\n## [Unreleased]\n" >> CHANGELOG.md
+          # Check if the entry already exists in the Unreleased section
+          if ! grep -q "${{ env.changelog }}" CHANGELOG.md; then
+            # Append the changelog entry to the correct section under "Unreleased"
+            sed -i "/${{ env.section }}/a - ${{ env.changelog }}" CHANGELOG.md
+          else
+            echo "Entry already exists in Unreleased, skipping."
           fi
 
-          # Ensure the correct section exists under the "Unreleased" section
-          sed -i '/## \[Unreleased\]/,/^## / { /'${{ env.section }}'/!b; :a; n; /^\n*$/b; :b; p; d; n; ba; }' CHANGELOG.md || sed -i "/## \[Unreleased\]/a ${{ env.section }}\n" CHANGELOG.md
-
-          # Append the changelog entry to the correct section under "Unreleased"
-          sed -i "/${{ env.section }}/a - ${{ env.changelog }}" CHANGELOG.md
+          # Ensure correct spacing by removing redundant empty lines
+          sed -i '/^$/N;/^\n$/D' CHANGELOG.md
 
           cat CHANGELOG.md
 
@@ -113,7 +113,7 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           add: 'CHANGELOG.md'
-          message: "Update CHANGELOG.md with entry from PR #${{ env.pr_number }}"
+          message: "Update CHANGELOG.md with note from PR #${{ env.pr_number }}"
           author_email: git-action-bot@example.com
           author_name: Git Action Bot
           token: ${{ secrets.GITHUB_TOKEN }}
