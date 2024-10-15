@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v5.5.18] - 2024-10-15
 
 ### Added
-- fifth test feature (PR #62)
+- fifth test feature (#62)
 - restrict to first occurance (PR #56)
 
 ### Changed
