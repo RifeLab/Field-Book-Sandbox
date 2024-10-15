@@ -29,10 +29,10 @@ jobs:
           # Use the GitHub API to find the pull request associated with the commit SHA
           pr_number=$(gh api -X GET "repos/${{ github.repository }}/commits/$commit_sha/pulls" --jq '.[0].number')
 
-          # Exit if no PR is found
+          # Graceful exit if no PR is found for the commit
           if [ -z "$pr_number" ]; then
             echo "No associated PR found for commit $commit_sha."
-            exit 1
+            exit 0
           fi
           echo "PR Number: $pr_number"
 
@@ -85,27 +85,10 @@ jobs:
           echo "pr_number=$pr_number" >> $GITHUB_ENV
 
 
-      - name: Append changelog entry to CHANGELOG.md under Unreleased
+      - name: Add note to unreleased section of CHANGELOG.md
         run: |
-          # Check if CHANGELOG.md exists, create it if not
-          if [ ! -f CHANGELOG.md ]; then
-            echo "# Changelog" > CHANGELOG.md
-            echo -e "\nAll notable changes to Field Book app will be documented in this file." >> CHANGELOG.md
-            echo -e "\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)," >> CHANGELOG.md
-            echo -e "and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n" >> CHANGELOG.md
-            echo -e "## [Unreleased]\n### Added\n\n### Changed\n\n### Fixed\n" >> CHANGELOG.md
-          fi
-
-          # Check if the entry already exists in the Unreleased section
-          if ! grep -q "${{ env.changelog }}" CHANGELOG.md; then
-            # Append the changelog entry to the correct section under "Unreleased"
-            sed -i "/${{ env.section }}/a - ${{ env.changelog }}" CHANGELOG.md
-          else
-            echo "Entry already exists in Unreleased, skipping."
-          fi
-
-          # Ensure correct spacing by removing redundant empty lines
-          sed -i '/^$/N;/^\n$/D' CHANGELOG.md
+          # Add under the first occurrence of the correct subsection
+          sed -i "0,/${{ env.section }}/!b;n;a - ${{ env.changelog }}" CHANGELOG.md
 
           cat CHANGELOG.md
 
