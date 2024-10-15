@@ -1,3 +1,10 @@
+## [Unreleased]
+### Added
+
+### Changed
+
+### Fixed
+
 # Changelog
 
 All notable changes to Field Book app will be documented in this file.
@@ -5,7 +12,7 @@ All notable changes to Field Book app will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [v5.5.18] - 2024-10-15
 
 ### Added
 - fifth test feature (PR #62)
@@ -42,4 +49,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - XLSX import no longer skips cells when empty
 
-[v5.6]: https://github.com/PhenoApps/Field-Book/releases/tag/5.6.25
+[v5.6]: https://github.com/PhenoApps/Field-Book/releases/tag/5.6.25[v5.5.18]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.18
