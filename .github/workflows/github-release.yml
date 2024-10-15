@@ -50,15 +50,17 @@ jobs:
             echo "app_changed=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Check if changelog.md changed
+      - name: Check CHANGELOG.md changes
         id: check_changelog
         run: |
-          changelog_changed=$(git diff --name-only $LAST_RELEASE_COMMIT $GITHUB_SHA | grep 'CHANGELOG.md' || echo "none")
-          if [ "$changelog_changed" != "none" ]; then
-            changelog_additions=$(git diff $LAST_RELEASE_COMMIT $GITHUB_SHA -- CHANGELOG.md)
+          unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '$d' | sed '1d')
+          if [ -n "$unreleased_section" ]; then
+            # Add checkmark to each line in changelog entries
+            changelog_additions=$(echo "$unreleased_section" | sed 's/^/- ✔ /')
             echo "changelog_additions=$changelog_additions" >> "$GITHUB_OUTPUT"
           else
-            echo "changelog_additions=" >> "$GITHUB_OUTPUT"
+            echo "No changes found in the Unreleased section."
+            exit 1
           fi
 
       - name: Check if version.properties changed
@@ -122,7 +124,7 @@ jobs:
       # Uses semantic commits to automate version bumping.
       # No scope or "fix:" = PATCH, "feat:" or "minor:" = MINOR, "BREAKING CHANGE:", "major:", or fix/feat with appended "!" = MAJOR
       # Additional details: https://www.conventionalcommits.org/en/v1.0.0/
-      - name: Increment version
+      - name: Increment version and update changelog
         if: needs.check-app-changes.outputs.version_changed == 'false'
         run: |
           #!/bin/bash
@@ -151,12 +153,24 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "BUMP_TYPE=$BUMP_TYPE" >> $GITHUB_ENV
 
+          # Update the Unreleased section in CHANGELOG.md
+          today=$(date +'%Y-%m-%d')
+          sed -i "s/## \[Unreleased\]/## \[v$VERSION\] - $today/" CHANGELOG.md
+          
+          # Add a new Unreleased section at the top of CHANGELOG.md
+          sed -i '1s/^/## [Unreleased]\n### Added\n\n### Changed\n\n### Fixed\n\n/' CHANGELOG.md
+
+          # Add the link to the release at the end of CHANGELOG.md
+          echo -e "[v$VERSION]: https://github.com/PhenoApps/Field-Book/releases/tag/v$VERSION" >> CHANGELOG.md
+
       - name: Commit version changes
         if: needs.check-app-changes.outputs.version_changed == 'false'
         uses: EndBug/add-and-commit@v7
         with:
-          add: 'version.properties'
-          message: Bump ${{ env.BUMP_TYPE }}
+          add: |
+            version.properties
+            CHANGELOG.md
+          message: message: Bump ${{ env.BUMP_TYPE }} and update changelog for v${{ env.VERSION }}
           author_email: git-action-bot@example.com
           author_name: Git Action Bot
 
