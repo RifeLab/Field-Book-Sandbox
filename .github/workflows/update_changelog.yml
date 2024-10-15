@@ -41,7 +41,7 @@ jobs:
           # Retrieve the PR body using the GitHub API
           pr_body=$(gh api -X GET "repos/${{ github.repository }}/pulls/$pr_number" --jq '.body')
 
-            # Print the cleaned PR body
+          # Print the cleaned PR body
           clean_pr_body=$(echo "$pr_body" | sed 's/\r//g')
 
           # Extract the release note content
@@ -49,7 +49,13 @@ jobs:
           changelog_entry=$(echo "$changelog_entry" | sed '/^$/d' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
           # Extract the type of change (CHANGE, FEATURE, BUGFIX, ENHANCEMENT, NONE)
-          change_type=$(echo "$clean_pr_body" | awk 'BEGIN { FS="\n"; ORS="" } /Type of change/ { found=1 } /## Checklist/ { found=0 } found { print $0 }' | grep -Eo 'CHANGE|FEATURE|BUGFIX|ENHANCEMENT|NONE')
+          change_type=$(echo "$clean_pr_body" | grep -oP '(?<=- \[x\] `)\w+')
+
+          # Ensure the section is properly set
+          if [ -z "$change_type" ]; then
+            echo "Could not determine the type of change from PR body."
+            exit 1
+          fi
 
           # Define the section based on the type of change
           case "$change_type" in
@@ -65,6 +71,10 @@ jobs:
             "NONE")
               echo "No notable changelog entry needed."
               exit 0
+              ;;
+            *)
+              echo "Unknown change type: $change_type"
+              exit 1
               ;;
           esac
 
@@ -85,7 +95,6 @@ jobs:
           echo "changelog=$changelog_entry" >> $GITHUB_ENV
           echo "section=$section" >> $GITHUB_ENV
           echo "pr_number=$pr_number" >> $GITHUB_ENV
-
 
       - name: Add note to unreleased section of CHANGELOG.md
         run: |
