@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - restrict to first occurance (PR #56)
 
 ### Changed
+- test string change (PR #57)
 - restrict to first occurance (PR #56)
 - Test branch string change (PR #55)
 - fix pr number and release note location (PR #54)
