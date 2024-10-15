@@ -39,21 +39,39 @@ jobs:
           # Retrieve the PR body using the GitHub API
           pr_body=$(gh api -X GET "repos/${{ github.repository }}/pulls/$pr_number" --jq '.body')
 
-           # Print the PR body for debugging
-          echo "Full PR Body Content (after removing carriage returns):"
+            # Print the cleaned PR body
           clean_pr_body=$(echo "$pr_body" | sed 's/\r//g')
-          echo "$clean_pr_body"
 
-          # Use awk to extract the release note content between ```release-note and ``` markers
-          # This will handle multiline content and ensure correct extraction
+          # Extract the release note content
           changelog_entry=$(echo "$clean_pr_body" | awk 'BEGIN { found=0 } /```release-note/ { found=1; next } /```/ { found=0 } found { print }')
-
-          # Remove leading/trailing whitespace and empty lines
           changelog_entry=$(echo "$changelog_entry" | sed '/^$/d' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
-          # Print the extracted changelog entry for debugging
-          echo "Extracted Changelog Entry:"
-          echo "$changelog_entry"
+          # Extract the type of change (CHANGE, FEATURE, BUGFIX, ENHANCEMENT, NONE)
+          change_type=$(echo "$clean_pr_body" | awk 'BEGIN { FS="\n"; ORS="" } /Type of change/ { found=1 } /## Checklist/ { found=0 } found { print $0 }' | grep -Eo 'CHANGE|FEATURE|BUGFIX|ENHANCEMENT|NONE')
+
+          # Define the section based on the type of change
+          case "$change_type" in
+            "CHANGE"|"FEATURE"|"ENHANCEMENT")
+              section="### Added"
+              ;;
+            "BUGFIX")
+              section="### Fixed"
+              ;;
+            "NONE")
+              echo "No notable changelog entry needed."
+              exit 0
+              ;;
+            *)
+              section="### Changed"
+              ;;
+          esac
+
+          # Add the PR number to the changelog entry
+          changelog_entry="$changelog_entry (PR #$pr_number)"
+          
+          # Print the changelog entry and section for debugging
+          echo "Changelog Entry: $changelog_entry"
+          echo "Section: $section"
 
           # Exit if the changelog entry is empty
           if [ -z "$changelog_entry" ]; then
@@ -61,18 +79,35 @@ jobs:
             exit 1
           fi
 
-          # Store the changelog entry as an environment variable
+          # Store the changelog entry and section as environment variables
           echo "changelog=$changelog_entry" >> $GITHUB_ENV
+          echo "section=$section" >> $GITHUB_ENV
 
-      - name: Append changelog entry to CHANGELOG.md
+
+      - name: Append changelog entry to CHANGELOG.md under Unreleased
         run: |
           # Check if CHANGELOG.md exists, create it if not
           if [ ! -f CHANGELOG.md ]; then
             echo "# Changelog" > CHANGELOG.md
+            echo -e "\nAll notable changes to Field Book app will be documented in this file." >> CHANGELOG.md
+            echo -e "\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)," >> CHANGELOG.md
+            echo -e "and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n" >> CHANGELOG.md
+            echo -e "## [Unreleased]\n" >> CHANGELOG.md
           fi
 
-          # Append the changelog entry with a date header to CHANGELOG.md
-          echo -e "\n## $(date +'%Y-%m-%d')\n${{ env.changelog }}" >> CHANGELOG.md
+          # Ensure "Unreleased" section exists
+          if ! grep -q "## \[Unreleased\]" CHANGELOG.md; then
+            echo -e "\n## [Unreleased]\n" >> CHANGELOG.md
+          fi
+
+          # Ensure the appropriate section exists under "Unreleased"
+          if ! grep -q "${{ env.section }}" CHANGELOG.md; then
+            sed -i "/## \[Unreleased\]/a ${{ env.section }}\n" CHANGELOG.md
+          fi
+
+          # Append the changelog entry to the correct section under "Unreleased"
+          sed -i "/${{ env.section }}/a - ${{ env.changelog }}" CHANGELOG.md
+
           cat CHANGELOG.md
 
       - name: Commit and push updated changelog
