@@ -55,10 +55,9 @@ jobs:
         run: |
           unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '$d' | sed '1d')
   
-          if [ -n "$unreleased_section" ]; then
+           if [ -n "$unreleased_section" ]; then
             # Add checkmark to each line in changelog entries
             changelog_additions=$(echo "$unreleased_section" | sed 's/^/- ✔ /')
-            echo "changelog_additions=$changelog_additions" >> "$GITHUB_ENV"
             
             # Write the changelog additions to a file to pass multiline content safely
             echo "$changelog_additions" > changelog_additions.txt
