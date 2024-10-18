@@ -167,7 +167,7 @@ jobs:
           sed -i '/## \[v'$VERSION'\]/i ## [Unreleased]\n### Added\n\n### Changed\n\n### Fixed\n\n' CHANGELOG.md
 
           # Add the link to the release at the end of CHANGELOG.md
-          echo -e "[v$VERSION]: https://github.com/PhenoApps/Field-Book/releases/tag/v$VERSION" >> CHANGELOG.md
+          printf "\n[v$VERSION]: https://github.com/PhenoApps/Field-Book/releases/tag/v$VERSION\n" >> CHANGELOG.md
 
       - name: Commit version changes
         if: needs.check-app-changes.outputs.version_changed == 'false'
