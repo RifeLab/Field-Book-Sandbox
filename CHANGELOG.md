@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - sixth string change (PR #64)
 
 ### Fixed
+- fix sed syntax (https://github.com/RifeLab/Field-Book-Sandbox/pull/68)
 - Fix format of existing changelog items (PR #65)
 
 ## [v5.5.18] - 2024-10-15
