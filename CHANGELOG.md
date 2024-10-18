@@ -2,6 +2,7 @@
 ### Added
 
 ### Changed
+- sixth string change (PR #64)
 
 ### Fixed
 
