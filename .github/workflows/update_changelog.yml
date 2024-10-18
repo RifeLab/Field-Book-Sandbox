@@ -68,7 +68,8 @@ jobs:
           esac
 
           # Store the extracted information in environment variables
-          echo "changelog=${changelog_entry} (PR #$pr_number)" >> $GITHUB_ENV
+          pr_url="https://github.com/${{ github.repository }}/pull/$pr_number"
+          echo "changelog=${changelog_entry} ($pr_url)" >> $GITHUB_ENV
           echo "section=$section" >> $GITHUB_ENV
           echo "pr_number=$pr_number" >> $GITHUB_ENV
 
