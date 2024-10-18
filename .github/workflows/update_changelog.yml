@@ -77,7 +77,7 @@ jobs:
         if: env.pr_number != ''
         run: |
           # Insert the changelog entry under the first matching section in Unreleased
-          sed -i "0,/${{ env.section }}/s//${{ env.section }}\n- ${{ env.changelog }}/" CHANGELOG.md
+          sed -i "0,|${{ env.section }}|s||${{ env.section }}\n- ${{ env.changelog }}|" CHANGELOG.md
 
           # Show the updated changelog
           cat CHANGELOG.md
