@@ -55,15 +55,13 @@ jobs:
         run: |
           unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '$d' | sed '1d')
   
-           if [ -n "$unreleased_section" ]; then
-            # Add checkmark to each line in changelog entries
+          if [ -n "$unreleased_section" ]; then
             changelog_additions=$(echo "$unreleased_section" | sed 's/^/- ✔ /')
-            
-            # Write the changelog additions to a file to pass multiline content safely
-            echo "$changelog_additions" > changelog_additions.txt
-            
-            # Reference the file in the action outputs
-            echo "changelog_file=changelog_additions.txt" >> "$GITHUB_ENV"
+            # Set the changelog additions as an environment variable with multiline escape sequences
+            changelog_escaped="${changelog_additions//'%'/'%25'}"
+            changelog_escaped="${changelog_escaped//$'\n'/'%0A'}"
+            changelog_escaped="${changelog_escaped//$'\r'/'%0D'}"
+            echo "RELEASE_BODY=$changelog_escaped" >> $GITHUB_ENV
           else
             echo "No changes found in the Unreleased section."
             exit 1
@@ -217,7 +215,7 @@ jobs:
           file: app/build/outputs/apk/release/app-release-unsigned-signed.apk
           asset_name: Field-Book-v${{ env.VERSION }}.apk
           body: |
-            $(cat changelog_additions.txt)
+            $( env.RELEASE_BODY )
       
       - name: Check date for Google Play upload
         id: date_check
