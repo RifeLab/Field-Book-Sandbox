@@ -21,26 +21,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- sixth string change (PR #64)
+- sixth string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/64)
 
 ### Fixed
 - fix sed syntax (https://github.com/RifeLab/Field-Book-Sandbox/pull/68)
-- Fix format of existing changelog items (PR #65)
+- Fix format of existing changelog items (https://github.com/RifeLab/Field-Book-Sandbox/pull/65)
 
 ## [v5.5.18] - 2024-10-15
 
 ### Added
-- fifth test feature ( https://github.com/RifeLab/Field-Book-Sandbox/pull/63 )
-- restrict to first occurance (PR #56)
+- fifth test feature (https://github.com/RifeLab/Field-Book-Sandbox/pull/63)
+- restrict to first occurance (https://github.com/RifeLab/Field-Book-Sandbox/pull/56)
 
 ### Changed
-- second string change (PR #58)
-- test string change (PR #57)
-- Test branch string change (PR #55 )
-- fix pr number and release note location (PR #54)
+- second string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/58)
+- test string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/57)
+- Test branch string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/55)
+- fix pr number and release note location (https://github.com/RifeLab/Field-Book-Sandbox/pull/54)
 
 ### Fixed
-- adjust change type extraction (PR #61)
+- adjust change type extraction (https://github.com/RifeLab/Field-Book-Sandbox/pull/61)
 
 ## [v5.6] - 2023-12-08
 
