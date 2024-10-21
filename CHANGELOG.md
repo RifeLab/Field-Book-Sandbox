@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+- change release action to auto-run weekly rather than daily (https://github.com/RifeLab/Field-Book-Sandbox/pull/70)
 
 ### Fixed
 - revert to env var approach for release body (https://github.com/RifeLab/Field-Book-Sandbox/pull/69)
