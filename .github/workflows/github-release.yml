@@ -163,7 +163,7 @@ jobs:
           sed -i "s/## \[Unreleased\]/## \[v$VERSION\] - $today/" CHANGELOG.md
           
           # Insert a new Unreleased section
-          sed -i '/## \[v'$VERSION'\]/i ## [Unreleased]\n### Added\n\n### Changed\n\n### Fixed\n\n' CHANGELOG.md
+          sed -i '/## \[v'$VERSION'\]/i ## [Unreleased]\n\n### Added\n\n### Changed\n\n### Fixed\n' CHANGELOG.md
 
           # Add the link to the release at the end of CHANGELOG.md
           printf "\n[v$VERSION]: https://github.com/PhenoApps/Field-Book/releases/tag/v$VERSION\n" >> CHANGELOG.md
