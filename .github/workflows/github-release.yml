@@ -215,8 +215,7 @@ jobs:
           tag: ${{ env.VERSION }}
           file: app/build/outputs/apk/release/app-release-unsigned-signed.apk
           asset_name: Field-Book-v${{ env.VERSION }}.apk
-          body: |
-            $( env.RELEASE_BODY )
+          body: ${{ env.RELEASE_BODY }}
       
       - name: Check date for Google Play upload
         id: date_check
