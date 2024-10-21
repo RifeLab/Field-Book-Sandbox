@@ -8,10 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-
+- include link in all changelog PR refs (https://github.com/RifeLab/Field-Book-Sandbox/pull/71)
+  
 ### Changed
-
+- change release action to auto-run weekly rather than daily (https://github.com/RifeLab/Field-Book-Sandbox/pull/70)
+  
 ### Fixed
+- fix unreleased section spacing (https://github.com/RifeLab/Field-Book-Sandbox/pull/72)
+- revert to env var approach for release body (https://github.com/RifeLab/Field-Book-Sandbox/pull/69)
 
 ## [v5.5.20] - 2024-10-21
 

@@ -62,7 +62,7 @@ jobs:
             changelog_escaped="${changelog_additions//'%'/'%25'}"
             changelog_escaped="${changelog_escaped//$'\n'/'%0A'}"
             changelog_escaped="${changelog_escaped//$'\r'/'%0D'}"
-            echo "RELEASE_BODY=$changelog_escaped" >> $GITHUB_ENV
+            echo "RELEASE_BODY=$changelog_escaped" >> $GITHUB_OUTPUT
           else
             echo "No changes found in the Unreleased section."
             exit 1
