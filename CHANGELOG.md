@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [v5.5.25] - 2024-10-22
+
+### Added
 - fifth test feature (https://github.com/RifeLab/Field-Book-Sandbox/pull/63)
 - restrict to first occurance (https://github.com/RifeLab/Field-Book-Sandbox/pull/56)
 
@@ -137,3 +145,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v5.5.23]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.23
 
 [v5.5.24]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.24
+
+[v5.5.25]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.25
