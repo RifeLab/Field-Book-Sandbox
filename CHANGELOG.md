@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [v5.5.26] - 2024-10-22
+
+### Added
 - include link in all changelog PR refs (https://github.com/RifeLab/Field-Book-Sandbox/pull/71)
   
 ### Changed
@@ -151,3 +159,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v5.5.24]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.24
 
 [v5.5.25]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.25
+
+[v5.5.26]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.26
