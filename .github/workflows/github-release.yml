@@ -55,7 +55,7 @@ jobs:
           unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
 
           if [ -n "$unreleased_section" ]; then
-            changelog_additions=$(echo "$unreleased_section" | sed 's/^ - /✔ /g')
+            changelog_additions=$(echo "$unreleased_section" | sed 's/^- /✔ /g')
             # Use multiline escape sequences
             changelog_escaped="${changelog_additions//'%'/'%25'}"
             changelog_escaped="${changelog_escaped//$'\n'/'%0A'}"
