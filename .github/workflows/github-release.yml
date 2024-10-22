@@ -51,10 +51,11 @@ jobs:
       - name: Check CHANGELOG.md changes
         id: check_changelog
         run: |
-          unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '$d' | sed '1d')
-  
+          # Extract the contents of the unreleased section
+          unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
+
           if [ -n "$unreleased_section" ]; then
-            changelog_additions=$(echo "$unreleased_section" | sed 's/^/- ✔ /')
+            changelog_additions=$(echo "$unreleased_section" | sed sed 's/^ - /✔ /g')
             # Use multiline escape sequences
             changelog_escaped="${changelog_additions//'%'/'%25'}"
             changelog_escaped="${changelog_escaped//$'\n'/'%0A'}"
