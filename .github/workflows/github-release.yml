@@ -14,9 +14,6 @@ jobs:
       app_changed: ${{ steps.check_app_changes.outputs.app_changed }}
       changelog_additions: ${{ steps.check_changelog.outputs.changelog_additions }}
       version_changed: ${{ steps.check_version.outputs.version_changed }}
-    env:
-      LAST_RELEASE_TAG: ""
-      LAST_RELEASE_COMMIT: ""
     steps:
 
       - name: Checkout repo
@@ -58,13 +55,15 @@ jobs:
   
           if [ -n "$unreleased_section" ]; then
             changelog_additions=$(echo "$unreleased_section" | sed 's/^/- ✔ /')
-            # Set the changelog additions as an environment variable with multiline escape sequences
+            # Use multiline escape sequences
             changelog_escaped="${changelog_additions//'%'/'%25'}"
             changelog_escaped="${changelog_escaped//$'\n'/'%0A'}"
             changelog_escaped="${changelog_escaped//$'\r'/'%0D'}"
-            echo "RELEASE_BODY=$changelog_escaped" >> $GITHUB_OUTPUT
+            echo "changelog_additions=$changelog_escaped" >> $GITHUB_OUTPUT
+            echo "changelog_additions: $changelog_escaped" # Also log release notes
           else
             echo "No changes found in the Unreleased section."
+            echo "changelog_additions=none" >> $GITHUB_OUTPUT
             exit 1
           fi
 
@@ -215,7 +214,7 @@ jobs:
           tag: ${{ env.VERSION }}
           file: app/build/outputs/apk/release/app-release-unsigned-signed.apk
           asset_name: Field-Book-v${{ env.VERSION }}.apk
-          body: ${{ env.RELEASE_BODY }}
+          body: ${{ needs.check-app-changes.outputs.changelog_additions }}
       
       - name: Check date for Google Play upload
         id: date_check
