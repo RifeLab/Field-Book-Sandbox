@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- test v6 (https://github.com/RifeLab/Field-Book-Sandbox/pull/74)
 
 ### Changed
 
