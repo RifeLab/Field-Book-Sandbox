@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- fixed checkbox value retrieval (https://github.com/RifeLab/Field-Book-Sandbox/pull/76)
 
 ## [v5.5.27] - 2024-10-31
 
