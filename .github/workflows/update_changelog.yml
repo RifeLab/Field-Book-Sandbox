@@ -46,7 +46,7 @@ jobs:
           fi
 
           # Detect change type (CHANGE, FEATURE, BUGFIX, ENHANCEMENT)
-          change_type=$(echo "$pr_body" | grep -oP '(?<=- \[x\] `)\w+')
+          change_type=$(echo "$pr_body" | grep -oP '(?<=- \[x\] `)\w+' | head -n 1)
           case "$change_type" in
             "FEATURE"|"ENHANCEMENT")
               section="### Added"
