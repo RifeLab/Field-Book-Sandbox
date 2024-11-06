@@ -7,13 +7,18 @@ If these changes fix a bug or resolves a feature request, be sure to link to tha
 
 ## Type of change
 
-_What type of changes does your code introduce? Put an `x` in boxes that apply._
+_What type of changes does your code introduce? Put an `x` in the box that best applies._
 
 - [ ] `CHANGE` (fix or feature that would cause existing functionality to not work as expected)
 - [ ] `FEATURE` (non-breaking change which adds functionality)
 - [ ] `BUGFIX` (non-breaking change which fixes an issue)
 - [ ] `ENHANCEMENT` (non-breaking change which improves existing functionality)
 - [ ] `NONE` (if none of the other choices apply. Example, tooling, build system, CI, docs, etc.)
+
+_Should this code trigger a major or minor release? Skip if the answer is no, otherwise put an `x` in the box that applies._
+
+- [ ] `MAJOR`
+- [ ] `MINOR`
 
 ## Checklist:
 
