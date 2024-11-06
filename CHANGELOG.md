@@ -12,6 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+
+## [v5.5.28] - 2024-11-06
+
+### Added
+
+### Changed
+
+### Fixed
 - fixed checkbox value retrieval (https://github.com/RifeLab/Field-Book-Sandbox/pull/76)
 
 ## [v5.5.27] - 2024-10-31
@@ -173,3 +181,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v5.5.26]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.26
 
 [v5.5.27]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.27
+
+[v5.5.28]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.28
