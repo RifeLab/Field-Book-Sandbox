@@ -3,6 +3,8 @@ on:
     # Run every Monday at 20:00 (8:00 PM)
     - cron: "0 20 * * 1"
   workflow_dispatch:
+  repository_dispatch:
+    types: [trigger-release]
 
 name: do-github-release
 
@@ -126,23 +128,25 @@ jobs:
       - name: Install Build Tools 29.0.3
         run: sdkmanager "build-tools;29.0.3"
 
-      # Uses semantic commits to automate version bumping.
-      # No scope or "fix:" = PATCH, "feat:" or "minor:" = MINOR, "BREAKING CHANGE:", "major:", or fix/feat with appended "!" = MAJOR
-      # Additional details: https://www.conventionalcommits.org/en/v1.0.0/
       - name: Increment version and update changelog
         if: needs.check-app-changes.outputs.version_changed == 'false'
         run: |
           #!/bin/bash
-          COMMIT_MSG=$(git log -1 --pretty=format:"%b" || git log -1 --pretty=format:"%B")
-          source version.properties
+          # Default bump type is patch unless overridden
           BUMP_TYPE="patchVersion"
+           if [ -n "${{ github.event.client_payload.bump_type }}" ]; then
+            BUMP_TYPE="${{ github.event.client_payload.bump_type }}"
+          fi
+          echo "Using BUMP_TYPE: $BUMP_TYPE"
 
-          if [[ $COMMIT_MSG == *"BREAKING CHANGE"* || $COMMIT_MSG == *"!"* || $COMMIT_MSG == *"major:"* ]]; then
+          source version.properties
+
+          if [ "$BUMP_TYPE" == "MAJOR" ]; then
               majorVersion=$((majorVersion + 1))
               minorVersion=0
               patchVersion=0
               BUMP_TYPE="majorVersion"
-          elif [[ $COMMIT_MSG == *"feat:"* || $COMMIT_MSG == *"minor:"* ]]; then
+          elif [ "$BUMP_TYPE" == "MINOR" ]; then
               minorVersion=$((minorVersion + 1))
               patchVersion=0
               BUMP_TYPE="minorVersion"
