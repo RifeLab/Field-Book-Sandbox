@@ -9,16 +9,17 @@ If these changes fix a bug or resolves a feature request, be sure to link to tha
 
 _What type of changes does your code introduce? Put an `x` in the box that best applies._
 
+- [ ] `ADDITION` (non-breaking change which adds functionality)
 - [ ] `CHANGE` (fix or feature that would cause existing functionality to not work as expected)
-- [ ] `FEATURE` (non-breaking change which adds functionality)
-- [ ] `BUGFIX` (non-breaking change which fixes an issue)
-- [ ] `ENHANCEMENT` (non-breaking change which improves existing functionality)
-- [ ] `NONE` (if none of the other choices apply. Example, tooling, build system, CI, docs, etc.)
+- [ ] `FIX` (non-breaking change which fixes an issue)
+- [ ] `OTHER` (if none of the other choices apply. Example, tooling, build system, CI, docs, etc.)
 
-_Should this code trigger a major or minor release? Skip if the answer is no, otherwise put an `x` in the box that applies._
+_Should this code trigger a major, minor, or patch release? Choose no release if the answer is no, otherwise put an `x` in the box that applies._
 
 - [ ] `MAJOR`
 - [ ] `MINOR`
+- [ ] `PATCH`
+- [ ] `NO RELEASE`
 
 ## Checklist:
 
