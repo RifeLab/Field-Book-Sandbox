@@ -19,7 +19,7 @@ jobs:
     steps:
 
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.ACTIONS_PAT }}
           fetch-depth: 0
@@ -105,8 +105,14 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Install Build Tools
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Build Tools 29.0.3
         run: sdkmanager "build-tools;29.0.3"
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
 
       - name: Build APK
         run: ./gradlew app:assembleRelease
