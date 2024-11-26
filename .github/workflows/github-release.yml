@@ -142,6 +142,22 @@ jobs:
           asset_name: "Field-Book-v${{ env.VERSION }}.apk"
           body: ${{ steps.process-changelog.outputs.changelog_additions }}
 
+      - name: Commit Version and Changelog Changes
+        if: ${{ success() }}
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: |
+            version.properties
+            CHANGELOG.md
+          message: "Bump ${{ env.BUMP_TYPE }} and update changelog for v${{ env.VERSION }}"
+          token: ${{ secrets.ACTIONS_PAT }}
+
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+
       - name: Check Date for Google Play Upload
         id: date-check
         run: |
@@ -161,19 +177,3 @@ jobs:
           packageName: com.fieldbook.tracker
           releaseFiles: app/build/outputs/apk/release/app-release-unsigned-signed.apk
           track: alpha
-
-      - name: Commit Version and Changelog Changes
-        if: ${{ success() }}
-        uses: EndBug/add-and-commit@v7
-        with:
-          add: |
-            version.properties
-            CHANGELOG.md
-          message: "Bump ${{ env.BUMP_TYPE }} and update changelog for v${{ env.VERSION }}"
-          token: ${{ secrets.ACTIONS_PAT }}
-
-      - name: Push Changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
