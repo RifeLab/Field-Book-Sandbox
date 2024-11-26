@@ -45,21 +45,20 @@ jobs:
             exit 0
           fi
 
-          # Detect change type (CHANGE, FEATURE, BUGFIX, ENHANCEMENT)
-          change_type=$(echo "$pr_body" | grep -oP '(?<=- \[x\] `)\w+' | head -n 1)
+          # Detect change type
+          change_type=$(echo "$pr_body" | grep -oP '(?<=- \[x\] `)[A-Z]+(?=`)' | head -n 1)
           case "$change_type" in
-            "FEATURE"|"ENHANCEMENT")
+            "ADDITION")
               section="### Added"
               ;;
             "CHANGE")
               section="### Changed"
               ;;
-            "BUGFIX")
+            "FIX")
               section="### Fixed"
               ;;
-            "NONE")
-              echo "No notable changelog entry needed."
-              exit 0
+            "OTHER")
+              section="### Miscellaneous"
               ;;
             *)
               echo "Unknown change type: $change_type"
@@ -79,17 +78,23 @@ jobs:
           pr_body=$(gh api -X GET "repos/${{ github.repository }}/pulls/${{ env.pr_number }}" --jq '.body' | sed 's/\r//g')
           major_checked=$(echo "$pr_body" | grep -q '\[x\] `MAJOR`' && echo "true" || echo "false")
           minor_checked=$(echo "$pr_body" | grep -q '\[x\] `MINOR`' && echo "true" || echo "false")
-          
+          patch_checked=$(echo "$pr_body" | grep -q '\[x\] `PATCH`' && echo "true" || echo "false")
+
           if [ "$major_checked" == "true" ]; then
             echo "BUMP_TYPE=major" >> $GITHUB_ENV
           elif [ "$minor_checked" == "true" ]; then
             echo "BUMP_TYPE=minor" >> $GITHUB_ENV
-          else
+          elif [ "$patch_checked" == "true" ]; then
             echo "BUMP_TYPE=patch" >> $GITHUB_ENV
+          else
+            echo "No release bump required."
+            exit 0
           fi
           
       - name: Dispatch GitHub Release Action
+        if: env.BUMP_TYPE != '' # Ensures no action if NO RELEASE is selected
         run: |
+          echo "Triggering release action with bump type: ${{ env.BUMP_TYPE }}"
           curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Accept: application/vnd.github.everest-preview+json" \
           https://api.github.com/repos/${{ github.repository }}/dispatches \
