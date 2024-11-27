@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: "0 20 * * 1"
+    - cron: "0 19 * * 3"
   workflow_dispatch:
     inputs:
       bump_type:
@@ -97,7 +97,9 @@ jobs:
           today=$(date +'%Y-%m-%d')
           sed -i "s/## \[Unreleased\]/## [v$VERSION] - $today/" CHANGELOG.md
           sed -i '/## \[v'$VERSION'\]/i ## [Unreleased]\n\n### Added\n\n### Changed\n\n### Fixed\n' CHANGELOG.md
-          printf "\n[v$VERSION]: https://github.com/PhenoApps/Field-Book/releases/tag/v$VERSION" >> CHANGELOG.md
+
+          REPO_URL="https://github.com/${{ github.repository }}/releases/tag"
+          printf "\n[$VERSION]: $REPO_URL/$VERSION" >> CHANGELOG.md
 
       - name: Set Up Build Environment
         uses: actions/setup-java@v3
