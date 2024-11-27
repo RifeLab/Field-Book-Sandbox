@@ -1,4 +1,4 @@
-# ChangelogA
+# Changelog
 
 All notable changes to Field Book app will be documented in this file.
 
@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Added
+
+### Changed
+
+### Fixed
+
+## [v6.1.0] - 2024-11-27
 
 ### Added
 
@@ -186,3 +194,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v5.5.27]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.27
 [v5.5.28]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.28
 [v6.0.0]: https://github.com/PhenoApps/Field-Book/releases/tag/v6.0.0
+[v6.1.0]: https://github.com/PhenoApps/Field-Book/releases/tag/v6.1.0
