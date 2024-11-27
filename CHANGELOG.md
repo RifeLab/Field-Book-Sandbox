@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+- test change to trigger minor release (https://github.com/RifeLab/Field-Book-Sandbox/pull/80)
 
 ### Fixed
 
