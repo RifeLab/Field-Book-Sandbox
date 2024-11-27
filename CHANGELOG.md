@@ -13,6 +13,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+## [v6.2.0] - 2024-11-27
+
+### Added
+
+### Changed
+
+### Fixed
+
 ## [v6.1.1] - 2024-11-27
 
 ### Added
@@ -206,3 +214,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v6.1.0]: https://github.com/PhenoApps/Field-Book/releases/tag/v6.1.0
 
 [v6.1.1]: https://github.com/PhenoApps/Field-Book/releases/tag/v6.1.1
+[v6.2.0]: https://github.com/PhenoApps/Field-Book/releases/tag/v6.2.0
