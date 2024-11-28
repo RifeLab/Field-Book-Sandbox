@@ -208,20 +208,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - XLSX import no longer skips cells when empty
 
-[v5.5.18]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.18
+[v5.5.18]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/5.5.18
 [v5.6]: https://github.com/PhenoApps/Field-Book/releases/tag/5.6.25
-[v5.5.19]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.19
-[v5.5.20]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.20
-[v5.5.21]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.21
-[v5.5.22]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.22
-[v5.5.23]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.23
-[v5.5.24]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.24
-[v5.5.25]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.25
-[v5.5.26]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.26
-[v5.5.27]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.27
-[v5.5.28]: https://github.com/PhenoApps/Field-Book/releases/tag/v5.5.28
-[v6.0.0]: https://github.com/PhenoApps/Field-Book/releases/tag/v6.0.0
-[v6.1.0]: https://github.com/PhenoApps/Field-Book/releases/tag/v6.1.0
-[v6.1.1]: https://github.com/PhenoApps/Field-Book/releases/tag/v6.1.1
-[v6.2.0]: https://github.com/PhenoApps/Field-Book/releases/tag/v6.2.0
+[v5.5.19]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/5.5.19
+[v5.5.20]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/5.5.20
+[v5.5.21]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/5.5.21
+[v5.5.22]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/5.5.22
+[v5.5.23]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/5.5.23
+[v5.5.24]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/5.5.24
+[v5.5.25]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/5.5.25
+[v5.5.26]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/5.5.26
+[v5.5.27]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/5.5.27
+[v5.5.28]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/5.5.28
+[v6.0.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.0.0
+[v6.1.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.1.0
+[v6.1.1]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.1.1
+[v6.2.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.2.0
 [v6.2.1]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.2.1
