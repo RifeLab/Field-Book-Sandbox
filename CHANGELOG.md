@@ -10,6 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+
+### Fixed
+
+## [v6.2.1] - 2024-11-28
+
+### Added
+
+### Changed
 - test of scheduled release (changed time)
   
 ### Fixed
@@ -217,3 +225,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [v6.1.1]: https://github.com/PhenoApps/Field-Book/releases/tag/v6.1.1
 [v6.2.0]: https://github.com/PhenoApps/Field-Book/releases/tag/v6.2.0
+[6.2.1]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.2.1
