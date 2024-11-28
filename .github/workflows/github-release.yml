@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: "10 0 * * 4" # (Test for 7:10 PM EST Wednesday)
+    - cron: "30 0 * * 4" # (Test for 7:30 PM EST Wednesday)
   workflow_dispatch:
     inputs:
       bump_type:
