@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- fix release note (https://github.com/RifeLab/Field-Book-Sandbox/pull/85)
 
 ## [v6.3.0] - 2024-11-28
 
