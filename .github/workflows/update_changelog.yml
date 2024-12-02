@@ -41,6 +41,7 @@ jobs:
 
           # Detect change type
           change_type=$(echo "$pr_body" | grep -oP '(?<=- \[x\] `)[A-Z]+(?=`)' | head -n 1)
+          change_type=$(echo "$pr_body" | grep -oP '(?<=- \[x\] \*\*`)[A-Z]+(?=`\*\*)' | head -n 1)
           case "$change_type" in
             "ADDITION")
               section="### Added"
@@ -77,9 +78,9 @@ jobs:
         id: extract_version_bump
         run: |
           pr_body=$(gh api -X GET "repos/${{ github.repository }}/pulls/${{ env.pr_number }}" --jq '.body' | sed 's/\r//g')
-          major_checked=$(echo "$pr_body" | grep -q '\[x\] `MAJOR`' && echo "true" || echo "false")
-          minor_checked=$(echo "$pr_body" | grep -q '\[x\] `MINOR`' && echo "true" || echo "false")
-          wait_checked=$(echo "$pr_body" | grep -q '\[x\] `WAIT`' && echo "true" || echo "false")
+          major_checked=$(echo "$pr_body" | grep -q '\[x\] \*\*`MAJOR`' && echo "true" || echo "false")
+          minor_checked=$(echo "$pr_body" | grep -q '\[x\] \*\*`MINOR`' && echo "true" || echo "false")
+          wait_checked=$(echo "$pr_body" | grep -q '\[x\] \*\*`WAIT`' && echo "true" || echo "false")
 
           if [ "$major_checked" == "true" ]; then
             echo "BUMP_TYPE=major" >> $GITHUB_ENV
