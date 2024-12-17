@@ -105,23 +105,37 @@ jobs:
       - name: Update changelog.xml
         id: update-changelog-xml
         run: |
-          # Extract and format the sections
-          NEW_NOTES=$(sed -n '/### Added/,/### Changed/p' CHANGELOG.md | sed '1d;$d' | \
-            sed -E 's/^- (.*)\(.*pull\/([0-9]+)\)/\\<new>\\1 (#\\2)<\\/new>/')
-          INFO_NOTES=$(sed -n '/### Changed/,/### Fixed/p' CHANGELOG.md | sed '1d;$d' | \
-            sed -E 's/^- (.*)\(.*pull\/([0-9]+)\)/\\<info>\\1 (#\\2)<\\/info>/')
-          BUGFIX_NOTES=$(sed -n '/### Fixed/,/^## /p' CHANGELOG.md | sed '1d;$d' | \
-            sed -E 's/^- (.*)\(.*pull\/([0-9]+)\)/\\<bugfix>\\1 (#\\2)<\\/bugfix>/')
+          # Initialize variables
+          NEW_NOTES="" INFO_NOTES="" BUGFIX_NOTES="" SECTION=""
+
+          # Read the Unreleased section line by line
+          while IFS= read -r line; do
+            if [[ "$line" == "### Added" ]]; then
+              SECTION="new"
+            elif [[ "$line" == "### Changed" ]]; then
+              SECTION="info"
+            elif [[ "$line" == "### Fixed" ]]; then
+              SECTION="bugfix"
+            elif [[ "$line" =~ ^- ]]; then
+              pr_number=$(echo "$line" | grep -oE 'pull/([0-9]+)' | grep -oE '[0-9]+')
+              note=$(echo "$line" | sed -E 's/ *\(.*\)//') # Remove PR link
+              case $SECTION in
+                new) NEW_NOTES+="    <new>$note (#$pr_number)</new>\n" ;;
+                info) INFO_NOTES+="    <info>$note (#$pr_number)</info>\n" ;;
+                bugfix) BUGFIX_NOTES+="    <bugfix>$note (#$pr_number)</bugfix>\n" ;;
+              esac
+            fi
+          done < <(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
 
           # Generate the release block
           today=$(date +'%Y-%m-%d')
           RELEASE_BLOCK="    <release date=\"$today\" versionCode=\"$VERSION_CODE\" versionName=\"v$VERSION\">\n"
-          RELEASE_BLOCK+="$NEW_NOTES\n"
-          RELEASE_BLOCK+="$INFO_NOTES\n"
-          RELEASE_BLOCK+="$BUGFIX_NOTES\n"
+          RELEASE_BLOCK+="$NEW_NOTES"
+          RELEASE_BLOCK+="$INFO_NOTES"
+          RELEASE_BLOCK+="$BUGFIX_NOTES"
           RELEASE_BLOCK+="    </release>"
 
-          # Safely insert the release block into changelog.xml
+          # Insert the release block into changelog.xml
           printf "%s\n" "$RELEASE_BLOCK" | sed -i "/<\/changelog>/r /dev/stdin" app/src/main/res/raw/changelog.xml
 
       - name: Set Up Build Environment
