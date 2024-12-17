@@ -23,17 +23,17 @@ jobs:
           token: ${{ secrets.ACTIONS_PAT }}
           fetch-depth: 0
 
-    - name: Fetch Latest Main Branch
-      run: |
-        git fetch origin main
-        git checkout main
-        git pull origin main
-        echo "Ensured the latest version of main is pulled."
+      - name: Fetch Latest Main Branch
+        run: |
+          git fetch origin main
+          git checkout main
+          git pull origin main
+          echo "Ensured the latest version of main is pulled."
 
-    - name: Verify Changelog Content
-      run: |
-        echo "Verifying the first 50 lines of CHANGELOG.md:"
-        head -n 50 CHANGELOG.md
+      - name: Verify Changelog Content
+        run: |
+          echo "Verifying the first 50 lines of CHANGELOG.md:"
+          head -n 50 CHANGELOG.md
 
       - name: Determine Bump Type Based on Trigger
         id: determine-bump-type
