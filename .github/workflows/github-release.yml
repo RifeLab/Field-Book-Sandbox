@@ -82,30 +82,37 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_ENV
 
-      - name: Process CHANGELOG.md and Update changelog.xml
+      - name: Process Changelog Changes
         id: process-changelog
         run: |
-          # Extract Unreleased section
-          UNRELEASED=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
-          if [ -z "$UNRELEASED" ]; then
-            echo "No changes found in Unreleased. Exiting."
-            exit 1
+          unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
+
+          if [ -z "$unreleased_section" ]; then
+            changelog_escaped="No release notes"
+          else
+            changelog_escaped=$(echo "$unreleased_section" | sed 's/^- /\u2714 /g' | sed ':a;N;$!ba;s/\n/%0A/g')
           fi
 
-          # Format release notes for GitHub body
-          RELEASE_NOTES=""
-          echo "$UNRELEASED" | awk 'BEGIN {FS=" - "; OFS=":"} 
-            /^- / {if ($2 ~ /https/) {print "- ✔", $1, "(" $2 ")"} else {print "- ✔", $1}}' > RELEASE_NOTES.tmp
-          RELEASE_NOTES=$(cat RELEASE_NOTES.tmp | tr '\n' '%0A')
-          echo "RELEASE_NOTES=$RELEASE_NOTES" >> $GITHUB_ENV
+          echo "changelog_additions=$changelog_escaped" >> $GITHUB_OUTPUT
 
-          # Process changelog.xml mapping types
-          NEW_NOTES=$(echo "$UNRELEASED" | grep "^- " | sed 's/^- /<new>/g' | sed 's/ (https.*)/<\/new>/g')
-          INFO_NOTES=$(echo "$UNRELEASED" | grep "^* " | sed 's/^* /<info>/g' | sed 's/ (https.*)/<\/info>/g')
-          BUGFIX_NOTES=$(echo "$UNRELEASED" | grep "^~ " | sed 's/^~ /<bugfix>/g' | sed 's/ (https.*)/<\/bugfix>/g')
+          today=$(date +'%Y-%m-%d')
+          sed -i "s/## \[Unreleased\]/## [v$VERSION] - $today/" CHANGELOG.md
+          sed -i '/## \[v'$VERSION'\]/i ## [Unreleased]\n\n### Added\n\n### Changed\n\n### Fixed\n' CHANGELOG.md
 
-          # Append to changelog.xml
-          today=$(date +%Y-%m-%d)
+          REPO_URL="https://github.com/${{ github.repository }}/releases/tag"
+          printf "\n[v$VERSION]: $REPO_URL/$VERSION" >> CHANGELOG.md
+
+      - name: Update changelog.xml
+        id: update-changelog-xml
+        run: |
+          # Extract and classify changes
+          unreleased_section=$(sed -n '/## \[v'$VERSION'\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
+
+          NEW_NOTES=$(echo "$unreleased_section" | grep -E '^- ' | sed 's/^- /<new>/;s/$/<\/new>/')
+          INFO_NOTES=$(echo "$unreleased_section" | grep -E '^- ' | sed 's/^- /<info>/;s/$/<\/info>/')
+          BUGFIX_NOTES=$(echo "$unreleased_section" | grep -E '^- ' | sed 's/^- /<bugfix>/;s/$/<\/bugfix>/')
+
+          today=$(date +'%Y-%m-%d')
           echo "    <release date=\"$today\" versionCode=\"$VERSION_CODE\" versionName=\"v$VERSION\">" > RELEASE_BLOCK.tmp
           echo "$NEW_NOTES" >> RELEASE_BLOCK.tmp
           echo "$INFO_NOTES" >> RELEASE_BLOCK.tmp
@@ -113,10 +120,6 @@ jobs:
           echo "    </release>" >> RELEASE_BLOCK.tmp
 
           sed -i "/<\/changelog>/i $(cat RELEASE_BLOCK.tmp)" app/src/main/res/raw/changelog.xml
-
-          # Replace Unreleased section with versioned release
-          sed -i "s/## \[Unreleased\]/## [v$VERSION] - $today/" CHANGELOG.md
-          sed -i '/## \[v'$VERSION'\]/i ## [Unreleased]\n\n### Added\n\n### Changed\n\n### Fixed\n' CHANGELOG.md
 
       - name: Set Up Build Environment
         uses: actions/setup-java@v3
@@ -159,7 +162,7 @@ jobs:
           tag: "${{ env.VERSION }}"
           file: app/build/outputs/apk/release/app-release-unsigned-signed.apk
           asset_name: "Field-Book-v${{ env.VERSION }}.apk"
-          body: "${{ env.RELEASE_NOTES }}"
+          body: "${{ steps.process-changelog.outputs.changelog_additions }}"
 
       - name: Commit Version and Changelog Changes
         if: ${{ success() }}
