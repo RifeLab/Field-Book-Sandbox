@@ -97,7 +97,7 @@ jobs:
               CURRENT_TYPE="bugfix"
             elif [[ "$note" =~ ^- ]]; then
               # Append formatted note based on the current type
-              RELEASE_CONTENT+="    <${CURRENT_TYPE}>${note:2}</${CURRENT_TYPE}>\n"
+              RELEASE_CONTENT+="        <${CURRENT_TYPE}>${note:2}</${CURRENT_TYPE}>\n"
             fi
           done < <(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
 
@@ -106,7 +106,7 @@ jobs:
           RELEASE_BLOCK="    <release date=\"$today\" versionCode=\"$VERSION_CODE\" versionName=\"v$VERSION\">\n"
           RELEASE_BLOCK+="$RELEASE_CONTENT"
           RELEASE_BLOCK+="    </release>"
-          sed -i "/<\/changelog>/i \\\n$RELEASE_BLOCK" app/src/main/res/raw/changelog.xml
+          sed -i "/<changelog>/a \\\n$RELEASE_BLOCK" app/src/main/res/raw/changelog.xml
           echo "Generated release block:"
           echo -e "$RELEASE_BLOCK"
 
