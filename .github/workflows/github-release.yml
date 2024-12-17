@@ -90,7 +90,7 @@ jobs:
           if [ -z "$unreleased_section" ]; then
             changelog_escaped="No release notes"
           else
-            changelog_escaped=$(echo "$unreleased_section" | sed 's/^- /\u2714 /g' | sed ':a;N;$!ba;s/\n/%0A/g')
+            changelog_escaped=$(echo "$unreleased_section" | sed 's/^- /✔ /g' | sed ':a;N;$!ba;s/\n/%0A/g')
           fi
 
           echo "changelog_additions=$changelog_escaped" >> $GITHUB_OUTPUT
