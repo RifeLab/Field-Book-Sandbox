@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - restrict to first occurance (https://github.com/RifeLab/Field-Book-Sandbox/pull/56)
 
 ### Changed
+- changed order (https://github.com/RifeLab/Field-Book-Sandbox/pull/100)
 - second string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/58)
 - test string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/57)
 - Test branch string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/55)
