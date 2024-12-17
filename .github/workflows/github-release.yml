@@ -112,45 +112,65 @@ jobs:
 
           # Read the Unreleased section line by line
           while IFS= read -r line; do
-            echo "Processing line: '$line'"
-            if [[ "$line" == "### Added" ]]; then
+            line_trimmed=$(echo "$line" | xargs) # Trim leading/trailing spaces
+
+            # Skip empty lines
+            if [[ -z "$line_trimmed" ]]; then
+              continue
+            fi
+
+            echo "Processing line: '$line_trimmed'"
+
+            # Match section headers
+            if [[ "$line_trimmed" == "### Added" ]]; then
               SECTION="new"
-              echo "Switched section to: $SECTION"
-            elif [[ "$line" == "### Changed" ]]; then
+            elif [[ "$line_trimmed" == "### Changed" ]]; then
               SECTION="info"
-              echo "Switched section to: $SECTION"
-            elif [[ "$line" == "### Fixed" ]]; then
+            elif [[ "$line_trimmed" == "### Fixed" ]]; then
               SECTION="bugfix"
-              echo "Switched section to: $SECTION"
-            elif [[ "$line" =~ ^- ]]; then
-              pr_number=$(echo "$line" | grep -oE 'pull/([0-9]+)' | grep -oE '[0-9]+')
-              note=$(echo "$line" | sed -E 's/ *\(.*\)//' | sed 's/^- //') # Remove PR link and leading dash
+
+            # Match bullet points
+            elif [[ "$line_trimmed" =~ ^- ]]; then
+              echo "Matched bullet point: '$line_trimmed'"
+
+              # Extract PR number and note safely
+              pr_number=$(echo "$line_trimmed" | grep -oE 'pull/([0-9]+)' | grep -oE '[0-9]+')
+              if [[ -z "$pr_number" ]]; then
+                echo "Warning: No PR number found in line '$line_trimmed'."
+                pr_number="N/A"
+              fi
+
+              note=$(echo "$line_trimmed" | sed -E 's/ *\(.*\)//' | sed 's/^- //')
+              echo "Extracted note: '$note', PR: '$pr_number'"
+
+              # Format line and append to the respective section
               formatted_line="    <${SECTION}>$note (#$pr_number)</${SECTION}>"
-              echo "Formatted line: $formatted_line"
+              echo "Formatted line: '$formatted_line'"
 
               case $SECTION in
                 new) NEW_NOTES+="$formatted_line\n" ;;
                 info) INFO_NOTES+="$formatted_line\n" ;;
                 bugfix) BUGFIX_NOTES+="$formatted_line\n" ;;
+                *) echo "Warning: Unknown section '$SECTION'. Skipping line." ;;
               esac
+            else
+              echo "Skipping unrecognized line: '$line_trimmed'"
             fi
           done < <(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
 
-          # Log what we collected
-          echo "NEW_NOTES:\n$NEW_NOTES"
-          echo "INFO_NOTES:\n$INFO_NOTES"
-          echo "BUGFIX_NOTES:\n$BUGFIX_NOTES"
+          # Log collected notes
+          echo -e "NEW_NOTES:\n$NEW_NOTES"
+          echo -e "INFO_NOTES:\n$INFO_NOTES"
+          echo -e "BUGFIX_NOTES:\n$BUGFIX_NOTES"
 
           # Generate the release block
           today=$(date +'%Y-%m-%d')
           RELEASE_BLOCK="    <release date=\"$today\" versionCode=\"$VERSION_CODE\" versionName=\"v$VERSION\">\n"
-          RELEASE_BLOCK+="$NEW_NOTES"
-          RELEASE_BLOCK+="$INFO_NOTES"
-          RELEASE_BLOCK+="$BUGFIX_NOTES"
+          RELEASE_BLOCK+="$NEW_NOTES$INFO_NOTES$BUGFIX_NOTES"
           RELEASE_BLOCK+="    </release>"
 
           echo "Generated RELEASE_BLOCK:"
-          echo "$RELEASE_BLOCK"
+          echo -e "$RELEASE_BLOCK"
 
           # Insert the release block at the top of the changelog.xml
           sed -i "0,/<changelog>/s|<changelog>|<changelog>\n$RELEASE_BLOCK|" app/src/main/res/raw/changelog.xml
