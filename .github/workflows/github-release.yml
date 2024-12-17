@@ -106,26 +106,40 @@ jobs:
         id: update-changelog-xml
         run: |
           # Initialize variables
-          NEW_NOTES="" INFO_NOTES="" BUGFIX_NOTES="" SECTION=""
+          NEW_NOTES="" INFO_NOTES="" BUGFIX_NOTES=""
+          SECTION=""
+          echo "Starting changelog update..."
 
           # Read the Unreleased section line by line
           while IFS= read -r line; do
+            echo "Processing line: '$line'"
             if [[ "$line" == "### Added" ]]; then
               SECTION="new"
+              echo "Switched section to: $SECTION"
             elif [[ "$line" == "### Changed" ]]; then
               SECTION="info"
+              echo "Switched section to: $SECTION"
             elif [[ "$line" == "### Fixed" ]]; then
               SECTION="bugfix"
+              echo "Switched section to: $SECTION"
             elif [[ "$line" =~ ^- ]]; then
               pr_number=$(echo "$line" | grep -oE 'pull/([0-9]+)' | grep -oE '[0-9]+')
-              note=$(echo "$line" | sed -E 's/ *\(.*\)//') # Remove PR link
+              note=$(echo "$line" | sed -E 's/ *\(.*\)//' | sed 's/^- //') # Remove PR link and leading dash
+              formatted_line="    <${SECTION}>$note (#$pr_number)</${SECTION}>"
+              echo "Formatted line: $formatted_line"
+
               case $SECTION in
-                new) NEW_NOTES+="    <new>$note (#$pr_number)</new>\n" ;;
-                info) INFO_NOTES+="    <info>$note (#$pr_number)</info>\n" ;;
-                bugfix) BUGFIX_NOTES+="    <bugfix>$note (#$pr_number)</bugfix>\n" ;;
+                new) NEW_NOTES+="$formatted_line\n" ;;
+                info) INFO_NOTES+="$formatted_line\n" ;;
+                bugfix) BUGFIX_NOTES+="$formatted_line\n" ;;
               esac
             fi
           done < <(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
+
+          # Log what we collected
+          echo "NEW_NOTES:\n$NEW_NOTES"
+          echo "INFO_NOTES:\n$INFO_NOTES"
+          echo "BUGFIX_NOTES:\n$BUGFIX_NOTES"
 
           # Generate the release block
           today=$(date +'%Y-%m-%d')
@@ -135,8 +149,13 @@ jobs:
           RELEASE_BLOCK+="$BUGFIX_NOTES"
           RELEASE_BLOCK+="    </release>"
 
-          # Insert the release block into changelog.xml
-          printf "%s\n" "$RELEASE_BLOCK" | sed -i "/<\/changelog>/r /dev/stdin" app/src/main/res/raw/changelog.xml
+          echo "Generated RELEASE_BLOCK:"
+          echo "$RELEASE_BLOCK"
+
+          # Insert the release block at the top of the changelog.xml
+          sed -i "0,/<changelog>/s|<changelog>|<changelog>\n$RELEASE_BLOCK|" app/src/main/res/raw/changelog.xml
+
+          echo "Changelog update complete!"
 
       - name: Set Up Build Environment
         uses: actions/setup-java@v3
