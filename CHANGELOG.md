@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - change to how github release action works (https://github.com/RifeLab/Field-Book-Sandbox/pull/87)
 
 ### Fixed
+- fixed sed syntax (https://github.com/RifeLab/Field-Book-Sandbox/pull/88)
 
 ## [v6.4.2] - 2024-12-12
 
