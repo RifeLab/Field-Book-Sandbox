@@ -1,5 +1,17 @@
 <changelog>
 
+    <release date="2024-12-17" versionCode="61300" versionName="v6.13.0">
+        <new>fifth test feature (https://github.com/RifeLab/Field-Book-Sandbox/pull/63)</new>
+        <new>restrict to first occurance (https://github.com/RifeLab/Field-Book-Sandbox/pull/56)</new>
+        <info>changed order (https://github.com/RifeLab/Field-Book-Sandbox/pull/100)</info>
+        <info>second string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/58)</info>
+        <info>test string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/57)</info>
+        <info>Test branch string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/55)</info>
+        <info>fix pr number and release note location (https://github.com/RifeLab/Field-Book-Sandbox/pull/54)</info>
+        <bugfix>fix release block formatting (https://github.com/RifeLab/Field-Book-Sandbox/pull/101)</bugfix>
+        <bugfix>adjust change type extraction (https://github.com/RifeLab/Field-Book-Sandbox/pull/61)</bugfix>
+    </release>
+
     <release
         date="2023-06-01"
         versionCode="550"
