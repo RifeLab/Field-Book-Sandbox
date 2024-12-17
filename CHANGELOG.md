@@ -10,6 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+
+### Fixed
+
+## [v6.6.0] - 2024-12-17
+
+### Added
+
+### Changed
 - troubleshoot note construction (https://github.com/RifeLab/Field-Book-Sandbox/pull/93)
 
 ### Fixed
@@ -290,3 +298,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v6.4.1]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.4.1
 [v6.4.2]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.4.2
 [v6.5.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.5.0
+[v6.6.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.6.0
