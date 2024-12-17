@@ -13,6 +13,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+## [v6.11.0] - 2024-12-17
+
+### Added
+
+### Changed
+- yet another test (https://github.com/RifeLab/Field-Book-Sandbox/pull/99)
+
+### Fixed
+
+## [v6.10.0] - 2024-12-17
+
+### Added
+
+### Changed
+- test different processing (https://github.com/RifeLab/Field-Book-Sandbox/pull/98)
+
+### Fixed
+
+## [v6.9.0] - 2024-12-17
+
+### Added
+
+### Changed
+
+### Fixed
+- fix indentation (https://github.com/RifeLab/Field-Book-Sandbox/pull/97)
+
+## [v6.8.0] - 2024-12-17
+
+### Added
+
+### Changed
+- more debugging (https://github.com/RifeLab/Field-Book-Sandbox/pull/95)
+
+### Fixed
+
+## [v6.7.0] - 2024-12-17
+
+### Added
+
+### Changed
+- more troubleshooting (https://github.com/RifeLab/Field-Book-Sandbox/pull/94)
+
+### Fixed
+
+## [v6.6.0] - 2024-12-17
+
+### Added
+
+### Changed
+- troubleshoot note construction (https://github.com/RifeLab/Field-Book-Sandbox/pull/93)
+
+### Fixed
+
+## [v6.5.0] - 2024-12-17
+
+### Added
+
+### Changed
+- handle tags outside of sed (https://github.com/RifeLab/Field-Book-Sandbox/pull/92)
+- got rid of grep (https://github.com/RifeLab/Field-Book-Sandbox/pull/90)
+- put changelog.xml update logic in separate step (https://github.com/RifeLab/Field-Book-Sandbox/pull/89)
+- change to how github release action works (https://github.com/RifeLab/Field-Book-Sandbox/pull/87)
+
+### Fixed
+- handle special character errors (https://github.com/RifeLab/Field-Book-Sandbox/pull/91)
+- fixed sed syntax (https://github.com/RifeLab/Field-Book-Sandbox/pull/88)
+
 ## [v6.4.2] - 2024-12-12
 
 ### Added
@@ -274,3 +342,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v6.4.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.4.0
 [v6.4.1]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.4.1
 [v6.4.2]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.4.2
+[v6.5.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.5.0
+[v6.6.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.6.0
+[v6.7.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.7.0
+[v6.8.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.8.0
+[v6.9.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.9.0
+[v6.10.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.10.0
+[v6.11.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.11.0
