@@ -86,7 +86,7 @@ jobs:
         id: update-changelog-xml
         run: |
 
-          # Read the Unreleased section and classify notes
+          # Read the Unreleased section and process notes based on type
           RELEASE_CONTENT="" CURRENT_TYPE=""
           while IFS= read -r note; do
             if [[ "$note" == "### Added"* ]]; then
@@ -96,8 +96,9 @@ jobs:
             elif [[ "$note" == "### Fixed"* ]]; then
               CURRENT_TYPE="bugfix"
             elif [[ "$note" =~ ^- ]]; then
-              # Append formatted note based on the current type
-              RELEASE_CONTENT+="        <${CURRENT_TYPE}>${note:2}</${CURRENT_TYPE}>\n"
+              clean_note=$(echo "$note" | sed -E 's/^- //; s/ *\(.*\)//')
+              pr_number=$(echo "$note" | grep -oP 'pull/\K[0-9]+' || echo "N/A")
+              RELEASE_CONTENT+="        <${CURRENT_TYPE}>${clean_note} (#${pr_number})</${CURRENT_TYPE}>\n"
             fi
           done < <(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
 
