@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [v6.12.0] - 2024-12-17
+
+### Added
 - fifth test feature (https://github.com/RifeLab/Field-Book-Sandbox/pull/63)
 - restrict to first occurance (https://github.com/RifeLab/Field-Book-Sandbox/pull/56)
 
@@ -357,3 +365,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v6.9.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.9.0
 [v6.10.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.10.0
 [v6.11.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.11.0
+[v6.12.0]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/6.12.0
