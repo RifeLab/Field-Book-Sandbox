@@ -23,18 +23,6 @@ jobs:
           token: ${{ secrets.ACTIONS_PAT }}
           fetch-depth: 0
 
-      - name: Fetch Latest Main Branch
-        run: |
-          git fetch origin main
-          git checkout main
-          git pull origin main
-          echo "Ensured the latest version of main is pulled."
-
-      - name: Verify Changelog Content
-        run: |
-          echo "Verifying the first 50 lines of CHANGELOG.md:"
-          head -n 50 CHANGELOG.md
-
       - name: Determine Bump Type Based on Trigger
         id: determine-bump-type
         run: |
@@ -120,64 +108,76 @@ jobs:
           # Initialize variables
           NEW_NOTES="" INFO_NOTES="" BUGFIX_NOTES=""
           SECTION=""
+          CAPTURE=0
+
           echo "Starting changelog update..."
-
-          # Extract the Unreleased section
-          echo "Extracting Unreleased section..."
-          UNRELEASED_CONTENT=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1d;$d')
-          echo "Unreleased content extracted:"
-          echo "$UNRELEASED_CONTENT"
-
-          # Read the Unreleased section line by line
+          
+          # Read the file line by line
           while IFS= read -r line; do
-            echo "Processing line: '$line'"
+            line_trimmed=$(echo "$line" | xargs) # Trim leading/trailing spaces
 
-            # Skip empty lines
-            if [[ -z "$line" ]]; then
+            # Start capturing after "## [Unreleased]"
+            if [[ "$line_trimmed" == "## [Unreleased]" ]]; then
+              echo "Found Unreleased section. Starting capture."
+              CAPTURE=1
+              continue
+            fi
+
+            # Stop capturing when the next "##" is encountered
+            if [[ "$CAPTURE" == "1" && "$line_trimmed" =~ ^## ]]; then
+              echo "Reached next section. Stopping capture."
+              break
+            fi
+
+            # Skip empty lines during capture
+            if [[ "$CAPTURE" == "1" && -z "$line_trimmed" ]]; then
               echo "Skipping empty line."
               continue
             fi
 
-            # Match section headers
-            if [[ "$line" == "### Added" ]]; then
-              SECTION="new"
-              echo "Switched to section: $SECTION"
-            elif [[ "$line" == "### Changed" ]]; then
-              SECTION="info"
-              echo "Switched to section: $SECTION"
-            elif [[ "$line" == "### Fixed" ]]; then
-              SECTION="bugfix"
-              echo "Switched to section: $SECTION"
+            # Process lines during capture
+            if [[ "$CAPTURE" == "1" ]]; then
+              echo "Processing line: '$line_trimmed'"
 
-            # Process bullet points
-            elif [[ "$line" =~ ^- ]]; then
-              echo "Matched bullet point: '$line'"
+              # Match section headers
+              if [[ "$line_trimmed" == "### Added" ]]; then
+                SECTION="new"
+                echo "Switched to section: $SECTION"
+              elif [[ "$line_trimmed" == "### Changed" ]]; then
+                SECTION="info"
+                echo "Switched to section: $SECTION"
+              elif [[ "$line_trimmed" == "### Fixed" ]]; then
+                SECTION="bugfix"
+                echo "Switched to section: $SECTION"
 
-              # Extract PR number and clean the note
-              pr_number=$(echo "$line" | grep -oE 'pull/([0-9]+)' | grep -oE '[0-9]+')
-              note=$(echo "$line" | sed -E 's/ *\(.*\)//' | sed 's/^- //')
+              # Process bullet points
+              elif [[ "$line_trimmed" =~ ^- ]]; then
+                echo "Matched bullet point: '$line_trimmed'"
 
-              # Validate PR number
-              if [[ -z "$pr_number" ]]; then
-                echo "Warning: No PR number found in line '$line'."
-                pr_number="N/A"
+                # Extract PR number and clean the note
+                pr_number=$(echo "$line_trimmed" | grep -oE 'pull/([0-9]+)' | grep -oE '[0-9]+')
+                note=$(echo "$line_trimmed" | sed -E 's/ *\(.*\)//' | sed 's/^- //')
+
+                # Validate PR number
+                if [[ -z "$pr_number" ]]; then
+                  echo "Warning: No PR number found in line '$line_trimmed'."
+                  pr_number="N/A"
+                fi
+
+                # Format the line
+                formatted_line="    <${SECTION}>$note (#$pr_number)</${SECTION}>"
+                echo "Formatted line: '$formatted_line'"
+
+                # Append to the respective section
+                case $SECTION in
+                  new) NEW_NOTES+="$formatted_line\n" ;;
+                  info) INFO_NOTES+="$formatted_line\n" ;;
+                  bugfix) BUGFIX_NOTES+="$formatted_line\n" ;;
+                  *) echo "Warning: Unknown section '$SECTION'. Skipping line." ;;
+                esac
               fi
-
-              # Format the line
-              formatted_line="    <${SECTION}>$note (#$pr_number)</${SECTION}>"
-              echo "Formatted line: '$formatted_line'"
-
-              # Append to the respective section
-              case $SECTION in
-                new) NEW_NOTES+="$formatted_line\n" ;;
-                info) INFO_NOTES+="$formatted_line\n" ;;
-                bugfix) BUGFIX_NOTES+="$formatted_line\n" ;;
-                *) echo "Warning: Unknown section '$SECTION'. Skipping line." ;;
-              esac
-            else
-              echo "Skipping unrecognized line: '$line'"
             fi
-          done <<< "$UNRELEASED_CONTENT"
+          done < CHANGELOG.md
 
           # Log the collected notes
           echo -e "Collected NEW_NOTES:\n$NEW_NOTES"
