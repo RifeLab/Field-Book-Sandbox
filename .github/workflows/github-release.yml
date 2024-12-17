@@ -110,43 +110,52 @@ jobs:
           SECTION=""
           echo "Starting changelog update..."
 
+          # Extract the Unreleased section
+          echo "Extracting Unreleased section..."
+          UNRELEASED_CONTENT=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1d;$d')
+          echo "Unreleased content extracted:"
+          echo "$UNRELEASED_CONTENT"
+
           # Read the Unreleased section line by line
           while IFS= read -r line; do
-            line_trimmed=$(echo "$line" | xargs) # Trim leading/trailing spaces
+            echo "Processing line: '$line'"
 
             # Skip empty lines
-            if [[ -z "$line_trimmed" ]]; then
+            if [[ -z "$line" ]]; then
+              echo "Skipping empty line."
               continue
             fi
 
-            echo "Processing line: '$line_trimmed'"
-
             # Match section headers
-            if [[ "$line_trimmed" == "### Added" ]]; then
+            if [[ "$line" == "### Added" ]]; then
               SECTION="new"
-            elif [[ "$line_trimmed" == "### Changed" ]]; then
+              echo "Switched to section: $SECTION"
+            elif [[ "$line" == "### Changed" ]]; then
               SECTION="info"
-            elif [[ "$line_trimmed" == "### Fixed" ]]; then
+              echo "Switched to section: $SECTION"
+            elif [[ "$line" == "### Fixed" ]]; then
               SECTION="bugfix"
+              echo "Switched to section: $SECTION"
 
-            # Match bullet points
-            elif [[ "$line_trimmed" =~ ^- ]]; then
-              echo "Matched bullet point: '$line_trimmed'"
+            # Process bullet points
+            elif [[ "$line" =~ ^- ]]; then
+              echo "Matched bullet point: '$line'"
 
-              # Extract PR number and note safely
-              pr_number=$(echo "$line_trimmed" | grep -oE 'pull/([0-9]+)' | grep -oE '[0-9]+')
+              # Extract PR number and clean the note
+              pr_number=$(echo "$line" | grep -oE 'pull/([0-9]+)' | grep -oE '[0-9]+')
+              note=$(echo "$line" | sed -E 's/ *\(.*\)//' | sed 's/^- //')
+
+              # Validate PR number
               if [[ -z "$pr_number" ]]; then
-                echo "Warning: No PR number found in line '$line_trimmed'."
+                echo "Warning: No PR number found in line '$line'."
                 pr_number="N/A"
               fi
 
-              note=$(echo "$line_trimmed" | sed -E 's/ *\(.*\)//' | sed 's/^- //')
-              echo "Extracted note: '$note', PR: '$pr_number'"
-
-              # Format line and append to the respective section
+              # Format the line
               formatted_line="    <${SECTION}>$note (#$pr_number)</${SECTION}>"
               echo "Formatted line: '$formatted_line'"
 
+              # Append to the respective section
               case $SECTION in
                 new) NEW_NOTES+="$formatted_line\n" ;;
                 info) INFO_NOTES+="$formatted_line\n" ;;
@@ -154,14 +163,14 @@ jobs:
                 *) echo "Warning: Unknown section '$SECTION'. Skipping line." ;;
               esac
             else
-              echo "Skipping unrecognized line: '$line_trimmed'"
+              echo "Skipping unrecognized line: '$line'"
             fi
-          done < <(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
+          done <<< "$UNRELEASED_CONTENT"
 
-          # Log collected notes
-          echo -e "NEW_NOTES:\n$NEW_NOTES"
-          echo -e "INFO_NOTES:\n$INFO_NOTES"
-          echo -e "BUGFIX_NOTES:\n$BUGFIX_NOTES"
+          # Log the collected notes
+          echo -e "Collected NEW_NOTES:\n$NEW_NOTES"
+          echo -e "Collected INFO_NOTES:\n$INFO_NOTES"
+          echo -e "Collected BUGFIX_NOTES:\n$BUGFIX_NOTES"
 
           # Generate the release block
           today=$(date +'%Y-%m-%d')
