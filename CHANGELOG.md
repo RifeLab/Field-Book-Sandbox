@@ -8,10 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- fifth test feature (https://github.com/RifeLab/Field-Book-Sandbox/pull/63)
+- restrict to first occurance (https://github.com/RifeLab/Field-Book-Sandbox/pull/56)
 
 ### Changed
+- changed order (https://github.com/RifeLab/Field-Book-Sandbox/pull/100)
+- second string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/58)
+- test string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/57)
+- Test branch string change (https://github.com/RifeLab/Field-Book-Sandbox/pull/55)
+- fix pr number and release note location (https://github.com/RifeLab/Field-Book-Sandbox/pull/54)
 
 ### Fixed
+- adjust change type extraction (https://github.com/RifeLab/Field-Book-Sandbox/pull/61)
 
 ## [v6.12.0] - 2024-12-17
 
