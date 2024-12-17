@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+- handle tags outside of sed (https://github.com/RifeLab/Field-Book-Sandbox/pull/92)
 - got rid of grep (https://github.com/RifeLab/Field-Book-Sandbox/pull/90)
 - put changelog.xml update logic in separate step (https://github.com/RifeLab/Field-Book-Sandbox/pull/89)
 - change to how github release action works (https://github.com/RifeLab/Field-Book-Sandbox/pull/87)
