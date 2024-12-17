@@ -105,21 +105,24 @@ jobs:
       - name: Update changelog.xml
         id: update-changelog-xml
         run: |
-          # Extract and classify changes
-          unreleased_section=$(sed -n '/## \[v'$VERSION'\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
+          # Extract and format the sections
+          NEW_NOTES=$(sed -n '/### Added/,/### Changed/p' CHANGELOG.md | sed '1d;$d' | \
+            sed -E 's/^- (.*)\(.*pull\/([0-9]+)\)/<new>\1 (#\2)<\/new>/')
+          INFO_NOTES=$(sed -n '/### Changed/,/### Fixed/p' CHANGELOG.md | sed '1d;$d' | \
+            sed -E 's/^- (.*)\(.*pull\/([0-9]+)\)/<info>\1 (#\2)<\/info>/')
+          BUGFIX_NOTES=$(sed -n '/### Fixed/,/^## /p' CHANGELOG.md | sed '1d;$d' | \
+            sed -E 's/^- (.*)\(.*pull\/([0-9]+)\)/<bugfix>\1 (#\2)<\/bugfix>/')
 
-          NEW_NOTES=$(echo "$unreleased_section" | grep -E '^- ' | sed 's/^- /<new>/;s/$/<\/new>/')
-          INFO_NOTES=$(echo "$unreleased_section" | grep -E '^- ' | sed 's/^- /<info>/;s/$/<\/info>/')
-          BUGFIX_NOTES=$(echo "$unreleased_section" | grep -E '^- ' | sed 's/^- /<bugfix>/;s/$/<\/bugfix>/')
-
+          # Generate the release block
           today=$(date +'%Y-%m-%d')
-          echo "    <release date=\"$today\" versionCode=\"$VERSION_CODE\" versionName=\"v$VERSION\">" > RELEASE_BLOCK.tmp
-          echo "$NEW_NOTES" >> RELEASE_BLOCK.tmp
-          echo "$INFO_NOTES" >> RELEASE_BLOCK.tmp
-          echo "$BUGFIX_NOTES" >> RELEASE_BLOCK.tmp
-          echo "    </release>" >> RELEASE_BLOCK.tmp
+          RELEASE_BLOCK="    <release date=\"$today\" versionCode=\"$VERSION_CODE\" versionName=\"v$VERSION\">\n"
+          RELEASE_BLOCK+="$NEW_NOTES\n"
+          RELEASE_BLOCK+="$INFO_NOTES\n"
+          RELEASE_BLOCK+="$BUGFIX_NOTES\n"
+          RELEASE_BLOCK+="    </release>"
 
-          sed -i "/<\/changelog>/i $(cat RELEASE_BLOCK.tmp)" app/src/main/res/raw/changelog.xml
+          # Insert the release block into changelog.xml
+          sed -i "/<\/changelog>/i $RELEASE_BLOCK" app/src/main/res/raw/changelog.xml
 
       - name: Set Up Build Environment
         uses: actions/setup-java@v3
