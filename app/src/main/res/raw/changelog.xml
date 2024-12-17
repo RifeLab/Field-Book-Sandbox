@@ -1,16 +1,4 @@
 <changelog>
-    <release date="2024-12-17" versionCode="61100" versionName="v6.11.0">
-    </release>
-    <release date="2024-12-17" versionCode="61000" versionName="v6.10.0">
-    </release>
-    <release date="2024-12-17" versionCode="60900" versionName="v6.9.0">
-    </release>
-    <release date="2024-12-17" versionCode="60800" versionName="v6.8.0">
-    </release>
-    <release date="2024-12-17" versionCode="60700" versionName="v6.7.0">
-    </release>
-    <release date="2024-12-17" versionCode="60600" versionName="v6.6.0">
-    </release>
 
     <release
         date="2023-06-01"
@@ -493,4 +481,3 @@
         <new>Spanish and German translation</new>
     </release>
 </changelog>
-    <release date="2024-12-17" versionCode="60500" versionName="v6.5.0">\n    </release>
