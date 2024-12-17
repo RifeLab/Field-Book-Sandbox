@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix pr number and release note location (https://github.com/RifeLab/Field-Book-Sandbox/pull/54)
 
 ### Fixed
+- fix release block formatting (https://github.com/RifeLab/Field-Book-Sandbox/pull/101)
 - adjust change type extraction (https://github.com/RifeLab/Field-Book-Sandbox/pull/61)
 
 ## [v6.12.0] - 2024-12-17
