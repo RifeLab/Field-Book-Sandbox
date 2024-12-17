@@ -1,6 +1,8 @@
+name: do-github-release
+
 on:
   schedule:
-    - cron: "30 0 * * 4" # (Test for 7:30 PM EST Wednesday)
+    - cron: "0 20 * * 1"
   workflow_dispatch:
     inputs:
       bump_type:
@@ -10,14 +12,11 @@ on:
   repository_dispatch:
     types: [trigger-release]
 
-name: do-github-release
-
 jobs:
   release:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repo
         uses: actions/checkout@v4
         with:
@@ -95,19 +94,24 @@ jobs:
 
           # Format release notes for GitHub body
           RELEASE_NOTES=""
-          echo "$UNRELEASED" | awk 'BEGIN {FS=" - "; OFS=": "} 
+          echo "$UNRELEASED" | awk 'BEGIN {FS=" - "; OFS=":"} 
             /^- / {if ($2 ~ /https/) {print "- ✔", $1, "(" $2 ")"} else {print "- ✔", $1}}' > RELEASE_NOTES.tmp
           RELEASE_NOTES=$(cat RELEASE_NOTES.tmp | tr '\n' '%0A')
           echo "RELEASE_NOTES=$RELEASE_NOTES" >> $GITHUB_ENV
 
           # Process changelog.xml mapping types
-          NEW_NOTES=$(echo "$UNRELEASED" | grep "^- " | sed 's/^- /\n\t<new>/g' | sed 's/ (https.*)/<\/new>/g')
-          INFO_NOTES=$(echo "$UNRELEASED" | grep "^* " | sed 's/^* /\n\t<info>/g' | sed 's/ (https.*)/<\/info>/g')
-          BUGFIX_NOTES=$(echo "$UNRELEASED" | grep "^~ " | sed 's/^~ /\n\t<bugfix>/g' | sed 's/ (https.*)/<\/bugfix>/g')
+          NEW_NOTES=$(echo "$UNRELEASED" | grep "^- " | sed 's/^- /<new>/g' | sed 's/ (https.*)/<\/new>/g')
+          INFO_NOTES=$(echo "$UNRELEASED" | grep "^* " | sed 's/^* /<info>/g' | sed 's/ (https.*)/<\/info>/g')
+          BUGFIX_NOTES=$(echo "$UNRELEASED" | grep "^~ " | sed 's/^~ /<bugfix>/g' | sed 's/ (https.*)/<\/bugfix>/g')
 
           # Append to changelog.xml
           today=$(date +%Y-%m-%d)
-          echo "    <release date=\"$today\" versionCode=\"$VERSION_CODE\" versionName=\"v$VERSION\">$NEW_NOTES$INFO_NOTES$BUGFIX_NOTES\n    </release>" > RELEASE_BLOCK.tmp
+          echo "    <release date=\"$today\" versionCode=\"$VERSION_CODE\" versionName=\"v$VERSION\">" > RELEASE_BLOCK.tmp
+          echo "$NEW_NOTES" >> RELEASE_BLOCK.tmp
+          echo "$INFO_NOTES" >> RELEASE_BLOCK.tmp
+          echo "$BUGFIX_NOTES" >> RELEASE_BLOCK.tmp
+          echo "    </release>" >> RELEASE_BLOCK.tmp
+
           sed -i "/<\/changelog>/i $(cat RELEASE_BLOCK.tmp)" app/src/main/res/raw/changelog.xml
 
           # Replace Unreleased section with versioned release
@@ -190,3 +194,4 @@ jobs:
       #     packageName: com.fieldbook.tracker
       #     releaseFiles: app/build/outputs/apk/release/app-release-unsigned-signed.apk
       #     track: alpha
+
