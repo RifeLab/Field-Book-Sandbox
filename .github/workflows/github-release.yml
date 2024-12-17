@@ -105,79 +105,60 @@ jobs:
       - name: Update changelog.xml
         id: update-changelog-xml
         run: |
+          # Extract the Unreleased section
+          echo "Extracting Unreleased section..."
+          UNRELEASED_SECTION=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
+
+          echo "Unreleased section extracted:"
+          echo "$UNRELEASED_SECTION"
+
           # Initialize variables
           NEW_NOTES="" INFO_NOTES="" BUGFIX_NOTES=""
-          SECTION=""
-          CAPTURE=0
 
-          echo "Starting changelog update..."
-          
-          # Read the file line by line
+          # Process the Unreleased section
+          SECTION=""
           while IFS= read -r line; do
             line_trimmed=$(echo "$line" | xargs) # Trim leading/trailing spaces
 
-            # Start capturing after "## [Unreleased]"
-            if [[ "$line_trimmed" == "## [Unreleased]" ]]; then
-              echo "Found Unreleased section. Starting capture."
-              CAPTURE=1
-              continue
+            if [[ -z "$line_trimmed" ]]; then
+              continue # Skip empty lines
             fi
 
-            # Stop capturing when the next "##" is encountered
-            if [[ "$CAPTURE" == "1" && "$line_trimmed" =~ ^## ]]; then
-              echo "Reached next section. Stopping capture."
-              break
-            fi
+            # Detect headers
+            if [[ "$line_trimmed" == "### Added" ]]; then
+              SECTION="new"
+              echo "Switched to section: $SECTION"
+            elif [[ "$line_trimmed" == "### Changed" ]]; then
+              SECTION="info"
+              echo "Switched to section: $SECTION"
+            elif [[ "$line_trimmed" == "### Fixed" ]]; then
+              SECTION="bugfix"
+              echo "Switched to section: $SECTION"
 
-            # Skip empty lines during capture
-            if [[ "$CAPTURE" == "1" && -z "$line_trimmed" ]]; then
-              echo "Skipping empty line."
-              continue
-            fi
+            # Match bullet points under the detected section
+            elif [[ "$line_trimmed" =~ ^- ]]; then
+              pr_number=$(echo "$line_trimmed" | grep -oE 'pull/([0-9]+)' | grep -oE '[0-9]+')
+              note=$(echo "$line_trimmed" | sed -E 's/ *\(.*\)//' | sed 's/^- //')
 
-            # Process lines during capture
-            if [[ "$CAPTURE" == "1" ]]; then
-              echo "Processing line: '$line_trimmed'"
-
-              # Match section headers
-              if [[ "$line_trimmed" == "### Added" ]]; then
-                SECTION="new"
-                echo "Switched to section: $SECTION"
-              elif [[ "$line_trimmed" == "### Changed" ]]; then
-                SECTION="info"
-                echo "Switched to section: $SECTION"
-              elif [[ "$line_trimmed" == "### Fixed" ]]; then
-                SECTION="bugfix"
-                echo "Switched to section: $SECTION"
-
-              # Process bullet points
-              elif [[ "$line_trimmed" =~ ^- ]]; then
-                echo "Matched bullet point: '$line_trimmed'"
-
-                # Extract PR number and clean the note
-                pr_number=$(echo "$line_trimmed" | grep -oE 'pull/([0-9]+)' | grep -oE '[0-9]+')
-                note=$(echo "$line_trimmed" | sed -E 's/ *\(.*\)//' | sed 's/^- //')
-
-                # Validate PR number
-                if [[ -z "$pr_number" ]]; then
-                  echo "Warning: No PR number found in line '$line_trimmed'."
-                  pr_number="N/A"
-                fi
-
-                # Format the line
-                formatted_line="    <${SECTION}>$note (#$pr_number)</${SECTION}>"
-                echo "Formatted line: '$formatted_line'"
-
-                # Append to the respective section
-                case $SECTION in
-                  new) NEW_NOTES+="$formatted_line\n" ;;
-                  info) INFO_NOTES+="$formatted_line\n" ;;
-                  bugfix) BUGFIX_NOTES+="$formatted_line\n" ;;
-                  *) echo "Warning: Unknown section '$SECTION'. Skipping line." ;;
-                esac
+              # Validate PR number
+              if [[ -z "$pr_number" ]]; then
+                echo "Warning: No PR number found in line '$line_trimmed'."
+                pr_number="N/A"
               fi
+
+              # Format the line
+              formatted_line="    <${SECTION}>$note (#$pr_number)</${SECTION}>"
+              echo "Formatted line: '$formatted_line'"
+
+              # Append to the respective section
+              case $SECTION in
+                new) NEW_NOTES+="$formatted_line\n" ;;
+                info) INFO_NOTES+="$formatted_line\n" ;;
+                bugfix) BUGFIX_NOTES+="$formatted_line\n" ;;
+                *) echo "Warning: Unknown section '$SECTION'. Skipping line." ;;
+              esac
             fi
-          done < CHANGELOG.md
+          done <<< "$UNRELEASED_SECTION"
 
           # Log the collected notes
           echo -e "Collected NEW_NOTES:\n$NEW_NOTES"
