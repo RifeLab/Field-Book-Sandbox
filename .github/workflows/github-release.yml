@@ -82,7 +82,35 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_ENV
 
-      - name: Process Changelog Changes
+      - name: Update changelog.xml
+        id: update-changelog-xml
+        run: |
+
+          # Read the Unreleased section and classify notes
+          RELEASE_CONTENT="" CURRENT_TYPE=""
+          while IFS= read -r note; do
+            if [[ "$note" == "### Added"* ]]; then
+              CURRENT_TYPE="new"
+            elif [[ "$note" == "### Changed"* ]]; then
+              CURRENT_TYPE="info"
+            elif [[ "$note" == "### Fixed"* ]]; then
+              CURRENT_TYPE="bugfix"
+            elif [[ "$note" =~ ^- ]]; then
+              # Append formatted note based on the current type
+              RELEASE_CONTENT+="    <${CURRENT_TYPE}>${note:2}</${CURRENT_TYPE}>\n"
+            fi
+          done < <(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
+
+          # Generate, insert, and log the new release block
+          today=$(date +'%Y-%m-%d')
+          RELEASE_BLOCK="    <release date=\"$today\" versionCode=\"$VERSION_CODE\" versionName=\"v$VERSION\">\n"
+          RELEASE_BLOCK+="$RELEASE_CONTENT"
+          RELEASE_BLOCK+="    </release>"
+          sed -i "/<\/changelog>/i \\\n$RELEASE_BLOCK" app/src/main/res/raw/changelog.xml
+          echo "Generated release block:"
+          echo -e "$RELEASE_BLOCK"
+
+      - name: Process CHANGELOG.md
         id: process-changelog
         run: |
           unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
@@ -101,83 +129,6 @@ jobs:
 
           REPO_URL="https://github.com/${{ github.repository }}/releases/tag"
           printf "\n[v$VERSION]: $REPO_URL/$VERSION" >> CHANGELOG.md
-
-      - name: Update changelog.xml
-        id: update-changelog-xml
-        run: |
-          # Extract the Unreleased section
-          echo "Extracting Unreleased section..."
-          UNRELEASED_SECTION=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
-
-          echo "Unreleased section extracted:"
-          echo "$UNRELEASED_SECTION"
-
-          # Initialize variables
-          NEW_NOTES="" INFO_NOTES="" BUGFIX_NOTES=""
-
-          # Process the Unreleased section
-          SECTION=""
-          while IFS= read -r line; do
-            line_trimmed=$(echo "$line" | xargs) # Trim leading/trailing spaces
-
-            if [[ -z "$line_trimmed" ]]; then
-              continue # Skip empty lines
-            fi
-
-            # Detect headers
-            if [[ "$line_trimmed" == "### Added" ]]; then
-              SECTION="new"
-              echo "Switched to section: $SECTION"
-            elif [[ "$line_trimmed" == "### Changed" ]]; then
-              SECTION="info"
-              echo "Switched to section: $SECTION"
-            elif [[ "$line_trimmed" == "### Fixed" ]]; then
-              SECTION="bugfix"
-              echo "Switched to section: $SECTION"
-
-            # Match bullet points under the detected section
-            elif [[ "$line_trimmed" =~ ^- ]]; then
-              pr_number=$(echo "$line_trimmed" | grep -oE 'pull/([0-9]+)' | grep -oE '[0-9]+')
-              note=$(echo "$line_trimmed" | sed -E 's/ *\(.*\)//' | sed 's/^- //')
-
-              # Validate PR number
-              if [[ -z "$pr_number" ]]; then
-                echo "Warning: No PR number found in line '$line_trimmed'."
-                pr_number="N/A"
-              fi
-
-              # Format the line
-              formatted_line="    <${SECTION}>$note (#$pr_number)</${SECTION}>"
-              echo "Formatted line: '$formatted_line'"
-
-              # Append to the respective section
-              case $SECTION in
-                new) NEW_NOTES+="$formatted_line\n" ;;
-                info) INFO_NOTES+="$formatted_line\n" ;;
-                bugfix) BUGFIX_NOTES+="$formatted_line\n" ;;
-                *) echo "Warning: Unknown section '$SECTION'. Skipping line." ;;
-              esac
-            fi
-          done <<< "$UNRELEASED_SECTION"
-
-          # Log the collected notes
-          echo -e "Collected NEW_NOTES:\n$NEW_NOTES"
-          echo -e "Collected INFO_NOTES:\n$INFO_NOTES"
-          echo -e "Collected BUGFIX_NOTES:\n$BUGFIX_NOTES"
-
-          # Generate the release block
-          today=$(date +'%Y-%m-%d')
-          RELEASE_BLOCK="    <release date=\"$today\" versionCode=\"$VERSION_CODE\" versionName=\"v$VERSION\">\n"
-          RELEASE_BLOCK+="$NEW_NOTES$INFO_NOTES$BUGFIX_NOTES"
-          RELEASE_BLOCK+="    </release>"
-
-          echo "Generated RELEASE_BLOCK:"
-          echo -e "$RELEASE_BLOCK"
-
-          # Insert the release block at the top of the changelog.xml
-          sed -i "0,/<changelog>/s|<changelog>|<changelog>\n$RELEASE_BLOCK|" app/src/main/res/raw/changelog.xml
-
-          echo "Changelog update complete!"
 
       - name: Set Up Build Environment
         uses: actions/setup-java@v3
