@@ -12,14 +12,50 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: 'Field Book Documentation',
-      repo: 'https://github.com/PhenoApps/Field-Book',
+      alias: {
+        '/v6/.*_sidebar.md': 'https://raw.githubusercontent.com/RifeLab/Field-Book-Sandbox/refs/tags/6.0.0/docs/_sidebar.md',
+        '/v5/.*_sidebar.md': 'https://raw.githubusercontent.com/RifeLab/Field-Book-Sandbox/refs/tags/6.0.0/docs/_sidebar.md',
+        '/': 'https://raw.githubusercontent.com/RifeLab/Field-Book-Sandbox/refs/tags/6.0.0/docs/README.md',
+        '/(.*)': 'https://raw.githubusercontent.com/RifeLab/Field-Book-Sandbox/refs/tags/6.0.0/docs/$1'
+      },
+      name:
+        '<div class="sidebar-logo">' +
+        '  <span class="sidebar-logo-title">Field Book</span>' +
+        "</div>" +
+        '<select id="version-selector" name="version" class="sidebar-version-select">' +
+          '<option value="v6">v6</option>' +
+          '<option value="v5">v5</option>' +
+        "</select>",
+      plugins: [
+        function (hook, vm) {
+          hook.mounted(function () {
+            Docsify.dom.find("#version-selector", function (e) {
+              // I'm using the "hash" router mode
+              window.location.hash = e.target.value;
+            });
+          });
+        },
+      ],
+      repo: 'https://github.com/RifeLab/Field-Book-Sandbox',
       loadSidebar: true,
       subMaxLevel: 2,
       homepage: 'README.md',
       search: {
-        namespace: 'default',
-      }
+        hideOtherSidebarContent: true,
+        namespaceTags: {
+          "v6": ["v6"],
+          "v5": ["v5"]
+        }
+      },
+      namespaces: [
+        {
+          id: "version",
+          values: ["v6", "v5"],
+          default: "v6",
+          optional: true,
+          selector: "#version-selector"
+        }
+      ],
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
