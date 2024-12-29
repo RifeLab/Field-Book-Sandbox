@@ -4,8 +4,8 @@ on:
   schedule:
     # Run every Monday at 20:00 (8:00 PM)
     - cron: "0 20 * * 1"
-    # Test runs Sunday at 6PM and 7PM EST 
-    - cron: "0 23 * * 0"
+    # Test runs Sunday at 6:30PM and 7PM EST 
+    - cron: "30 23 * * 0"
     - cron: "0 0 * * 1"
   workflow_dispatch:
     inputs:
@@ -17,7 +17,7 @@ on:
     types: [trigger-release]
 
 jobs:
- check-changes:
+  check-changes:
     runs-on: ubuntu-latest
     outputs:
       release_required: ${{ steps.release-check.outputs.release_required }}
