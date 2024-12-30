@@ -4,9 +4,10 @@ on:
   schedule:
     # Run every Monday at 20:00 (8:00 PM)
     - cron: "0 20 * * 1"
-    # Test runs Sunday at 7PM and 7:30PM EST 
-    - cron: "0 0 * * 1"
-    - cron: "30 0 * * 1"
+    # Test runs
+    - cron: "15 4 * * 1"
+    - cron: "30 4 * * 1"
+    - cron: "45 4 * * 1"
   workflow_dispatch:
     inputs:
       bump_type:
