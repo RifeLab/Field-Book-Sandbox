@@ -31,7 +31,7 @@
     <string name="startup_sample_data_message">Load sample data?</string>
 
     <!-- App Intro -->
-    <string name="app_intro_intro_title_slide1">Welcome to Field Book!</string>
+    <string name="app_intro_intro_title_slide1">Welcome to Field Book! Here is an app change</string>
     <string name="app_intro_intro_summary_slide1">Collecting data in the field has traditionally required writing and transcribing from paper notebooks. Field Book was created as a digital solution for data capture that enables increased collection speed with greater data integrity.</string>
     <string name="app_intro_intro_title_slide2">Features and Customization</string>
     <string name="app_intro_intro_summary_slide2">Data is entered into Field Book with custom trait layouts that are designed to simplify data input and minimize mistakes.\n\n By default, collected data is stored locally, but Field Book supports the Breeding API which allows it to send data to BrAPI-compatible systems.</string>
