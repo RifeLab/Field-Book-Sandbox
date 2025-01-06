@@ -1,5 +1,8 @@
 <changelog>
 
+    <release date="2025-01-06" versionCode="10101" versionName="v1.1.1">
+    </release>
+
     <release date="2025-01-04" versionCode="10100" versionName="v1.1.0">
         <info>Testing code change</info>
     </release>
