@@ -148,6 +148,14 @@ jobs:
           REPO_URL="https://github.com/${{ github.repository }}/releases/tag"
           printf "\n[v$VERSION]: $REPO_URL/$VERSION" >> CHANGELOG.md
 
+      - name: Commit Version and Changelog Changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: "version.properties CHANGELOG.md app/src/main/res/raw/changelog.xml"
+          message: "Bump ${{ env.BUMP_TYPE }} and update changelog for v${{ env.VERSION }}"
+          token: ${{ secrets.ACTIONS_PAT }}
+          push: false # Commit locally but don't push until/unless release is successful
+
       - name: Set Up Build Environment
         uses: actions/setup-java@v3
         with:
@@ -191,15 +199,8 @@ jobs:
           asset_name: "Field-Book-v${{ env.VERSION }}.apk"
           body: ${{ steps.process-changelog.outputs.changelog_additions }}
 
-      - name: Commit Version and Changelog Changes
-        if: ${{ success() }}
-        uses: EndBug/add-and-commit@v7
-        with:
-          add: "version.properties CHANGELOG.md app/src/main/res/raw/changelog.xml"
-          message: "Bump ${{ env.BUMP_TYPE }} and update changelog for v${{ env.VERSION }}"
-          token: ${{ secrets.ACTIONS_PAT }}
-
       - name: Push Changes
+        if: ${{ success() }}
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
