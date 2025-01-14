@@ -14,6 +14,8 @@ on:
 jobs:
   determine-pr:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.ACTIONS_PAT }}
     outputs:
       pr_number: ${{ steps.check-pr.outputs.pr_number }}
       pr_body: ${{ steps.check-pr.outputs.pr_body }}
