@@ -19,7 +19,6 @@ jobs:
     outputs:
       pr_number: ${{ steps.check-pr.outputs.pr_number }}
       pr_body: ${{ steps.check-pr.outputs.pr_body }}
-    continue-on-error: true
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -38,7 +37,7 @@ jobs:
           if [ -z "$pr_number" ]; then
             echo "No PR associated with commit $commit_sha."
             echo "pr_number=" >> $GITHUB_OUTPUT
-            exit 78  # Neutral exit code
+            exit 0
           fi
 
           pr_body=$(gh api -X GET "repos/${{ github.repository }}/pulls/$pr_number" --jq '.body' | sed 's/\r//g')
