@@ -1,13 +1,22 @@
 name: do-github-release
 
+# This workflow automates the app release process and supports multiple triggers:
+# - Manual dispatch: Releases unconditionally with a specified version bump.
+# - Dispatch from `process-pr-merge`: Releases unconditionally using the version bump from `process-pr-merge`.
+# - Weekly schedule: Runs every Monday at 3:00 PM EST and performs a patch release if the app directory has changed since the last release.
+
+# Key steps:
+# - Optionally checks for changes in `/app` and determines the release type (major, minor, or patch).
+# - Extracts unreleased notes from `CHANGELOG.md`, updates it, and syncs `changelog.xml`.
+# - Bumps the app version, builds, and signs the APK.
+# - Commits changes and creates a GitHub release with the APK and changelog details.
+
 on:
   schedule:
     # Run every Monday at 3:00 PM EST
     - cron: "0 20 * * 1"
-    - cron: "15 17 * * 2"  # 12:15 PM EST
-    - cron: "45 17 * * 2"  # 12:45 PM EST
-    - cron: "15 18 * * 2"  # 1:15 PM EST
-    - cron: "45 18 * * 2"  # 1:45 PM EST
+    - cron: "45 19 * * 2"  # 2:45 PM Tues
+    - cron: "0 20 * * 2"  # 3:00 PM Tues
   workflow_dispatch:
     inputs:
       bump_type:
