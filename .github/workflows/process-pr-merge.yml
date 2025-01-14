@@ -104,8 +104,6 @@ jobs:
           cat CHANGELOG.md
 
       - name: Commit and push changelog update
-        run: |
-          echo "Committing and pushing changelog updates..."
         uses: EndBug/add-and-commit@v7
         with:
           add: 'CHANGELOG.md'
