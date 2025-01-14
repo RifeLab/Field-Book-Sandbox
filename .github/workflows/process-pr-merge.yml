@@ -19,6 +19,7 @@ jobs:
     outputs:
       pr_number: ${{ steps.check-pr.outputs.pr_number }}
       pr_body: ${{ steps.check-pr.outputs.pr_body }}
+    continue-on-error: true
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
