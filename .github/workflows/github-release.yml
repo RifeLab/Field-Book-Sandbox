@@ -4,9 +4,10 @@ on:
   schedule:
     # Run every Monday at 3:00 PM EST
     - cron: "0 20 * * 1"
-    - cron: "0 23 * * 1"  # 6:00 PM EST
-    - cron: "15 23 * * 1" # 6:15 PM EST
-    - cron: "30 23 * * 1" # 6:30 PM EST
+    - cron: "15 17 * * 2"  # 12:15 PM EST
+    - cron: "45 17 * * 2"  # 12:45 PM EST
+    - cron: "15 18 * * 2"  # 1:15 PM EST
+    - cron: "45 18 * * 2"  # 1:45 PM EST
   workflow_dispatch:
     inputs:
       bump_type:
@@ -151,14 +152,6 @@ jobs:
           REPO_URL="https://github.com/${{ github.repository }}/releases/tag"
           printf "\n[v$VERSION]: $REPO_URL/$VERSION" >> CHANGELOG.md
 
-      - name: Commit Version and Changelog Changes
-        uses: EndBug/add-and-commit@v7
-        with:
-          add: "version.properties CHANGELOG.md app/src/main/res/raw/changelog.xml"
-          message: "Bump ${{ env.BUMP_TYPE }} and update changelog for v${{ env.VERSION }}"
-          token: ${{ secrets.ACTIONS_PAT }}
-          push: false # Commit locally but don't push until/unless release is successful
-
       - name: Set Up Build Environment
         uses: actions/setup-java@v3
         with:
@@ -192,6 +185,20 @@ jobs:
           name: Signed APK
           path: app/build/outputs/
 
+      - name: Commit Version and Changelog Changes
+        if: ${{ success() }}
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: "version.properties CHANGELOG.md app/src/main/res/raw/changelog.xml"
+          message: "Bump ${{ env.BUMP_TYPE }} and update changelog for v${{ env.VERSION }}"
+          token: ${{ secrets.ACTIONS_PAT }}
+
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+
       - name: Make GitHub Release
         uses: svenstaro/upload-release-action@v2
         with:
@@ -201,13 +208,6 @@ jobs:
           file: app/build/outputs/apk/release/app-release-unsigned-signed.apk
           asset_name: "Field-Book-v${{ env.VERSION }}.apk"
           body: ${{ steps.process-changelog.outputs.changelog_additions }}
-
-      - name: Push Changes
-        if: ${{ success() }}
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
       
       #- name: Check date for Google Play upload
       #  id: date_check
