@@ -1,5 +1,11 @@
 <changelog>
 
+    <release date="2025-01-21" versionCode="10200" versionName="v1.2.0">
+        <info>test change 5</info>
+        <info>test change for release</info>
+        <bugfix>this is another fix release note</bugfix>
+    </release>
+
     <release date="2025-01-14" versionCode="10106" versionName="v1.1.6">
     </release>
 
