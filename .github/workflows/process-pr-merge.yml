@@ -76,7 +76,7 @@ jobs:
           echo "release_note=${release_note}" >> $GITHUB_OUTPUT
 
           # Determine change type
-          change_type=$(echo "$pr_body" | grep -oP '(?<=- \[x\] `)[A-Z]+(?=`)' | head -n 1)
+          change_type=$(echo "$pr_body" | grep -oP '(?<=- \[x\] \*\*`)[A-Z]+(?=`\*\*)' | head -n 1)
           echo "Change Type: $change_type"
           case "$change_type" in
             "ADDITION")
