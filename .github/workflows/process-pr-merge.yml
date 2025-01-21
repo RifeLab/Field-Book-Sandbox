@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: determine-pr
     outputs:
-      bump_type: ${{ steps.extract-bump.outputs.bump_type }}
+      bump_type: ${{ steps.extract-details.outputs.bump_type }}
     if: needs.determine-pr.outputs.pr_number != ''
     steps:
       - name: Checkout repository
