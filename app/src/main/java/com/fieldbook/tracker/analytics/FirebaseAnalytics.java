@@ -1,7 +1,7 @@
 package com.fieldbook.tracker.analytics;
 
 import android.os.Bundle;
-
+// test
 public class FirebaseAnalytics implements Analytics {
 
     private final com.google.firebase.analytics.FirebaseAnalytics firebaseAnalytics;
