@@ -8,7 +8,7 @@ import dagger.hilt.android.HiltAndroidApp;
 
 @HiltAndroidApp
 public class FieldBook extends MultiDexApplication {
-
+//test
     public FieldBook() {
         if (BuildConfig.DEBUG) {
             //StrictMode.enableDefaults();
