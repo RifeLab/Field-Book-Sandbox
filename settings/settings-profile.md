@@ -14,7 +14,7 @@ Profile
 #### <img class="icon" src="_static/icons/settings/profile/account.png"> Person
 
 Sets the first and last name of the person operating Field Book.
-This information is stored with each collected measurement as metadata and is included in the database <a href="export.md"><img style="vertical-align: middle;" src="_static/icons/home/save.png"></a> [Export](export.md) format.
+This information is stored with each collected measurement as metadata and is included in the database <img class="icon" src="_static/icons/home/save.png"> [Export](export.md) format.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/profile/settings_profile_set_person.png" width="325px"> 
