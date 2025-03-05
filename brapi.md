@@ -18,7 +18,7 @@ To use BrAPI, set the base URL to the URL of a valid BrAPI server and authorize 
 
 <figure class="image">
   <img src="_static/images/brapi/brapi_url_joined.png" width="700px" class="screenshot"> 
-  <figcaption><i>Example BrAPI URL authorization</i></figcaption> 
+  <figcaption class="screenshot-caption"><i>Example BrAPI URL authorization</i></figcaption> 
 </figure>
 
 Import fields
@@ -31,9 +31,9 @@ Field Book will then display a list of possible fields (known as `studies` in th
 The load time will depend on the status of the BrAPI cache.
 The fields list will take some time to retrieve when first accessed (or when the cache is refreshed), but will load much faster on subsequent imports.
 
-<figure align="center" class="image">
+<figure class="image">
   <img src="_static/images/brapi/brapi_field_import_joined.png" width="1100px" class="screenshot"> 
-  <figcaption><i>The BrAPI field import process</i></figcaption> 
+  <figcaption class="screenshot-caption"><i>The BrAPI field import process</i></figcaption> 
 </figure>
 
 Select one or more fields from the list to import by checking the checkbox on the right of the field item.
@@ -67,7 +67,7 @@ Then the BrAPI Display Name of the server you connected to will show up as the l
 
 <figure class="image">
   <img src="_static/images/brapi/brapi_trait_import_joined.png" width="1100px" class="screenshot"> 
-  <figcaption><i>The BrAPI trait import process</i></figcaption> 
+  <figcaption class="screenshot-caption"><i>The BrAPI trait import process</i></figcaption> 
 </figure>
 
 When you select this option Field Book will then display a list of possible traits (known as `observationVariables` in the BrAPI standard) from the BrAPI server.
@@ -92,7 +92,7 @@ Select the desired layout, edit any additional parameters as desired, then press
 
 <figure class="image">
   <img src="_static/images/brapi/brapi_trait_import_change_joined.png" width="1100px" class="screenshot"> 
-  <figcaption><i>Changing a trait's layout from text to categorical</i></figcaption> 
+  <figcaption class="screenshot-caption"><i>Changing a trait's layout from text to categorical</i></figcaption> 
 </figure>
 
 Once you are satisified with the traits, press the Import button at the bottom of the screen to save them for use in Field Book.
@@ -106,7 +106,7 @@ This option will not work for fields imported from a file.
 
 <figure class="image">
   <img src="_static/images/brapi/brapi_sync_joined.png" width="1100px" class="screenshot"> 
-  <figcaption><i>Downloading 25 observations from the BrAPI server using BrAPI sync</i></figcaption> 
+  <figcaption class="screenshot-caption"><i>Downloading 25 observations from the BrAPI server using BrAPI sync</i></figcaption> 
 </figure>
 
 Export data
@@ -120,7 +120,7 @@ The same statistics are displayed for images.
 
 <figure class="image">
   <img src="_static/images/brapi/brapi_export_process_joined.png" width="700px" class="screenshot"> 
-  <figcaption><i>The BrAPI data export process</i></figcaption> 
+  <figcaption class="screenshot-caption"><i>The BrAPI data export process</i></figcaption> 
 </figure>
 
 Pressing the **Export** button uploads the observations to the external BrAPI database.

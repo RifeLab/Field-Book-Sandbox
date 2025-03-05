@@ -19,9 +19,9 @@ The progress bar above them indicates progress through the entries.
 Data is entered in the bottom area of the screen using a layout determined by the current trait.
 Entered values turn from black to red once they have been saved to Field Book's internal database.
 
-<figure align="center" class="image">
-  <img src="_static/images/collect/collect_framed.png" width="350px"> 
-  <figcaption><i>Data collection screen</i></figcaption> 
+<figure class="image">
+  <img src="_static/images/collect/collect_framed.png" width="350px" class="screenshot"> 
+  <figcaption class="screenshot-caption"><i>Data collection screen</i></figcaption> 
 </figure>
 
 Collect Screen Details
@@ -31,16 +31,16 @@ Collect Screen Details
 
 By default there are four buttons at the top of the screen (in addtion to the back navigation arrow).
 
-<figure align="center" class="image">
-  <img src="_static/images/collect/collect_toolbar_highlight_framed.png" width="350px"> 
-  <figcaption><i>Collect screen with the top toolbar highlighted</i></figcaption> 
+<figure class="image">
+  <img src="_static/images/collect/collect_toolbar_highlight_framed.png" width="350px" class="screenshot"> 
+  <figcaption class="screenshot-caption"><i>Collect screen with the top toolbar highlighted</i></figcaption> 
 </figure>
 
 -   <img ref="search" style="vertical-align: middle;" src="_static/icons/collect/magnify.png" width="20px"> **Search** opens a dialog to search for a specific entry.
 
-<figure align="center" class="image">
-  <img src="_static/images/collect/collect_search_steps_joined.png" width="1100px"> 
-  <figcaption><i>The collect screen search tool</i></figcaption> 
+<figure class="image" class="screenshot">
+  <img src="_static/images/collect/collect_search_steps_joined.png" width="1100px" class="screenshot"> 
+  <figcaption class="screenshot-caption"><i>The collect screen search tool</i></figcaption> 
 </figure>
 
 The search dialog provides a flexible interface to search for specific entries.
@@ -56,9 +56,9 @@ Long press the icon to jump directly to the most recently loaded file, rather th
 
 - <img ref="summary" style="vertical-align: middle;" src="_static/icons/collect/file-document.png" width="20px"> **Summary** opens a dialog that displays all info for the current entry.
 
-<figure align="center" class="image">
-  <img src="_static/images/collect/collect_summary_joined.png" width="700px"> 
-  <figcaption><i>The collect screen summary tool</i></figcaption> 
+<figure class="image">
+  <img src="_static/images/collect/collect_summary_joined.png" width="700px" class="screenshot"> 
+  <figcaption class="screenshot-caption"><i>The collect screen summary tool</i></figcaption> 
 </figure>
 
 Summary shows detailed information for the current entry.
@@ -77,17 +77,17 @@ Default tools can be removed from the toolbar in <a href="settings-appearance.md
 
 #### InfoBars
 
-<figure align="center" class="image">
-  <img src="_static/images/collect/collect_infobars_section.png" width="325px"> 
-  <figcaption><i>The collect screen InfoBar section</i></figcaption> 
+<figure class="image">
+  <img src="_static/images/collect/collect_infobars_section.png" width="325px" class="screenshot"> 
+  <figcaption class="screenshot-caption"><i>The collect screen InfoBar section</i></figcaption> 
 </figure>
 
 InfoBars display information about the current plot.
 InfoBar prefixes can be pressed to adjust which data field is displayed.
 
-<figure align="center" class="image">
-  <img src="_static/images/collect/collect_infobar_joined.png" width="700px"> 
-  <figcaption><i>Customizing the infoBar section</i></figcaption> 
+<figure class="image">
+  <img src="_static/images/collect/collect_infobar_joined.png" width="700px" class="screenshot"> 
+  <figcaption class="screenshot-caption"><i>Customizing the infoBar section</i></figcaption> 
 </figure>
 
 An infobar can show one of the attributes imported with the field, or the value of a trait.
@@ -97,31 +97,31 @@ If an infobar's value gets cut off because it is too long to fit on one line you
 When word wrap in on, any long values for that infobar will automatically wrap to the next line.
 Longpress a wrapped infobar again to disable word wrap.
 
-<figure align="center" class="image">
-  <img src="_static/images/collect/collect_infobar_wordwrap_joined.png" width="700px"> 
-  <figcaption><i>Enabling word wrap for long pedigree strings</i></figcaption> 
+<figure class="image">
+  <img src="_static/images/collect/collect_infobar_wordwrap_joined.png" width="700px" class="screenshot"> 
+  <figcaption class="screenshot-caption"><i>Enabling word wrap for long pedigree strings</i></figcaption> 
 </figure>
 
 #### Trait navigation
 
-<figure align="center" class="image">
-  <img src="_static/images/collect/collect_trait_navigation_section.png" width="325px"> 
-  <figcaption><i>The collect screen trait navigation section</i></figcaption> 
+<figure class="image">
+  <img src="_static/images/collect/collect_trait_navigation_section.png" width="325px" class="screenshot"> 
+  <figcaption class="screenshot-caption"><i>The collect screen trait navigation section</i></figcaption> 
 </figure>
 
 The small, green arrows are used to move between the different traits that are currently active.
 Pressing the current trait will show a dialog of all currently active traits, select a different trait to jump to it.
 
-<figure align="center" class="image">
-  <img src="_static/images/collect/collect_trait_menu_framed.png" width="350px"> 
-  <figcaption><i>Pressing the active trait to see the trait dialog</i></figcaption> 
+<figure class="image">
+  <img src="_static/images/collect/collect_trait_menu_framed.png" width="350px" class="screenshot"> 
+  <figcaption class="screenshot-caption"><i>Pressing the active trait to see the trait dialog</i></figcaption> 
 </figure>
 
 #### Entry navigation
 
-<figure align="center" class="image">
-  <img src="_static/images/collect/collect_entry_navigation_section.png" width="325px"> 
-  <figcaption><i>The collect screen entry navigation section</i></figcaption> 
+<figure class="image">
+  <img src="_static/images/collect/collect_entry_navigation_section.png" width="325px" class="screenshot"> 
+  <figcaption class="screenshot-caption"><i>The collect screen entry navigation section</i></figcaption> 
 </figure>
 
 The large, black arrows navigate between different entries.
