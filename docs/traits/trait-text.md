@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/format-letter-matches.png"> Text Trait
-==================================================================================
+# <img class="icon-title" src="_static/icons/formats/format-letter-matches.png"> Text Trait
 
 The text trait format is used to record open-ended text.
 It is created with a trait name, optional default value, and trait details.

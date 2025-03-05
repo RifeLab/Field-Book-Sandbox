@@ -1,15 +1,13 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Sound Settings
-==============
+# Sound Settings
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/sounds/settings_sounds_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>Sound settings screen layout</i></figcaption> 
 </figure>
 
-Sounds
-------
+## Sounds
 
 #### <img class="icon" src="_static/icons/settings/sounds/numeric-1-box.png"> Change Primary Order
 
@@ -30,8 +28,7 @@ Useful for knowing when to move to the next entry.
 
 Makes a sound when a recorded value is deleted in the Collect screen.
 
-Text to Speech
---------------
+## Text to Speech
 
 #### <img class="icon" src="_static/icons/settings/sounds/microphone-message.png"> Text to Speech
 

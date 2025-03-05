@@ -1,15 +1,13 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Appearance Settings
-===================
+# Appearance Settings
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/appearance/settings_appearance_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>Appearance settings screen layout</i></figcaption> 
 </figure>
 
-Application
------------
+## Application
 
 #### <img class="icon" src="_static/icons/settings/appearance/palette.png"> Theme
 
@@ -29,8 +27,7 @@ Allows the user to change the Field Book language to one of 14 different options
   <figcaption class="screenshot-caption"><i>Language options</i></figcaption> 
 </figure>
 
-Collect Screen
---------------
+## Collect Screen
 
 #### <img class="icon" src="_static/icons/settings/appearance/server-minus.png"> Toolbar Actions
 

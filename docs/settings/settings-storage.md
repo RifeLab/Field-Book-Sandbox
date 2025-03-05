@@ -1,22 +1,19 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Storage Settings
-================
+# Storage Settings
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/storage/settings_storage_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>Storage settings screen layout</i></figcaption> 
 </figure>
 
-Storage
--------
+## Storage
 
 #### <img class="icon" src="_static/icons/settings/system/sd.png">  Define storage location
 
 Opens the <a href="#/storage">Storage</a> dialog to define or update the **Storage location** on the device.
 
-Database
---------
+## Database
 
 #### <img class="icon" src="_static/icons/settings/storage/database-import.png"> Import database
 

@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/close-circle.png"> Boolean Trait
-===============================================================================
+# <img class="icon-title" src="_static/icons/formats/close-circle.png"> Boolean Trait
 
 The Boolean trait format is used to record TRUE/FALSE values.
 It is created with a trait name, default value, and optional details.

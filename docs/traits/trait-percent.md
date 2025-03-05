@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/percent.png"> Percent Trait
-==========================================================================
+# <img class="icon-title" src="_static/icons/formats/percent.png"> Percent Trait
 
 The percent trait format is used to collect percentage-based phenotypes.
 In addition to the required trait name the default value, minimum, and maximum values can be adjusted.

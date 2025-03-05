@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/view-comfy.png"> Multicat Trait
-===============================================================================
+# <img class="icon-title" src="_static/icons/formats/view-comfy.png"> Multicat Trait
 
 The multicat trait format is used when trait values fall into a set of discrete categories.
 Categories are invidiually added in the `Categories` section of the create screen.

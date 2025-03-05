@@ -1,10 +1,8 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/satellite-variant.png"> GNSS Trait
-==============================================================================
+# <img class="icon-title" src="_static/icons/formats/satellite-variant.png"> GNSS Trait
 
-Overview
---------
+## Overview
 
 The GNSS trait format is used to acquire high-accuracy GPS coordinates from an external, Bluetooth-connected device.
 While other traits only capture phenotypic or observational data, the GNSS trait is intended to be used to capture metadata about the plot itself.
@@ -15,8 +13,7 @@ This metadata can be used in conjunction with the <img class="icon" src="_static
   <figcaption class="screenshot-caption"><i>GNSS trait creation dialog and collect format</i></figcaption> 
 </figure>
 
-Details
--------
+## Details
 
 When first navigating to a GNSS trait, the collect screen will show a <img class="icon" src="_static/icons/formats/satellite-variant.png"> button that will show a list of devices that can be accessed to provide a location for this trait.
 

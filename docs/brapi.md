@@ -1,17 +1,14 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-BrAPI (Breeding API)
-====================
+# BrAPI (Breeding API)
 
-Overview
---------
+## Overview
 
 BrAPI is an application programming interface for plant breeding.
 It allows Field Book to directly communicate with compatible databases to import fields and traits, and export collected data.
 This eliminates the need to manually transfer files and enables Field Book to offer more sophisticated features including field and trait metadata and data syncing.
 
-Setup
------
+## Setup
 
 BrAPI can be set up in the <img class="icon" src="_static/icons/settings/main/server-network.png"> [Brapi settings](settings-brapi.md).
 To use BrAPI, set the base URL to the URL of a valid BrAPI server and authorize it. Once authorized, Field Book will be able to communicate with the server to import fields and traits and export data.
@@ -21,8 +18,7 @@ To use BrAPI, set the base URL to the URL of a valid BrAPI server and authorize 
   <figcaption class="screenshot-caption"><i>Example BrAPI URL authorization</i></figcaption> 
 </figure>
 
-Import fields
--------------
+## Import fields
 
 To import a field using BrAPI, press the floating <img class="icon" src="_static/icons/fields/plus-circle.png"> button in the bottom righthand corner of the Fields activity.
 Then select BrAPI as the import source (The BrAPI import option will use the server display name set in BrAPI settings).
@@ -55,8 +51,7 @@ The fields (and any traits linked to them) will be saved for use in Field Book.
 !> Any field can be exported locally, but only fields that have been imported via BrAPI are able to export data via BrAPI.
 And only if that data is also collected using BrAPI-imported traits.
 
-Import traits
--------------
+## Import traits
 
 Depending on the BrAPI server, fields may have linked traits that are
 imported with the field.
@@ -97,8 +92,7 @@ Select the desired layout, edit any additional parameters as desired, then press
 
 Once you are satisified with the traits, press the Import button at the bottom of the screen to save them for use in Field Book.
 
-Sync
-----
+## Sync
 
 The <img class="icon" src="_static/icons/fields/sync.png"> BrAPI sync option is found on the field detail page of BrAPI fields.
 Sync connects to the server specified in <img class="icon" src="_static/icons/settings/main/server-network.png"> [Brapi settings](settings-brapi.md), updating the field with new data that has been added from other sources since the last sync or import.
@@ -109,8 +103,7 @@ This option will not work for fields imported from a file.
   <figcaption class="screenshot-caption"><i>Downloading 25 observations from the BrAPI server using BrAPI sync</i></figcaption> 
 </figure>
 
-Export data
------------
+## Export data
 
 Once data has been collected it can be exported via BrAPI by pressing **Export** and selecting BrAPI from the Export Data options.
 

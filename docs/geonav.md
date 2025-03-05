@@ -1,10 +1,8 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-GeoNav
-======
+# GeoNav
 
-Overview
---------
+## Overview
 
 GeoNav is used to automatically navigate between entries in the field based on the location of a high precision GNSS device.
 This feature requires field entries to have high-precision location data collected via the <img class="icon" src="_static/icons/formats/satellite-variant.png"> [GNSS Trait](trait-gnss.md) or included in the field import file.
@@ -37,16 +35,14 @@ Field Book will automatically switch to the nearest entry as the device moves ar
   <figcaption class="screenshot-caption"><i>The automatic geonavigation notification</i></figcaption> 
 </figure>
 
-Example
--------
+## Example
 
 <figure class="image">
   <img class="screenshot" src="_static/gifs/GeoNavDemo.gif" width="1100px"> 
   <figcaption class="screenshot-caption"><i>GeoNav automatic navigation demonstration</i></figcaption> 
 </figure>
 
-Recommendations
----------------
+## Recommendations
 
 This section provides the original hardware recommendations from when the Geonav feature was first developed in conjunction with the Breeding Insight OnRamp project.
 It also includes instructions for deploying the suggested devices to use the GeoNav feature in the field.

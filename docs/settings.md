@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Settings
-========
+# Settings
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/settings_framed.png" width="350px"> 

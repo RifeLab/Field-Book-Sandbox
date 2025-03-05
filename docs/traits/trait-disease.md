@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/bug.png"> Disease RatingTrait
-======================================================================
+# <img class="icon-title" src="_static/icons/formats/bug.png"> Disease Rating Trait
 
 The disease rating trait format is used for collecting ratings of both disease incidence and severity.
 It is created with a trait name and optional details.

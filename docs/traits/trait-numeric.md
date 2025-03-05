@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/numeric.png"> Numeric Trait
-==========================================================================
+# <img class="icon-title" src="_static/icons/formats/numeric.png"> Numeric Trait
 
 The numeric trait format is used for quantitative traits like yield and height.
 Value minimum and maximums help reduce erros during collection.

@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-BrAPI Settings
-==============
+# BrAPI Settings
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/brapi/settings_brapi_1_framed.png" width="350px"> 
@@ -13,8 +12,7 @@ BrAPI Settings
 Enable/Disable BrAPI throughout Field Book app.
 Disabling BrAPI hides all other BrAPI settings, and removes BrAPI as an option from imports and exports.
 
-Server
-------
+## Server
 
 #### <img class="icon" src="_static/icons/settings/brapi/link-plus.png"> BrAPI Base URL
 
@@ -34,8 +32,7 @@ Set the display name Field Book should use when referring to the BrAPI server.
   <figcaption class="screenshot-caption"><i>BrAPI Display Name setting</i></figcaption> 
 </figure>
 
-Authorization
--------------
+## Authorization
 
 #### <img class="icon" src="_static/icons/settings/brapi/alpha-v-box-outline.png"> OIDC Flow
 
@@ -59,8 +56,7 @@ The location of the OIDC discovery JSON document.
 
 Optional settings for when OIDC Client ID and Scope need to be specified.
 
-Advanced
---------
+## Advanced
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/brapi/settings_brapi_2_framed.png" width="350px"> 
@@ -113,8 +109,7 @@ Cache refreshes are important for field and trait imports to be able to capture 
   <figcaption class="screenshot-caption"><i>BrAPI cache invalidation</i></figcaption> 
 </figure>
 
-Preferences
------------
+## Preferences
 
 #### <img class="icon" src="_static/icons/settings/brapi/view-list-outline.png"> Value vs Label Display
 

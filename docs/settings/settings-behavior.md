@@ -1,15 +1,13 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Behavior Settings
-=================
+# Behavior Settings
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/behavior/settings_behavior_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>Behavior settings screen layout</i></figcaption> 
 </figure>
 
-Movement
---------
+## Movement
 
 #### <img class="icon" src="_static/icons/settings/behavior/repeat.png"> Auto-Advance Entry
 
@@ -41,8 +39,7 @@ When advancing entries, skips either entries that already have data for the acti
 
 Switches the location of the trait advancement section (small green arrows) and the entry advancement section (large black arrows).
 
-Hardware
---------
+## Hardware
 
 #### <img class="icon" src="_static/icons/settings/behavior/contrast-box.png"> Navigate With Volume Keys
 
@@ -58,8 +55,7 @@ Allows the user to choose the behavior of the carriage return signal that can be
   <figcaption class="screenshot-caption"><i>Choice of return key signal behavior</i></figcaption> 
 </figure>
 
-Data
-----
+## Data
 
 #### <img class="icon" src="_static/icons/settings/behavior/calendar-today.png"> Use Day Of Year
 

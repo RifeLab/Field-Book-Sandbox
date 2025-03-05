@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/calendar-range.png"> Date Trait
-===========================================================================
+# <img class="icon-title" src="_static/icons/formats/calendar-range.png"> Date Trait
 
 The date trait format is used to record dates.
 Details text is displayed under the trait name on the collect page.

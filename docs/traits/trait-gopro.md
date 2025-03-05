@@ -1,10 +1,8 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/camera-gopro.png"> GoPro Trait
-===========================================================================
+# <img class="icon-title" src="_static/icons/formats/camera-gopro.png"> GoPro Trait
 
-Overview
---------
+## Overview
 
 The GoPro trait format is used to capture images with an external, Bluetooth-connected GoPro camera.
 It is created with a trait name and optional details.
@@ -17,16 +15,14 @@ Captured photos are stored in `.jpg` format, and named by using underscores to j
 The resulting files are stored in a gopro folder within a field-specific subfolder of `plot_data`.
 An example photo filepath would be `plot_data/FIELD_NAME/gopro/PHOTO_FILE_NAME.jpg`.
 
-Creation
---------
+## Creation
 
 <figure class="image">
   <img class="screenshot" class="screenshot" src="_static/images/traits/formats/create_gopro.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>Gopro trait creation dialog</i></figcaption> 
 </figure>
 
-Collect layout
---------------
+## Collect layout
 
 <figure class="image">
   <img class="screenshot" class="screenshot" src="_static/images/traits/formats/collect_gopro_framed.png" width="350px"> 

@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/microphone.png"> Audio Trait
-=========================================================================
+# <img class="icon-title" src="_static/icons/formats/microphone.png"> Audio Trait
 
 The audio trait format is used to record audio. It is created with a trait name and optional details.
 
