@@ -1,7 +1,7 @@
-img {
+.screenshot {
     display: block;
     margin: auto;
   }
-figcaption {
+.screenshot-caption {
     text-align: center;
 }
