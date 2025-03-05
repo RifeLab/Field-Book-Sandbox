@@ -1,5 +1,3 @@
-About
-=====
 <head>
   <style>
     img {
@@ -11,6 +9,9 @@ About
     }
   </style>
 </head>
+
+About
+=====
 
 <figure class="image">
   <img src="_static/images/about/about_framed.png" width="350px""> 
