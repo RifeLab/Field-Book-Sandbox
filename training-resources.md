@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Training Resources
-==================
+# Training Resources
 
 In addition to this documentation, we have created training materials that can be used to introduce Field Book to breeders and technicians.
 These materials are also useful for bringing existing users up-to-speed with new features.

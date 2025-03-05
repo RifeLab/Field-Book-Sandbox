@@ -1,10 +1,8 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/printer.png"> Zebra Label Print Trait
-==================================================================================
+# <img class="icon-title" src="_static/icons/formats/printer.png"> Zebra Label Print Trait
 
-Overview
---------
+## Overview
 
 The Zebra Label print trait format is used to print labels from an external printer.
 The trait is designed to work with Zebra's [ZQ500 Series](https://www.zebra.com/us/en/products/printers/mobile/zq500.html) of ruggedized, mobile printers.
@@ -19,8 +17,7 @@ Pressing the print button will print the desired number of labels, each containi
   <figcaption class="screenshot-caption"><i>Zebra Label Print trait creation dialog and collect format</i></figcaption> 
 </figure>
 
-Troubleshooting
----------------
+## Troubleshooting
 
 Issues with label printing are often caused by incompatible Zebra mobile printer configurations.
 To troubleshoot, install the [Zebra Printer Setup Utility](<https://play.google.com/store/apps/details?id=com.zebra.printersetup>) and try the following steps:

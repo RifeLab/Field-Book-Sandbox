@@ -1,10 +1,8 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Export
-======
+# Export
 
-Overview
---------
+## Overview
 
 Collected data is exported to `.csv` files. The Export dialog allows the user to customize how collected data is exported.
 
@@ -13,8 +11,7 @@ Collected data is exported to `.csv` files. The Export dialog allows the user to
   <figcaption class="screenshot-caption"><i>Export dialog details</i></figcaption> 
 </figure>
 
-Options
--------
+## Options
 
 #### File Format
 

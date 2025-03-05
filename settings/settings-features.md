@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Features Settings
-=================
+# Features Settings
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/features/settings_features_framed.png" width="350px"> 
@@ -19,8 +18,7 @@ Press each circled item to proceed to the next, until the walkthrough finishes.
   <figcaption class="screenshot-caption"><i>A tutorial explanation on the Collect screen </i></figcaption> 
 </figure>
 
-Collect Toolbar
----------------
+## Collect Toolbar
 
 #### <img class="icon" src="_static/icons/settings/features/grid.png"> Datagrid
 

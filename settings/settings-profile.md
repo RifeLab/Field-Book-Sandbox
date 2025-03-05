@@ -1,15 +1,13 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Profile Settings
-================
+# Profile Settings
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/profile/settings_profile_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>Profile settings screen layout</i></figcaption> 
 </figure>
 
-Profile
--------
+## Profile
 
 #### <img class="icon" src="_static/icons/settings/profile/account.png"> Person
 

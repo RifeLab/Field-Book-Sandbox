@@ -1,10 +1,8 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Datagrid
-========
+# Datagrid
 
-Overview
---------
+## Overview
 
 DataGrid is accessed by pressing the <img class="icon" src="_static/icons/settings/features/grid.png"> icon in the toolbar.
 DataGrid displays a matrix of entries and traits in the active field.
@@ -16,8 +14,7 @@ Pressing an individual cell moves the collect screen directly to the correspondi
   <figcaption class="screenshot-caption"><i>The Datagrid tool, showing a grid of entries, traits, and collected values</i></figcaption> 
 </figure>
 
-Settings
---------
+## Settings
 
 The column used for the row header can be changed by pressing the <img class="icon" src="_static/icons/collect/view-split-vertical.png"> icon in the toolbar, then selecting a different attribute to use.
 

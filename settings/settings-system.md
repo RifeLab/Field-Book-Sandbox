@@ -1,15 +1,13 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-System Settings
-===============
+# System Settings
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/system/settings_system_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>System settings screen layout</i></figcaption> 
 </figure>
 
-Defaults
---------
+## Defaults
 
 #### <img class="icon" src="_static/icons/settings/system/application-import.png"> Import Source
 
@@ -33,15 +31,13 @@ Sets the default export location to one of the provided options so the app doesn
 
 Turns off the share dialog that opens by default when data is exported.
 
-Settings
---------
+## Settings
 
 #### <img class="icon" src="_static/icons/settings/system/refresh.png"> Reset Settings
 
 Returns all Field Book settings to defaults.
 
-Crashlytics
------------
+## Crashlytics
 
 #### <img class="icon" src="_static/icons/settings/profile/card-account-details-outline.png"> Unique ID
 

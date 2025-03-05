@@ -1,10 +1,8 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Collect
-=======
+# Collect
 
-Overview
---------
+## Overview
 
 Field Book aims to increase the rate at which data can be collected by tailoring the input screen to fit the exact task.
 Only a single entry and trait are visible at a time during collection.
@@ -24,8 +22,7 @@ Entered values turn from black to red once they have been saved to Field Book's 
   <figcaption class="screenshot-caption"><i>Data collection screen</i></figcaption> 
 </figure>
 
-Collect Screen Details
-----------------------
+## Collect Screen Details
 
 #### Top toolbar
 

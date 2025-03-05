@@ -1,15 +1,13 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Location Settings
-=================
+# Location Settings
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/location/settings_location_framed.png" width="350px"> 
   <figcaption><i>Location settings screen layout</i></figcaption> 
 </figure>
 
-GeoCoordinates
---------------
+## GeoCoordinates
 
 #### <img class="icon" src="_static/icons/formats/crosshairs-gps.png"> Location Provider
 
@@ -24,8 +22,7 @@ Set the method for collecting location while using Field Book. Can be at the lev
   <figcaption class="screenshot-caption"><i>Location collect options</i></figcaption> 
 </figure>
 
-Geonav
-------
+## Geonav
 
 #### <img class="icon" src="_static/icons/settings/location/map-search.png"> Enable Geonav
 

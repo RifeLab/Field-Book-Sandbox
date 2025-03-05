@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-About
-=====
+# About
 
 <figure class="image">
   <img class="screenshot" src="_static/images/about/about_framed.png" width="350px"> 

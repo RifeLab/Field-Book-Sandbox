@@ -1,10 +1,8 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Traits
-======
+# Traits
 
-Overview
---------
+## Overview
 
 Data is collected in Field Book by defining different traits.
 Each trait layout is optimized for a specific type of data collection.
@@ -15,8 +13,7 @@ The traits screen allows new traits to be defined and existing traits to be mana
   <figcaption class="screenshot-caption"><i>The Traits screen layout with sample data loaded</i></figcaption> 
 </figure>
 
-Creating a Trait
-----------------
+## Creating a Trait
 
 Traits can be created by pressing the large <img class="icon" src="_static/icons/traits/plus-circle.png"> icon at the bottom right of the screen.
 Select a format, then fill in the required fields in the format-specific dialog. Trait names must be unique.
@@ -27,8 +24,7 @@ Each trait has a `format`, a trait `name`, optional `details`, and format-depend
   <figcaption class="screenshot-caption"><i>Trait creation for a <a href="#/trait-numeric">Numeric</a> trait, and other format options</i></figcaption> 
 </figure>
 
-Managing Traits
----------------
+## Managing Traits
 
 Once created, traits can be manipulated using the following features:
 

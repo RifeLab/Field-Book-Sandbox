@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-<img class="icon-title" src="_static/icons/formats/crosshairs-gps.png"> Location Trait
-===================================================================================
+# <img class="icon-title" src="_static/icons/formats/crosshairs-gps.png"> Location Trait
 
 The location trait is used to record the GPS coordinates of the device.
 It is created with a trait name and optional details.

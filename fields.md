@@ -1,10 +1,8 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Fields
-======
+# Fields
 
-Overview
---------
+## Overview
 
 Experiments are represented in Field Book as `fields`.
 Fields are either imported from a file, from a BrAPI-enabled database, or created from scratch.
@@ -46,8 +44,7 @@ Field Book includes a set of sample field files.
 Samples `field_sample.csv`, `field_sample2.csv`, and `field_sample3.csv` represent typical wheat breeding fields, while `rtk_sample.csv` demonstrates the import format for entry location data (an additional `geo_coordinates` column).
 Imported entry coordinates can then be used with the <img class="icon" src="_static/icons/settings/main/map-search.png"> [Geonav](geonav.md) feature.
 
-Adding a field
---------------
+## Adding a field
 
 To add a new field in Field Book press the floating <img class="icon" src="_static/icons/fields/plus-circle.png"> button in the bottom righthand corner of the Fields section.
 Then, in the resulting dialog, select whether to import from a local file, from cloud storage (Dropbox, Google Drive, etc.), create a new field from scratch, or import via a <img class="icon" src="_static/icons/settings/main/server-network.png"> [Brapi](brapi.md) connection (if BrAPI is enabled).
@@ -108,8 +105,7 @@ Check out the [BrAPI](brapi.md) section of the documentation for details of the 
 !> Any field can be exported locally, but only fields that have been imported via BrAPI are able to export data via BrAPI.
 And only if that data is also collected using BrAPI-imported traits.
 
-Managing fields
----------------
+## Managing fields
 
 To set or switch your active field, press the import source icon on the left side of the field item.
 
@@ -140,8 +136,7 @@ Use the action menu icons to select all, export selected fields, or delete selec
 <img class="icon" src="_static/icons/fields/delete.png"> Deletes all selected fields. 
 A confirmation message will be shown first, to confirm the list of fields to be deleted.
 
-Field details
--------------
+## Field details
 
 Pressing a field item in the fields list opens a detail view for the field.
 

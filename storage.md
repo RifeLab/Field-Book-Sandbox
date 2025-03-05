@@ -1,10 +1,8 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Storage
-=======
+# Storage
 
-Setup
------
+# Setup
 
 One of the required steps when opening the app for the first time is to define the **Storage location** where Field Book app files will be written.
 This can be an existing folder, or a newly created one.
@@ -16,8 +14,7 @@ This can be an existing folder, or a newly created one.
 
 The selected **Storage location** can be changed in the <img class="icon" src="_static/icons/settings/main/database-cog.png"> [Storage Settings](settings-storage.md).
 
-Subfolders
-----------
+# Subfolders
 
 Fieldbook will create the following subfolders within the selected **Storage location** folder:
 
@@ -31,8 +28,7 @@ Fieldbook will create the following subfolders within the selected **Storage loc
 -   `geonav`: stores files created when using the geonav feature
 -   `updates`: stores .apk files downloaded for app updates
 
-File transfer
--------------
+# File transfer
 
 To add your own files to the appropriate subfolders you may need to manually transfer files from a computer.
 You can do this by connecting your Android device via a USB cable and changing its USB mode to allow file transfer.
@@ -43,8 +39,7 @@ Each device manufacturer has slight variations for the appearance of this dialog
   <figcaption class="screenshot-caption"><i>Example settings for USB file transfer</i></figcaption> 
 </figure>
 
-Database
---------
+# Database
 
 Field Book uses an internal SQLite database to store imported fields and traits, as well as all data collected with the app. The database schema is modelled after the Breeding API (BrAPI) standard, and is documented in the [Field Book Wiki](https://github.com/PhenoApps/Field-Book/wiki)
 

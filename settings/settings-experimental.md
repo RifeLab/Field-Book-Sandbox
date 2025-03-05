@@ -1,15 +1,13 @@
 <link rel="stylesheet" type="text/css" href="_styles/styles.css">
 
-Experimental Settings
-=====================
+# Experimental Settings
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/experimental/settings_experimental_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>Experimental settings screen layout</i></figcaption> 
 </figure>
 
-Stable
-------
+## Stable
 
 #### <img class="icon" src="_static/icons/settings/experimental/flask-outline.png"> Repeated Measures
 
@@ -26,8 +24,7 @@ When pressed it creates a new entry field for collecting an additional observati
 !> To export data that includes repeated measures make sure to choose the **Database** format or to use **BrAPI**. These formats allow repeated measures to be differentiated by timestamp.
 If exporting in **Table** format then only the latest measurement will be included.
 
-Beta
-----
+## Beta
 
 #### <img class="icon" src="_static/icons/settings/experimental/microphone-message.png"> Enable Field Audio
 
@@ -37,8 +34,7 @@ Adds icon to collect toolbar for recording audio at the field level.
 
 Changes the software library used for barcode scans from ZXing to MLKit.
 
-Alpha
------
+## Alpha
 
 #### <img class="icon" src="_static/icons/settings/experimental/server.png"> New BrAPI Import UI
 
