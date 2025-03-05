@@ -17,6 +17,5 @@ About
   <figcaption style=width:100%><i>The About screen</i></figcaption> 
 </figure>
 
-The About screen provides helpful information about Field Book including
-the version number and changelog. It also includes an update tool to
-check the availability of newer versions.
+The About screen provides helpful information about Field Book including the version number and changelog.
+It also includes an update tool to check the availability of newer versions.
