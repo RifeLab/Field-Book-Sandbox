@@ -3,8 +3,7 @@ Storage Settings
 
 <figure align="center" class="image">
   <img src="_static/images/settings/storage/settings_storage_framed.png" width="350px"> 
-  <figcaption><i>Storage settings screen
-layout</i></figcaption> 
+  <figcaption><i>Storage settings screen layout</i></figcaption> 
 </figure>
 
 Storage
@@ -19,8 +18,8 @@ Database
 
 #### <img ref="import" style="vertical-align: middle;" src="_static/icons/settings/storage/database-import.png" width="20px"> Import database
 
-Imports a database from an exported database file. This replaces the
-current data in the app.
+Imports a database from an exported database file.
+This replaces the current data in the app.
 
 <figure align="center" class="image">
   <img src="_static/images/settings/storage/settings_storage_database_import.png" width="325px"> 
@@ -29,8 +28,8 @@ current data in the app.
 
 #### <img ref="export" style="vertical-align: middle;" src="_static/icons/settings/storage/database-export.png" width="20px"> Export database
 
-Exports the internal database. Contact the development team if you need
-data recovered or are having issues and send the file that is exported.
+Exports the internal database.
+Contact the development team if you need data recovered or are having issues and send the file that is exported.
 
 <figure align="center" class="image">
   <img src="_static/images/settings/storage/settings_storage_database_export.png" width="325px"> 

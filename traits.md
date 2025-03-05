@@ -4,23 +4,21 @@ Traits
 Overview
 --------
 
-Data is collected in Field Book by defining different traits. Each trait
-layout is optimized for a specific type of data collection. The traits
-screen allows new traits to be defined and existing traits to be
-managed.
+Data is collected in Field Book by defining different traits.
+Each trait layout is optimized for a specific type of data collection.
+The traits screen allows new traits to be defined and existing traits to be managed.
 
 <figure align="center" class="image">
   <img src="_static/images/traits/traits_framed.png" width="350px"> 
-  <figcaption><i>The Traits screen layout with sample data
-loaded</i></figcaption> 
+  <figcaption><i>The Traits screen layout with sample data loaded</i></figcaption> 
 </figure>
 
 Creating a Trait
 ----------------
 
-Traits can be created by pressing the large <img ref="add" style="vertical-align: middle;" src="_static/icons/traits/plus-circle.png" width="20px"> icon at the
-bottom right of the screen. Select a format, then fill in the required fields in the format-specific dialog. Trait names must be unique. Each trait has a `format`, a trait `name`, optional `details`, and
-format-dependent fields such as `min`, `max`, and `default`.
+Traits can be created by pressing the large <img ref="add" style="vertical-align: middle;" src="_static/icons/traits/plus-circle.png" width="20px"> icon at the bottom right of the screen.
+Select a format, then fill in the required fields in the format-specific dialog. Trait names must be unique.
+Each trait has a `format`, a trait `name`, optional `details`, and format-dependent fields such as `min`, `max`, and `default`.
 
 <figure align="center" class="image">
   <img src="_static/images/traits/traits_create_joined.png" width="700px"> 
@@ -62,12 +60,14 @@ Once created, traits can be manipulated using the following features:
   <figcaption><i>All traits mangement menu</i></figcaption> 
 </figure>
 
-Trait imports and exports are similar to field imports/exports in that
-they rely on files stored in a dedicated folder (Local Storage), or on using the device file manager to select a trait file anywhere on the device, including from cloud utilities like Google Drive (Cloud Storage).
+Trait imports and exports are similar to field imports/exports in that they rely on files stored in a dedicated folder (Local Storage), or on using the device file manager to select a trait file anywhere on the device, including from cloud utilities like Google Drive (Cloud Storage).
 
-BrAPI imports are accessed separately, in the create trait workflow. First make sure BrAPI is enabled and configured in the <a href="settings-brapi.md"><img style="vertical-align: middle;" src="_static/icons/settings/main/server-network.png" width="20px"></a> [Brapi settings](settings-brapi.md)
+BrAPI imports are accessed separately, in the create trait workflow.
+First make sure BrAPI is enabled and configured in the <a href="settings-brapi.md"><img style="vertical-align: middle;" src="_static/icons/settings/main/server-network.png" width="20px"></a> [Brapi settings](settings-brapi.md)
 
-Then the BrAPI Display Name of the server you connected to will show up as the last format choice in the list when you press the create trait icon in the bottom right of the screen. Check out the <a href="brapi.md"></a> [BrAPI](brapi.md) section of the documentation for details of the trait import process, as well as field import, sync, and data export.
+Then the BrAPI Display Name of the server you connected to will show up as the last format choice in the list when you press the create trait icon in the bottom right of the screen.
+Check out the <a href="brapi.md"></a> [BrAPI](brapi.md) section of the documentation for details of the trait import process, as well as field import, sync, and data export.
 
 ?> When using local storage, trait lists are stored as `.trt` files in the
-`trait` folder. Technically `.trt` files are just `.csv` files with the extension renamed; exported `.trt` files can be opened as `.csv` if desired. However it is not recommended to manually edit and reimport these files, trait edits are best done within the application.
+`trait` folder. Technically `.trt` files are just `.csv` files with the extension renamed; exported `.trt` files can be opened as `.csv` if desired.
+However it is not recommended to manually edit and reimport these files, trait edits are best done within the application.

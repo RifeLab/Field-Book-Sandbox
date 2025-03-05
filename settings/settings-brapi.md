@@ -8,7 +8,8 @@ BrAPI Settings
 
 #### <img ref="url" style="vertical-align: middle;" src="_static/icons/settings/brapi/server-network.png" width="20px"> Enable BrAPI
 
-Enable/Disable BrAPI throughout Field Book app. Disabling BrAPI hides all other BrAPI settings, and removes BrAPI as an option from imports and exports.
+Enable/Disable BrAPI throughout Field Book app.
+Disabling BrAPI hides all other BrAPI settings, and removes BrAPI as an option from imports and exports.
 
 Server
 ------
@@ -66,8 +67,7 @@ Advanced
 
 #### <img ref="version" style="vertical-align: middle;" src="_static/icons/settings/brapi/alpha-v-box-outline.png" width="20px"> BrAPI Version
 
-Set the version of the BrAPI specification that will be used to
-communicate with the server. Defaults to V2.
+Set the version of the BrAPI specification that will be used to communicate with the server. Defaults to V2.
 
 <figure align="center" class="image">
   <img src="_static/images/settings/brapi/settings_brapi_version.png" width="325px"> 
@@ -94,8 +94,7 @@ Set the chunk size. Defaults to 500.
 
 #### <img ref="timeout" style="vertical-align: middle;" src="_static/icons/settings/brapi/timer-outline.png" width="20px"> Server Timeout
 
-Set the time limit in seconds to wait for a response from the server
-before timing out. Defaults to 2 minutes.
+Set the time limit in seconds to wait for a response from the server before timing out. Defaults to 2 minutes.
 
 <figure align="center" class="image">
   <img src="_static/images/settings/brapi/settings_brapi_server_timeout.png" width="325px"> 
@@ -104,7 +103,8 @@ before timing out. Defaults to 2 minutes.
 
 #### <img ref="timeout" style="vertical-align: middle;" src="_static/icons/settings/brapi/history.png" width="20px"> Cache Invalidation
 
-Set the interval for Field Book to invalidate/refresh cached BrAPI data. Cache refreshes are important for field and trait imports to be able to capture new data from the BrAPI server.
+Set the interval for Field Book to invalidate/refresh cached BrAPI data.
+Cache refreshes are important for field and trait imports to be able to capture new data from the BrAPI server.
 
 <figure align="center" class="image">
   <img src="_static/images/settings/brapi/settings_brapi_cache_invalidation.png" width="325px"> 
@@ -116,8 +116,7 @@ Preferences
 
 #### <img ref="display" style="vertical-align: middle;" src="_static/icons/settings/brapi/view-list-outline.png" width="20px"> Value vs Label Display
 
-Sets desired field for display when using a categorical trait the comes
-from a BrAPI Variable.
+Sets desired field for display when using a categorical trait the comes from a BrAPI Variable.
 
 <figure align="center" class="image">
   <img src="_static/images/settings/brapi/settings_brapi_value_label.png" width="325px"> 
