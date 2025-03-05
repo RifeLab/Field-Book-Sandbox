@@ -5,3 +5,7 @@
 .screenshot-caption {
     text-align: center;
 }
+.icon {
+  vertical-align: middle;
+  width: 20px;
+}
