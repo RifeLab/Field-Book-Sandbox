@@ -1,8 +1,8 @@
 <img ref="numeric" style="vertical-align: middle;" src="_static/icons/formats/numeric.png" width="40px"> Numeric Trait
 ==========================================================================
 
-The numeric trait format is used for quantitative traits like yield and
-height. Value minimum and maximums help reduce erros during collection.
+The numeric trait format is used for quantitative traits like yield and height.
+Value minimum and maximums help reduce erros during collection.
 Details text is displayed under the trait name on the collect page.
 
 <figure align="center" class="image">

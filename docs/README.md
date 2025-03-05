@@ -4,13 +4,10 @@ Field Book
 Introduction
 ------------
 
-Field Book is an open-source Android app that can be used to collect
-data on field research plots. When used in place of paper field books,
-it eliminates the need for data transcription and reduces the risk of
-errors. It runs on a wide range of inexpensive hardware, allowing
-consumer-grade technology to be used in environments where cost and
-inflexibility have been limiting factors. The source code for Field Book
-is available on [GitHub](https://github.com/PhenoApps/Field-Book).
+Field Book is an open-source Android app that can be used to collect data on field research plots.
+When used in place of paper field books, it eliminates the need for data transcription and reduces the risk of errors.
+It runs on a wide range of inexpensive hardware, allowing consumer-grade technology to be used in environments where cost and inflexibility have been limiting factors.
+The source code for Field Book is available on [GitHub](https://github.com/PhenoApps/Field-Book).
 
 <figure align="center" class="image">
   <img src="_static/images/collect/collect_framed.png" width="350px"> 
@@ -20,10 +17,7 @@ is available on [GitHub](https://github.com/PhenoApps/Field-Book).
 Getting Started
 ---------------
 
-Field Book can be downloaded from the [Google Play
-Store](https://play.google.com/store/apps/details?id=com.tracker.fieldbook)
-or can be installed manually from the latest [GitHub
-Release](https://github.com/PhenoApps/Field-Book/releases).
+Field Book can be downloaded from the [Google Play Store](https://play.google.com/store/apps/details?id=com.tracker.fieldbook) or can be installed manually from the latest [GitHub Release](https://github.com/PhenoApps/Field-Book/releases).
 
 Field Book will display a brief set of slides to introduce you to the app when you open it for the first time.
 
@@ -32,9 +26,12 @@ Field Book will display a brief set of slides to introduce you to the app when y
   <figcaption><i>Field Book intro slides</i></figcaption> 
 </figure>
 
-During this intro you must set choices for the required permissions, and choose a storage location for app files. You also have the option to enable a tutorial and/or load a set of three sample fields and sample traits. The images in this documentation will make use of this sample data.
+During this intro you must set choices for the required permissions, and choose a storage location for app files.
+You also have the option to enable a tutorial and/or load a set of three sample fields and sample traits.
+The images in this documentation will make use of this sample data.
 
-When the intro finishes, Field Book will open to its home screen. This screen is divided into sections that can be pressed to access each of the major functions of the app.
+When the intro finishes, Field Book will open to its home screen.
+This screen is divided into sections that can be pressed to access each of the major functions of the app.
 
 <figure align="center" class="image">
   <img src="_static/images/home_framed.png" width="350px"> 
@@ -54,5 +51,4 @@ Navigate between these to:
 
 In addition to these main functions you can customize Field Book <a href="settings.md"><img style="vertical-align: middle;" src="_static/icons/home/cog.png" width="20px"></a> [Settings](settings.md), view summaries of your usage <a href="statistics.md"><img style="vertical-align: middle;" src="_static/icons/home/chart-bar.png" width="20px"></a>[Statistics](statistics.md), or learn more about the app in the <a href="about.md"><img style="vertical-align: middle;" src="_static/icons/home/information.png" width="20px"></a>[About](about.md) section at any time.
 
-The <img ref="changelog" style="vertical-align: middle;" src="_static/icons/home/history.png" width="20px"> Changelog can be accessed from the top toolbar to see new features and
-additions to the app.
+The <img ref="changelog" style="vertical-align: middle;" src="_static/icons/home/history.png" width="20px"> Changelog can be accessed from the top toolbar to see new features and additions to the app.
