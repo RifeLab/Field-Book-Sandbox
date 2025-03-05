@@ -16,8 +16,8 @@ Setup
 BrAPI can be set up in the <a href="settings-brapi.md"><img style="vertical-align: middle;" src="_static/icons/settings/main/server-network.png" width="20px"></a> [Brapi settings](settings-brapi.md).
 To use BrAPI, set the base URL to the URL of a valid BrAPI server and authorize it. Once authorized, Field Book will be able to communicate with the server to import fields and traits and export data.
 
-<figure align="center" class="image">
-  <img src="_static/images/brapi/brapi_url_joined.png" width="700px"> 
+<figure class="image">
+  <img src="_static/images/brapi/brapi_url_joined.png" width="700px" class="screenshot"> 
   <figcaption><i>Example BrAPI URL authorization</i></figcaption> 
 </figure>
 
@@ -32,7 +32,7 @@ The load time will depend on the status of the BrAPI cache.
 The fields list will take some time to retrieve when first accessed (or when the cache is refreshed), but will load much faster on subsequent imports.
 
 <figure align="center" class="image">
-  <img src="_static/images/brapi/brapi_field_import_joined.png" width="1100px"> 
+  <img src="_static/images/brapi/brapi_field_import_joined.png" width="1100px" class="screenshot"> 
   <figcaption><i>The BrAPI field import process</i></figcaption> 
 </figure>
 
@@ -65,8 +65,8 @@ First make sure BrAPI is enabled and configured in the <a href="settings-brapi.m
 
 Then the BrAPI Display Name of the server you connected to will show up as the last format choice in the list when you press the press the floating <img ref="add" style="vertical-align: middle;" src="_static/icons/fields/plus-circle.png" width="20px"> button in the bottom right of the Traits screen.
 
-<figure align="center" class="image">
-  <img src="_static/images/brapi/brapi_trait_import_joined.png" width="1100px"> 
+<figure class="image">
+  <img src="_static/images/brapi/brapi_trait_import_joined.png" width="1100px" class="screenshot"> 
   <figcaption><i>The BrAPI trait import process</i></figcaption> 
 </figure>
 
@@ -90,8 +90,8 @@ Press a trait item to open the trait parameters.
 Press back to access the different trait layout options.
 Select the desired layout, edit any additional parameters as desired, then press save.
 
-<figure align="center" class="image">
-  <img src="_static/images/brapi/brapi_trait_import_change_joined.png" width="1100px"> 
+<figure class="image">
+  <img src="_static/images/brapi/brapi_trait_import_change_joined.png" width="1100px" class="screenshot"> 
   <figcaption><i>Changing a trait's layout from text to categorical</i></figcaption> 
 </figure>
 
@@ -104,8 +104,8 @@ The <img ref="add" style="vertical-align: middle;" src="_static/icons/fields/syn
 Sync connects to the server specified in <a href="settings-brapi.md"><img style="vertical-align: middle;" src="_static/icons/settings/main/server-network.png" width="20px"></a> [Brapi settings](settings-brapi.md), updating the field with new data that has been added from other sources since the last sync or import.
 This option will not work for fields imported from a file.
 
-<figure align="center" class="image">
-  <img src="_static/images/brapi/brapi_sync_joined.png" width="1100px"> 
+<figure class="image">
+  <img src="_static/images/brapi/brapi_sync_joined.png" width="1100px" class="screenshot"> 
   <figcaption><i>Downloading 25 observations from the BrAPI server using BrAPI sync</i></figcaption> 
 </figure>
 
@@ -118,8 +118,8 @@ Before the export is finalized, Field Book will display a summary of BrAPI Expor
 These include a breakdown of the number of new vs synced(imported) vs edited observations, as well as skipped observations.
 The same statistics are displayed for images.
 
-<figure align="center" class="image">
-  <img src="_static/images/brapi/brapi_export_process_joined.png" width="700px"> 
+<figure class="image">
+  <img src="_static/images/brapi/brapi_export_process_joined.png" width="700px" class="screenshot"> 
   <figcaption><i>The BrAPI data export process</i></figcaption> 
 </figure>
 
