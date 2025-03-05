@@ -1,46 +1,48 @@
+<link rel="stylesheet" type="text/css" href="_styles/styles.css">
+
 Storage Settings
 ================
 
-<figure align="center" class="image">
-  <img src="_static/images/settings/storage/settings_storage_framed.png" width="350px"> 
-  <figcaption><i>Storage settings screen layout</i></figcaption> 
+<figure class="image">
+  <img class="screenshot" src="_static/images/settings/storage/settings_storage_framed.png" width="350px"> 
+  <figcaption class="screenshot-caption"><i>Storage settings screen layout</i></figcaption> 
 </figure>
 
 Storage
 -------
 
-#### <img ref="sd" style="vertical-align: middle;" src="_static/icons/settings/system/sd.png" width="20px">  Define storage location
+#### <img class="icon" src="_static/icons/settings/system/sd.png">  Define storage location
 
 Opens the <a href="#/storage">Storage</a> dialog to define or update the **Storage location** on the device.
 
 Database
 --------
 
-#### <img ref="import" style="vertical-align: middle;" src="_static/icons/settings/storage/database-import.png" width="20px"> Import database
+#### <img class="icon" src="_static/icons/settings/storage/database-import.png"> Import database
 
 Imports a database from an exported database file.
 This replaces the current data in the app.
 
-<figure align="center" class="image">
-  <img src="_static/images/settings/storage/settings_storage_database_import.png" width="325px"> 
-  <figcaption><i>Database import dialog</i></figcaption> 
+<figure class="image">
+  <img class="screenshot" src="_static/images/settings/storage/settings_storage_database_import.png" width="325px"> 
+  <figcaption class="screenshot-caption"><i>Database import dialog</i></figcaption> 
 </figure>
 
-#### <img ref="export" style="vertical-align: middle;" src="_static/icons/settings/storage/database-export.png" width="20px"> Export database
+#### <img class="icon" src="_static/icons/settings/storage/database-export.png"> Export database
 
 Exports the internal database.
 Contact the development team if you need data recovered or are having issues and send the file that is exported.
 
-<figure align="center" class="image">
-  <img src="_static/images/settings/storage/settings_storage_database_export.png" width="325px"> 
-  <figcaption><i>Database export dialog</i></figcaption> 
+<figure class="image">
+  <img class="screenshot" src="_static/images/settings/storage/settings_storage_database_export.png" width="325px"> 
+  <figcaption class="screenshot-caption"><i>Database export dialog</i></figcaption> 
 </figure>
 
-#### <img ref="remove" style="vertical-align: middle;" src="_static/icons/settings/storage/database-remove.png" width="20px"> Delete database
+#### <img class="icon" src="_static/icons/settings/storage/database-remove.png"> Delete database
 
 Wipes all data from the app.
 
-<figure align="center" class="image">
-  <img src="_static/images/settings/storage/settings_storage_database_delete.png" width="325px"> 
-  <figcaption><i>Database delete confirmation</i></figcaption> 
+<figure class="image">
+  <img class="screenshot" src="_static/images/settings/storage/settings_storage_database_delete.png" width="325px"> 
+  <figcaption class="screenshot-caption"><i>Database delete confirmation</i></figcaption> 
 </figure>

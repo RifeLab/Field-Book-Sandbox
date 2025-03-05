@@ -1,4 +1,6 @@
-<img ref="print" style="vertical-align: middle;" src="_static/icons/formats/printer.png" width="40px"> Zebra Label Print Trait
+<link rel="stylesheet" type="text/css" href="_styles/styles.css">
+
+<img class="icon-title" src="_static/icons/formats/printer.png"> Zebra Label Print Trait
 ==================================================================================
 
 Overview
@@ -12,9 +14,9 @@ To use this trait, the Zebra printer must first be paired via Bluetooth.
 Label size, barcode, specific data, and number of copies are selected and are saved as defaults.
 Pressing the print button will print the desired number of labels, each containing a barcode and ID for the specific entry, along with any additional selected data.
 
-<figure align="center" class="image">
-  <img src="_static/images/traits/formats/zebra_format_joined.png" width="700px"> 
-  <figcaption><i>Zebra Label Print trait creation dialog and collect format</i></figcaption> 
+<figure class="image">
+  <img class="screenshot" src="_static/images/traits/formats/zebra_format_joined.png" width="700px"> 
+  <figcaption class="screenshot-caption"><i>Zebra Label Print trait creation dialog and collect format</i></figcaption> 
 </figure>
 
 Troubleshooting

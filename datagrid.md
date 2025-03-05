@@ -12,7 +12,7 @@ This view allows rapid identification of missing values.
 Pressing an individual cell moves the collect screen directly to the corresponding entry and trait.
 
 <figure class="image">
-  <img src="_static/images/datagrid/datagrid_view_framed.png" width="350px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/datagrid/datagrid_view_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>The Datagrid tool, showing a grid of entries, traits, and collected values</i></figcaption> 
 </figure>
 
@@ -22,6 +22,6 @@ Settings
 The column used for the row header can be changed by pressing the <img class="icon" src="_static/icons/collect/view-split-vertical.png"> icon in the toolbar, then selecting a different attribute to use.
 
 <figure class="image">
-  <img src="_static/images/datagrid/datagrid_edit_rows_joined.png" width="1100px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/datagrid/datagrid_edit_rows_joined.png" width="1100px"> 
   <figcaption class="screenshot-caption"><i>Changing the row header from plot_id to plot</i></figcaption> 
 </figure>

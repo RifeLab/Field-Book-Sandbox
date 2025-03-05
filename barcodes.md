@@ -17,21 +17,21 @@ Barcoded height sticks can be used to rapidly capture plot height values.
 Attaching the Android device to the stick makes it possible to accurately capture height without having to hold both the height stick and the device.
 
 <figure class="image">
-  <img src="_static/images/barcodes/barcodes_plant_height.png" width="350px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/barcodes/barcodes_plant_height.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>Plant height measurement via barcoded height stick</i></figcaption> 
 </figure>
 
 #### Leaf length
 
 <figure class="image">
-  <img src="_static/images/barcodes/barcodes_leaf_length.png" width="900px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/barcodes/barcodes_leaf_length.png" width="900px"> 
   <figcaption class="screenshot-caption"><i>Example leaf length collection via length barcodes</i></figcaption> 
 </figure>
 
 #### Leaf angle
 
 <figure class="image">
-  <img src="_static/images/barcodes/barcodes_leaf_angle.png" width="600px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/barcodes/barcodes_leaf_angle.png" width="600px"> 
   <figcaption class="screenshot-caption"><i>Example leaf angle barcodes</i></figcaption> 
 </figure>
 

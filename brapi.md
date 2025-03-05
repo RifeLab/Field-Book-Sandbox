@@ -13,7 +13,7 @@ This eliminates the need to manually transfer files and enables Field Book to of
 Setup
 -----
 
-BrAPI can be set up in the <a href="settings-brapi.md"><img style="vertical-align: middle;" src="_static/icons/settings/main/server-network.png" width="20px"></a> [Brapi settings](settings-brapi.md).
+BrAPI can be set up in the <img class="icon" src="_static/icons/settings/main/server-network.png"> [Brapi settings](settings-brapi.md).
 To use BrAPI, set the base URL to the URL of a valid BrAPI server and authorize it. Once authorized, Field Book will be able to communicate with the server to import fields and traits and export data.
 
 <figure class="image">
@@ -24,7 +24,7 @@ To use BrAPI, set the base URL to the URL of a valid BrAPI server and authorize 
 Import fields
 -------------
 
-To import a field using BrAPI, press the floating <img ref="add" style="vertical-align: middle;" src="_static/icons/fields/plus-circle.png" width="20px"> button in the bottom righthand corner of the Fields activity.
+To import a field using BrAPI, press the floating <img class="icon" src="_static/icons/fields/plus-circle.png"> button in the bottom righthand corner of the Fields activity.
 Then select BrAPI as the import source (The BrAPI import option will use the server display name set in BrAPI settings).
 
 Field Book will then display a list of possible fields (known as `studies` in the BrAPI standard) from the BrAPI server.
@@ -38,11 +38,11 @@ The fields list will take some time to retrieve when first accessed (or when the
 
 Select one or more fields from the list to import by checking the checkbox on the right of the field item.
 Available fields can be filtered by typing a search string into the search bar.
-They can also be filtered by program, season, trial or crop by pressing the <img ref="add" style="vertical-align: middle;" src="_static/icons/settings/brapi/filter-variant.png" width="20px"> icon in the top toolbar.
+They can also be filtered by program, season, trial or crop by pressing the <img class="icon" src="_static/icons/settings/brapi/filter-variant.png"> icon in the top toolbar.
 
-The count of selected fields is tracked and displayed over top of the <img ref="add" style="vertical-align: middle;" src="_static/icons/settings/brapi/tray-remove.png" width="20px"> icon in the toolbar.
+The count of selected fields is tracked and displayed over top of the <img class="icon" src="_static/icons/settings/brapi/tray-remove.png"> icon in the toolbar.
 Press this icon to clear your selections.
-If you do not find the field you are looking for but know that it is available on the server then use the <img ref="add" style="vertical-align: middle;" src="_static/icons/settings/brapi/dots-vertical.png" width="20px"> icon in the toolbar to reset the cache.
+If you do not find the field you are looking for but know that it is available on the server then use the <img class="icon" src="_static/icons/settings/brapi/dots-vertical.png"> icon in the toolbar to reset the cache.
 
 Once you are satisfied with your selections press the import button on the bottom of the screen.
 
@@ -61,9 +61,9 @@ Import traits
 Depending on the BrAPI server, fields may have linked traits that are
 imported with the field.
 Additional traits can be imported via BrAPI in the Traits activity.
-First make sure BrAPI is enabled and configured in the <a href="settings-brapi.md"><img style="vertical-align: middle;" src="_static/icons/settings/main/server-network.png" width="20px"></a> [Brapi settings](settings-brapi.md)
+First make sure BrAPI is enabled and configured in the <img class="icon" src="_static/icons/settings/main/server-network.png"> [Brapi settings](settings-brapi.md)
 
-Then the BrAPI Display Name of the server you connected to will show up as the last format choice in the list when you press the press the floating <img ref="add" style="vertical-align: middle;" src="_static/icons/fields/plus-circle.png" width="20px"> button in the bottom right of the Traits screen.
+Then the BrAPI Display Name of the server you connected to will show up as the last format choice in the list when you press the press the floating <img class="icon" src="_static/icons/fields/plus-circle.png"> button in the bottom right of the Traits screen.
 
 <figure class="image">
   <img src="_static/images/brapi/brapi_trait_import_joined.png" width="1100px" class="screenshot"> 
@@ -77,11 +77,11 @@ The traits list will take some time to retrieve when first accessed (or when the
 
 Select one or more traits from the list to import by checking the checkbox on the right of the trait item.
 Available traits can be filtered by typing a search string into the search bar.
-They can also be filtered by trial, study or crop by pressing the <img ref="add" style="vertical-align: middle;" src="_static/icons/settings/brapi/filter-variant.png" width="20px"> icon in the top toolbar.
+They can also be filtered by trial, study or crop by pressing the <img class="icon" src="_static/icons/settings/brapi/filter-variant.png"> icon in the top toolbar.
 
-The count of selected traits is tracked and displayed over top of the <img ref="add" style="vertical-align: middle;" src="_static/icons/settings/brapi/tray-remove.png" width="20px"> icon in the toolbar.
+The count of selected traits is tracked and displayed over top of the <img class="icon" src="_static/icons/settings/brapi/tray-remove.png"> icon in the toolbar.
 Press this icon to clear your selections.
-If you do not find the trait you are looking for but know that it is available on the server then use the <img ref="add" style="vertical-align: middle;" src="_static/icons/settings/brapi/dots-vertical.png" width="20px"> icon in the toolbar to reset the cache.
+If you do not find the trait you are looking for but know that it is available on the server then use the <img class="icon" src="_static/icons/settings/brapi/dots-vertical.png"> icon in the toolbar to reset the cache.
 
 When you are finished with your selections press the import button on the bottom of the screen.
 
@@ -100,8 +100,8 @@ Once you are satisified with the traits, press the Import button at the bottom o
 Sync
 ----
 
-The <img ref="add" style="vertical-align: middle;" src="_static/icons/fields/sync.png" width="20px"> BrAPI sync option is found on the field detail page of BrAPI fields.
-Sync connects to the server specified in <a href="settings-brapi.md"><img style="vertical-align: middle;" src="_static/icons/settings/main/server-network.png" width="20px"></a> [Brapi settings](settings-brapi.md), updating the field with new data that has been added from other sources since the last sync or import.
+The <img class="icon" src="_static/icons/fields/sync.png"> BrAPI sync option is found on the field detail page of BrAPI fields.
+Sync connects to the server specified in <img class="icon" src="_static/icons/settings/main/server-network.png"> [Brapi settings](settings-brapi.md), updating the field with new data that has been added from other sources since the last sync or import.
 This option will not work for fields imported from a file.
 
 <figure class="image">
