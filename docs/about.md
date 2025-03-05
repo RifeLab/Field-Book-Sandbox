@@ -4,7 +4,7 @@ About
 =====
 
 <figure class="image">
-  <img src="_static/images/about/about_framed.png" width="350px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/about/about_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>The About screen</i></figcaption> 
 </figure>
 

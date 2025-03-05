@@ -20,7 +20,7 @@ Data is entered in the bottom area of the screen using a layout determined by th
 Entered values turn from black to red once they have been saved to Field Book's internal database.
 
 <figure class="image">
-  <img src="_static/images/collect/collect_framed.png" width="350px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/collect/collect_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>Data collection screen</i></figcaption> 
 </figure>
 
@@ -32,32 +32,32 @@ Collect Screen Details
 By default there are four buttons at the top of the screen (in addtion to the back navigation arrow).
 
 <figure class="image">
-  <img src="_static/images/collect/collect_toolbar_highlight_framed.png" width="350px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/collect/collect_toolbar_highlight_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>Collect screen with the top toolbar highlighted</i></figcaption> 
 </figure>
 
--   <img ref="search" style="vertical-align: middle;" src="_static/icons/collect/magnify.png" width="20px"> **Search** opens a dialog to search for a specific entry.
+-   <img class="icon" src="_static/icons/collect/magnify.png"> **Search** opens a dialog to search for a specific entry.
 
 <figure class="image" class="screenshot">
-  <img src="_static/images/collect/collect_search_steps_joined.png" width="1100px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/collect/collect_search_steps_joined.png" width="1100px"> 
   <figcaption class="screenshot-caption"><i>The collect screen search tool</i></figcaption> 
 </figure>
 
 The search dialog provides a flexible interface to search for specific entries.
-Populate the search menu by pressing the <img ref="plus" style="vertical-align: middle;" src="_static/icons/fields/plus.png" width="20px"> icon, and selecting from the list of attributes, traits, or other columns.
+Populate the search menu by pressing the <img class="icon" src="_static/icons/fields/plus.png"> icon, and selecting from the list of attributes, traits, or other columns.
 Once a search column is added you can enter a search string on it's blank text entry line.
-Press the <img ref="sort" style="vertical-align: middle;" src="_static/icons/collect/equal-box.png" width="20px"> icon if you'd like to change the operator from "equals" to "contains", or numeric operators like ">" or "<".
-Press the <img ref="delete" style="vertical-align: middle;" src="_static/icons/settings/sounds/delete.png" width="20px"> icon to remove a column.
+Press the <img class="icon" src="_static/icons/collect/equal-box.png"> icon if you'd like to change the operator from "equals" to "contains", or numeric operators like ">" or "<".
+Press the <img class="icon" src="_static/icons/settings/sounds/delete.png"> icon to remove a column.
 Add as many search columns as you like, then press search.
 The search will return a table of matching results, press any line in the results table to jump to that entry.
 
-- <img ref="resources" style="vertical-align: middle;" src="_static/icons/collect/folder-star.png" width="20px"> **Resources** opens the `resources` folder and can be used to load reference images.
+- <img class="icon" src="_static/icons/collect/folder-star.png"> **Resources** opens the `resources` folder and can be used to load reference images.
 Long press the icon to jump directly to the most recently loaded file, rather than the file picker.
 
-- <img ref="summary" style="vertical-align: middle;" src="_static/icons/collect/file-document.png" width="20px"> **Summary** opens a dialog that displays all info for the current entry.
+- <img class="icon" src="_static/icons/collect/file-document.png"> **Summary** opens a dialog that displays all info for the current entry.
 
 <figure class="image">
-  <img src="_static/images/collect/collect_summary_joined.png" width="700px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/collect/collect_summary_joined.png" width="700px"> 
   <figcaption class="screenshot-caption"><i>The collect screen summary tool</i></figcaption> 
 </figure>
 
@@ -67,18 +67,18 @@ By default the summary shows all of the imported data fields from the field file
 Pressing the edit icon in the top toolbar opens a dialog to customize which data fields and traits are shown.
 Selecting a trait from the summary screen navigates to that trait.
 
-<img ref="unlocked" style="vertical-align: middle;" src="_static/icons/collect/lock-open-outline.png" width="20px"> **Lock** adds restrictions on data input to prevent accidental changes. Pressing the icon multiple times will cycle through three states:
--   <img ref="unlocked" style="vertical-align: middle;" src="_static/icons/collect/lock-open-outline.png" width="20px"> **Unlocked** is the default, unfrozen state that allows trait values to be entered, edited, or deleted.
--   <img ref="locked" style="vertical-align: middle;" src="_static/icons/collect/lock.png" width="20px"> **Locked** freezes the collect input so no values can be entered, modified, or deleted.
--   <img ref="partial" style="vertical-align: middle;" src="_static/icons/collect/lock-clock.png" width="20px"> **Limited** freezes existing data but allows entry of new values.
+<img class="icon"  src="_static/icons/collect/lock-open-outline.png"> **Lock** adds restrictions on data input to prevent accidental changes. Pressing the icon multiple times will cycle through three states:
+-   <img class="icon" src="_static/icons/collect/lock-open-outline.png"> **Unlocked** is the default, unfrozen state that allows trait values to be entered, edited, or deleted.
+-   <img class="icon" src="_static/icons/collect/lock.png"> **Locked** freezes the collect input so no values can be entered, modified, or deleted.
+-   <img class="icon" src="_static/icons/collect/lock-clock.png"> **Limited** freezes existing data but allows entry of new values.
 
-More tools can be added to the toolbar in the <a href="settings-features.md"><img style="vertical-align: middle;" src="_static/icons/settings/main/star-circle-outline.png" width="20px"></a> [Features Settings](settings-features.md).
-Default tools can be removed from the toolbar in <a href="settings-appearance.md"><img style="vertical-align: middle;" src="_static/icons/settings/appearance/view-grid-outline.png" width="20px"></a> [Appearance Settings](settings-appearance.md).
+More tools can be added to the toolbar in the <img class="icon" src="_static/icons/settings/main/star-circle-outline.png"> [Features Settings](settings-features.md).
+Default tools can be removed from the toolbar in <img class="icon" src="_static/icons/settings/appearance/view-grid-outline.png"> [Appearance Settings](settings-appearance.md).
 
 #### InfoBars
 
 <figure class="image">
-  <img src="_static/images/collect/collect_infobars_section.png" width="325px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/collect/collect_infobars_section.png" width="325px"> 
   <figcaption class="screenshot-caption"><i>The collect screen InfoBar section</i></figcaption> 
 </figure>
 
@@ -86,26 +86,26 @@ InfoBars display information about the current plot.
 InfoBar prefixes can be pressed to adjust which data field is displayed.
 
 <figure class="image">
-  <img src="_static/images/collect/collect_infobar_joined.png" width="700px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/collect/collect_infobar_joined.png" width="700px" class="screenshot"> 
   <figcaption class="screenshot-caption"><i>Customizing the infoBar section</i></figcaption> 
 </figure>
 
 An infobar can show one of the attributes imported with the field, or the value of a trait.
-The number of infobars can also be changed by pressing "customize" in the bottom left of the dialog, this navigates the the "numnber of infobars" preference in the <a href="settings-appearance.md"><img style="vertical-align: middle;" src="_static/icons/settings/appearance/view-grid-outline.png" width="20px"></a> [Appearance Settings](settings-appearance.md).
+The number of infobars can also be changed by pressing "customize" in the bottom left of the dialog, this navigates the the "numnber of infobars" preference in the <img class="icon" src="_static/icons/settings/appearance/view-grid-outline.png"> [Appearance Settings](settings-appearance.md).
 
 If an infobar's value gets cut off because it is too long to fit on one line you can longpress it to enable word wrap.
 When word wrap in on, any long values for that infobar will automatically wrap to the next line.
 Longpress a wrapped infobar again to disable word wrap.
 
 <figure class="image">
-  <img src="_static/images/collect/collect_infobar_wordwrap_joined.png" width="700px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/collect/collect_infobar_wordwrap_joined.png" width="700px"> 
   <figcaption class="screenshot-caption"><i>Enabling word wrap for long pedigree strings</i></figcaption> 
 </figure>
 
 #### Trait navigation
 
 <figure class="image">
-  <img src="_static/images/collect/collect_trait_navigation_section.png" width="325px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/collect/collect_trait_navigation_section.png" width="325px"> 
   <figcaption class="screenshot-caption"><i>The collect screen trait navigation section</i></figcaption> 
 </figure>
 
@@ -113,14 +113,14 @@ The small, green arrows are used to move between the different traits that are c
 Pressing the current trait will show a dialog of all currently active traits, select a different trait to jump to it.
 
 <figure class="image">
-  <img src="_static/images/collect/collect_trait_menu_framed.png" width="350px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/collect/collect_trait_menu_framed.png" width="350px"> 
   <figcaption class="screenshot-caption"><i>Pressing the active trait to see the trait dialog</i></figcaption> 
 </figure>
 
 #### Entry navigation
 
 <figure class="image">
-  <img src="_static/images/collect/collect_entry_navigation_section.png" width="325px" class="screenshot"> 
+  <img class="screenshot" src="_static/images/collect/collect_entry_navigation_section.png" width="325px"> 
   <figcaption class="screenshot-caption"><i>The collect screen entry navigation section</i></figcaption> 
 </figure>
 
@@ -138,6 +138,6 @@ Information for each specific trait format can be found in the Trait Formats pag
 
 The bottom toolbar contains three buttons for data input:
 
--   <img ref="scan" style="vertical-align: middle;" src="_static/icons/collect/barcode-scan.png" width="20px"> enters data by scanning a barcode.
--   <img ref="na" style="vertical-align: middle;" src="_static/icons/collect/not-applicable.png" width="20px"> enters NA for when a phenotype is not available.
--   <img ref="delete" style="vertical-align: middle;" src="_static/icons/collect/delete-outline.png" width="20px"> deletes the entered data.
+-   <img class="icon" src="_static/icons/collect/barcode-scan.png"> enters data by scanning a barcode.
+-   <img class="icon" src="_static/icons/collect/not-applicable.png"> enters NA for when a phenotype is not available.
+-   <img class="icon" src="_static/icons/collect/delete-outline.png"> deletes the entered data.

@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="_styles/styles.css">
+
 Training Resources
 ==================
 
@@ -7,7 +9,7 @@ This [training presentation](https://docs.google.com/presentation/d/1Milb9mO_LNt
 
 The exercises in the the training slides are based on the `training_sample.csv` field file which is copied into the `field_import` folder on install and is imported as part training.
 
-<figure align="center" class="image">
-  <img src="_static/images/training_field.png" width="1100px"> 
-  <figcaption><i>The training sample field in exercise 3</i></figcaption> 
+<figure class="image">
+  <img class="screenshot" src="_static/images/training_field.png" width="1100px"> 
+  <figcaption class="screenshot-caption"><i>The training sample field in exercise 3</i></figcaption> 
 </figure>
