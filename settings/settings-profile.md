@@ -12,11 +12,11 @@
 #### <img class="icon" src="_static/icons/settings/profile/account.png"> Person
 
 Sets the first and last name of the person operating Field Book.
-This information is stored with each collected measurement as metadata and is included in the database <img class="icon" src="_static/icons/home/save.png"> [Export](export.md) format.
+This information is stored as metadata for each collected observation and is included in the database <img class="icon" src="_static/icons/home/save.png"> [Export](export.md#file-format) format.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/profile/settings_profile_set_person.png" width="325px"> 
-  <figcaption class="screenshot-caption"><i>Set person dialog</i></figcaption> 
+  <figcaption class="screenshot-caption"><i>Set Person dialog</i></figcaption> 
 </figure>
 
 #### <img class="icon" src="_static/icons/settings/profile/account-clock-outline.png"> Verification Interval

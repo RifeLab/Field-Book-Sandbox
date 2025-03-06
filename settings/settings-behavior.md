@@ -4,7 +4,7 @@
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/behavior/settings_behavior_framed.png" width="350px"> 
-  <figcaption class="screenshot-caption"><i>Behavior settings screen layout</i></figcaption> 
+  <figcaption class="screenshot-caption"><i>Behavior settings screen</i></figcaption> 
 </figure>
 
 ## Movement
@@ -44,7 +44,7 @@ Switches the location of the trait advancement section (small green arrows) and 
 #### <img class="icon" src="_static/icons/settings/behavior/contrast-box.png"> Navigate With Volume Keys
 
 Allows volume keys to be used to move to next/previous entry.
-Note that this disables the volume buttons being able to change the device volume when Collect is open.
+This also disables the volume buttons being able to change the device volume when Collect is open.
 
 #### <img class="icon" src="_static/icons/settings/behavior/keyboard-return.png"> Carriage Return Action
 

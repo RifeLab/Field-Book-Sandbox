@@ -3,9 +3,10 @@
 # <img class="icon-title" src="_static/icons/formats/format-letter-matches.png"> Text Trait
 
 The text trait format is used to record open-ended text.
-It is created with a trait name, optional default value, and trait details.
+It is created with a trait `name`, optional `default value`, and optional `details`.
+Details text is displayed under the trait name on the Collect screen.
 
-On the collect screen, text can be typed or dictated using the system keyboard.
+On the Collect screen, text can be typed or dictated using the system keyboard.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/traits/formats/text_format_joined.png" width="700px"> 

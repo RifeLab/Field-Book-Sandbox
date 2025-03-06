@@ -2,13 +2,15 @@
 
 # <img class="icon-title" src="_static/icons/formats/microphone.png"> Audio Trait
 
-The audio trait format is used to record audio. It is created with a trait name and optional details.
+The audio trait format is used to record audio.
+It is created with a `name` and optional `details`.
+Details text is displayed under the trait name on the Collect screen.
 
-On the collect page, press the <img class="icon" src="_static/icons/formats/microphone.png"> button to begin recording audio.
+On the Collect screen, press the <img class="icon" src="_static/icons/formats/microphone.png"> button to begin recording audio.
 Press the <img class="icon" src="_static/icons/formats/stop.png"> button to stop recording.
 Press the <img class="icon" src="_static/icons/formats/play.png"> button to play back the audio that has been recorded.
 
-Recorded audio files are stored in `.mp3` format, and named with the entry's unique_id and a
+Recorded audio files are stored in `.mp3` format, and named with the entry's `unique id` and a
 timestamp.
 The resulting files are stored in an audio folder within a field-specific subfolder of `plot_data`.
 An example audio filepath would be `plot_data/FIELD_NAME/audio/AUDIO_FILE_NAME.mp3`.

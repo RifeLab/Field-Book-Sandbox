@@ -19,7 +19,7 @@ Navigate to the Collect screen and look for a confirmation message that says **R
 </figure>
 
 Once the rover is connected, Field Book will automatically display the nearest plot in the bottom toolbar.
-Press the <img class="icon" src="_static/icons/collect/send-outline.png"> icon on the right to jump to the plot.
+Press the <img class="icon" src="_static/icons/collect/send-outline.png"> icon on the right to navigate to the plot.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/geonav/goto_cropped.png" width="325px"> 
@@ -47,8 +47,8 @@ Field Book will automatically switch to the nearest entry as the device moves ar
 This section provides the original hardware recommendations from when the Geonav feature was first developed in conjunction with the Breeding Insight OnRamp project.
 It also includes instructions for deploying the suggested devices to use the GeoNav feature in the field.
 
-While not covered in the original recommendations, Emlid's new [Reach RX](https://emlid.com/reachrx/) device is also suitable for Geonav, and comes with a simplified setup process.
-Devices from other manufacturers should also work with the Geonav feature, as long as they broadcast using the NMEA protocol.
+While not covered in the original recommendations, Emlid's new [Reach RX](https://emlid.com/reachrx/) device is also suitable for GeoNav, and comes with a simplified setup process.
+Devices from other manufacturers should also work with the GeoNav feature, as long as they broadcast using the NMEA protocol.
 
 #### Supplies
 
@@ -64,14 +64,14 @@ Devices from other manufacturers should also work with the Geonav feature, as lo
 
 #### Instructions (field use)
 
-1.  Turn on BASE and ROVER, wait for both to broadcast WIFI hotspots
-2.  In TABLET settings, join ROVER WIFI.
-3.  In Reach3 app, navigate to ROVER WIFI settings. Connect ROVER to BASE WIFI.
-4.  Go back to TABLET settings, now connect TABLET to BASE WIFI
-5.  In Reach3 app, connect to BASE. Navigate to Base Settings. Wait until the BASE collects enough data to report a "single" position in the left hand corner and click apply.
-6.  In Reach3 app, connect to ROVER. Navigate to BT settings and turn on ROVER BT. Turn off and on again if you've forgotten the BT password (currently it is 1111).
-7.  Go back to TABLET BT settings. Turn on TABLET BT. Select ROVER from list of available devices and input password when prompted.
-8.  Finally, navigate to FIELDBOOK. Start collecting data. When prompted for GNSS trait, select ROVER.
+1. Turn on BASE and ROVER, wait for both to broadcast WIFI hotspots
+2. In TABLET settings, join ROVER WIFI.
+3. In Reach3 app, navigate to ROVER WIFI settings. Connect ROVER to BASE WIFI.
+4. Go back to TABLET settings, now connect TABLET to BASE WIFI
+5. In Reach3 app, connect to BASE. Navigate to Base Settings. Wait until the BASE collects enough data to report a "single" position in the left hand corner and click apply.
+6. In Reach3 app, connect to ROVER. Navigate to BT settings and turn on ROVER BT. Turn off and on again if you've forgotten the BT password (currently it is 1111).
+7. Go back to TABLET BT settings. Turn on TABLET BT. Select ROVER from list of available devices and input password when prompted.
+8. Finally, navigate to FIELDBOOK. Start collecting data. When prompted for GNSS trait, select ROVER.
 
 Emlid's own documentation for the RS2 and M2 can be found here [(RS2 docs)](https://docs.emlid.com/reachrs2/) and here [(M2 docs)](https://docs.emlid.com/reach/)
 
@@ -79,5 +79,5 @@ Emlid's own documentation for the RS2 and M2 can be found here [(RS2 docs)](http
 
 Complete kits and matching 3D Cases for M2 hardware are available for purchase online:
 
--   <https://e38surveysolutions.com/products/reach-m2-with-gnss-antenna>
--   <https://cults3d.com/en/3d-model/tool/emlid-reach-m2-case-estuche-gnss-gps-rtk>
+- <https://e38surveysolutions.com/products/reach-m2-with-gnss-antenna>
+- <https://cults3d.com/en/3d-model/tool/emlid-reach-m2-case-estuche-gnss-gps-rtk>

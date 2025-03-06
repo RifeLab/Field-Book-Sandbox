@@ -36,7 +36,8 @@ Set the display name Field Book should use when referring to the BrAPI server.
 
 #### <img class="icon" src="_static/icons/settings/brapi/alpha-v-box-outline.png"> OIDC Flow
 
-BrAPI server authentication version. Defaults to OAuth2 Implicit Grant.
+BrAPI server authentication version.
+Defaults to OAuth2 Implicit Grant.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/brapi/settings_brapi_oidc_flow.png" width="325px"> 
@@ -65,7 +66,8 @@ Optional settings for when OIDC Client ID and Scope need to be specified.
 
 #### <img class="icon" src="_static/icons/settings/brapi/alpha-v-box-outline.png"> BrAPI Version
 
-Set the version of the BrAPI specification that will be used to communicate with the server. Defaults to V2.
+Set the version of the BrAPI specification that will be used to communicate with the server.
+Defaults to V2.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/brapi/settings_brapi_version.png" width="325px"> 
@@ -74,7 +76,8 @@ Set the version of the BrAPI specification that will be used to communicate with
 
 #### <img class="icon" src="_static/icons/settings/brapi/layers-triple.png"> Page Size
 
-Set the page size for BrAPI server responses. Defaults to 1000.
+Set the page size for BrAPI server responses.
+Defaults to 1000.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/brapi/settings_brapi_page_size.png" width="325px"> 
@@ -83,7 +86,8 @@ Set the page size for BrAPI server responses. Defaults to 1000.
 
 #### <img class="icon" src="_static/icons/settings/brapi/transfer.png"> Chunk Size
 
-Set the chunk size. Defaults to 500.
+Set the chunk size.
+Defaults to 500.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/brapi/settings_brapi_chunk_size.png" width="325px"> 
@@ -92,7 +96,8 @@ Set the chunk size. Defaults to 500.
 
 #### <img class="icon" src="_static/icons/settings/brapi/timer-outline.png"> Server Timeout
 
-Set the time limit in seconds to wait for a response from the server before timing out. Defaults to 2 minutes.
+Set the time limit in seconds to wait for a response from the server before timing out.
+Defaults to 2 minutes.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/brapi/settings_brapi_server_timeout.png" width="325px"> 

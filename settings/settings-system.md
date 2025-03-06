@@ -11,7 +11,7 @@
 
 #### <img class="icon" src="_static/icons/settings/system/application-import.png"> Import Source
 
-Set the default field and trait import source to one of the provided options so the app doesn't ask each time.
+Set the default field and trait import source to one of the provided options.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/system/settings_system_import_sources.png" width="325px"> 
@@ -20,7 +20,7 @@ Set the default field and trait import source to one of the provided options so 
 
 #### <img class="icon" src="_static/icons/settings/system/application-export.png"> Export Source
 
-Sets the default export location to one of the provided options so the app doesn't ask each time.
+Sets the default export location to one of the provided options.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/system/settings_system_export_sources.png" width="325px"> 

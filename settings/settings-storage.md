@@ -11,7 +11,7 @@
 
 #### <img class="icon" src="_static/icons/settings/system/sd.png">  Define storage location
 
-Opens the <a href="#/storage">Storage</a> dialog to define or update the **Storage location** on the device.
+Opens the [Storage](../storage.md) dialog to define or update the **Storage location** on the device.
 
 ## Database
 
@@ -28,7 +28,7 @@ This replaces the current data in the app.
 #### <img class="icon" src="_static/icons/settings/storage/database-export.png"> Export database
 
 Exports the internal database.
-Contact the development team if you need data recovered or are having issues and send the file that is exported.
+If you are having issues or need data recovered, send the resulting file to the Field Book development team.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/storage/settings_storage_database_export.png" width="325px"> 

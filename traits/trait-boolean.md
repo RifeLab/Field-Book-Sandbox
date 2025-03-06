@@ -2,10 +2,10 @@
 
 # <img class="icon-title" src="_static/icons/formats/close-circle.png"> Boolean Trait
 
-The Boolean trait format is used to record TRUE/FALSE values.
-It is created with a trait name, default value, and optional details.
-On the collect page you can toggle between TRUE and FALSE as needed.
-Details text is displayed under the trait name on the collect page.
+The Boolean trait format is used to record `TRUE`/`FALSE` values.
+It is created with a `name`, `default` value, and optional `details`.
+On the Collect screen you can toggle between `TRUE` and `FALSE`.
+Details text is displayed under the trait name on the Collect screen.
 
 <figure class="image">
   <img class="screenshot" src="_static/images/traits/formats/boolean_format_joined.png" width="700px"> 
