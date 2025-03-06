@@ -4,15 +4,15 @@
 
 <figure class="image">
   <img class="screenshot" src="_static/images/settings/sounds/settings_sounds_framed.png" width="350px"> 
-  <figcaption class="screenshot-caption"><i>Sound settings screen layout</i></figcaption> 
+  <figcaption class="screenshot-caption"><i>Sound settings screen</i></figcaption> 
 </figure>
 
 ## Sounds
 
 #### <img class="icon" src="_static/icons/settings/sounds/numeric-1-box.png"> Change Primary Order
 
-Makes a sound when the primary order changes. Useful for knowing when to
-move to the next field row.
+Makes a sound when the primary order changes.
+Useful for knowing when to move to the next field row.
 
 #### <img class="icon" src="_static/icons/settings/sounds/play-circle-outline.png"> Change Entry
 
