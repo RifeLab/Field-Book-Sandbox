@@ -11,7 +11,7 @@ The source code for Field Book is available on [GitHub](https://github.com/Pheno
 
 <figure class="image">
   <img class="screenshot" src="_static/images/collect/collect_framed.png" width="350px"> 
-  <figcaption class="screenshot-caption"><i>Field Book collect screen</i></figcaption> 
+  <figcaption class="screenshot-caption"><i>Field Book Collect screen</i></figcaption> 
 </figure>
 
 ## Getting Started
