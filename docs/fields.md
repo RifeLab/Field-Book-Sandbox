@@ -4,7 +4,7 @@
 
 ## Overview
 
-A test line change in fields. Experiments in Field Book are called `fields`.
+Experiments in Field Book are called `fields`.
 Fields can be imported from a file, downloaded from a BrAPI-enabled database, or created from scratch.
 
 <figure class="image">
