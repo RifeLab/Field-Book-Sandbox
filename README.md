@@ -2,7 +2,7 @@
 
 # Field Book
 
-## Introduction
+## Introduction to Field Book
 
 Field Book is an open-source Android app used to collect data on field research plots.
 When used in place of paper field books, it eliminates the need for data transcription and reduces the risk of errors.
