@@ -144,12 +144,48 @@ jobs:
       - name: Process CHANGELOG.md
         id: process-changelog
         run: |
+          # Get the contents under "Unreleased" section
           unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
 
-          if [ -z "$unreleased_section" ]; then
+          filtered_content=""
+          current_section=""
+          in_section=false
+
+          while IFS= read -r line; do
+
+            if [[ "$line" =~ ^###[[:space:]]+(Added|Changed|Fixed) ]]; then
+
+              # Found a section header
+              # Remember it, do not add it yet
+
+              current_section="$line"
+              in_section=true
+              section_header_added=false
+
+            elif [[ "$line" =~ ^- ]] && [[ "$in_section" == true ]]; then
+
+              # Found a note under the current section
+
+              if [[ "$section_header_added" == false ]]; then
+                # First note found, section has some content
+                # Add the section header
+                # Set the section_header_added flag as true
+
+                filtered_content+="$current_section"$'\n'
+                section_header_added=true
+              fi
+
+              # Add the note
+              filtered_content+="$line"$'\n'
+
+            fi
+
+          done <<< "$unreleased_section"
+
+          if [ -z "$filtered_content" ]; then
             changelog_escaped="No release notes"
           else
-            changelog_escaped=$(echo "$unreleased_section" | sed 's/^- /✔ /g' | sed ':a;N;$!ba;s/\n/%0A/g')
+            changelog_escaped=$(echo "$filtered_content" | sed 's/^- /✔ /g' | sed ':a;N;$!ba;s/\n/%0A/g')
           fi
 
           echo "changelog_additions=$changelog_escaped" >> $GITHUB_OUTPUT
