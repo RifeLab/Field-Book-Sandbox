@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v1.2.1] - 2025-01-27
 
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v1.2.0] - 2025-01-21
 
@@ -31,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - test change for release
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - this is another fix release note
 
 ## [v1.1.6] - 2025-01-14
@@ -40,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v1.1.5] - 2025-01-14
 
@@ -48,6 +52,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v1.1.4] - 2025-01-13
 
@@ -56,6 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v1.1.3] - 2025-01-13
 
@@ -64,6 +70,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v1.1.2] - 2025-01-13
 
@@ -72,6 +79,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v1.1.1] - 2025-01-06
 
@@ -80,6 +88,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v1.1.0] - 2025-01-04
 
@@ -89,6 +98,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Testing code change (https://github.com/RifeLab/Field-Book-Sandbox/pull/104)
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v6.1.0] - 2025-01-03
 
@@ -98,6 +108,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Code change test (https://github.com/RifeLab/Field-Book-Sandbox/pull/103)
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v6.0.5] - 2024-12-30
 
@@ -106,6 +117,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v6.0.4] - 2024-12-30
 
@@ -114,6 +126,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v6.0.3] - 2024-12-23
 
@@ -122,6 +135,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
 ## [v6.0.2] - 2024-12-16
 
@@ -134,6 +148,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fields with different BrAPI study IDs can now have the same name (https://github.com/PhenoApps/Field-Book/pull/1095)
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Min and max values now correctly saved for BrAPI traits (https://github.com/PhenoApps/Field-Book/pull/1103)
 - Label print observations are now assigned to the correct entry when navigating before the print is complete (https://github.com/PhenoApps/Field-Book/pull/1109)
 - Improved database export messaging (https://github.com/PhenoApps/Field-Book/pull/1112)
@@ -155,6 +170,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved support for BrAPI servers not using https (https://github.com/PhenoApps/Field-Book/pull/1071)
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - "observation_time_stamp" and "last_synced_time" now correctly saved in DAO (https://github.com/PhenoApps/Field-Book/pull/1071)
 - Synced and updated records now correctly identified (https://github.com/PhenoApps/Field-Book/pull/1071)
 
@@ -174,6 +190,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - InfoBars updated to support wrapping and prefix replacement
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes and enhancements
 - GoPro, USB, and Canon camera improvements
 
@@ -185,6 +202,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated Field Book documentation (https://github.com/PhenoApps/Field-Book/pull/1072)
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Fix issue with importing traits (https://github.com/PhenoApps/Field-Book/pull/1074)
 
 ## [v5.6] - 2024-10-02
@@ -205,6 +223,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - DataGrid and BrAPI sorting improvements
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes and enhancements
 - XLSX import updated to include all cells even if empty
 
@@ -225,6 +244,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Coordinate order swapped to match ISO
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Bug fixes and performance improvements
 
 ## [v5.4] - 2023-07-20
@@ -244,6 +264,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GNSS/GeoNav improvements
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes and enhancements
 
 ## [v5.3] - 2022-09-07
@@ -281,6 +302,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Quick GoTo can now use both primary/secondary ID
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes
 
 ## [v5.1] - 2021-11-01
@@ -295,6 +317,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Increased required minimum Android version to 5.1
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Move to unique identifier setting bug
 
 ## [v5.0] - 2021-09-27
@@ -317,6 +340,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Printing a label adds an observation record
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Fixed issue with special characters in file headers
 - Fixed issue with categorical trait layout
 - File management and import fixes
@@ -339,6 +363,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Disable entry arrows setting adjustments
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Database settings bug
 - Profile not saving person or location bug
 - Files with uppercase extensions now visible in file manager
@@ -354,6 +379,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - BrAPI HTTP error handling improvements
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Zebra Label Print trait bug
 - Search bug that resulted in data not being saved
 - UTF-8-BOM import file bug
@@ -369,6 +395,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Quick GoTo uses full keyboard
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Tutorial order corrected
 - BMS BrAPI bug
 - Database import bug
@@ -394,6 +421,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Chinese and Italian translations updated
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Return key setting bug
 
 ## [v4.1] - 2020-02-21
@@ -409,6 +437,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Settings improvements
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes
 
 ## [v4.0] - 2017-10-19
@@ -418,11 +447,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New Collect screen layout
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes
 
 ## [v3.3.1] - 2017-03-07
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Bug fixes and performance enhancements
 
 ## [v3.3.0] - 2017-02-19
@@ -443,6 +474,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Numeric clear changed to backspace
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Spaces in column names bug
 - Default trait value saving bug
 - Trait visibility not saving bug
@@ -459,6 +491,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Internal database updated
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Several bugs causing crashes
 - Numeric trait bug
 - Reordering traits bug
@@ -466,6 +499,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v3.1.1] - 2015-12-12
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Multicat trait bug
 - Trait creation bug
 
@@ -483,6 +517,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dialogs updated with titles
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Audio and rust traits bug
 
 
@@ -500,6 +535,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Setup renamed to Profile
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Text trait cursor bug
 
 ## [v2.4.1] - 2015-06-05
@@ -520,6 +556,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated strings for clarity
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes
 
 
@@ -550,6 +587,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sample files updated
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Fixed issue with MediaContentScanner
 - Search layout improvements
 
@@ -566,6 +604,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - InfoBar prefixes can be selected from Collect
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Table export speed improved
 
 ## [v2.2] - 2014-09-11
@@ -584,6 +623,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changelog can be accessed from the About dialog
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Miscellaneous interface improvements
 - Traits can now be made in other languages
 - Field Book doesn't move to first entry when screen is turned off
@@ -596,6 +636,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed ActionBarSherlock library
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Fixed issue with field folders
 - Fixed issue with field file selection
 
@@ -616,6 +657,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed XLS support
 
 ### Fixed
+- Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - External hardware no longer moves to first entry
 - Numeric minimum correctly enforced
 - Text trait can now be completely deleted via keyboard
