@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 
@@ -17,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.2.1] - 2025-01-27
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - test change file
 
 ### Changed
@@ -27,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.2.0] - 2025-01-21
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 - test change 5
@@ -39,6 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.1.6] - 2025-01-14
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 
@@ -48,6 +52,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.1.5] - 2025-01-14
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 
@@ -57,6 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.1.4] - 2025-01-13
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 
@@ -66,6 +72,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.1.3] - 2025-01-13
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 
@@ -75,6 +82,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.1.2] - 2025-01-13
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 
@@ -84,6 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.1.1] - 2025-01-06
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 
@@ -93,6 +102,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v1.1.0] - 2025-01-04
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 - Testing code change (https://github.com/RifeLab/Field-Book-Sandbox/pull/104)
@@ -103,6 +113,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v6.1.0] - 2025-01-03
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 - Code change test (https://github.com/RifeLab/Field-Book-Sandbox/pull/103)
@@ -113,6 +124,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v6.0.5] - 2024-12-30
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 
@@ -122,6 +134,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v6.0.4] - 2024-12-30
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 
@@ -131,6 +144,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v6.0.3] - 2024-12-23
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 
@@ -140,6 +154,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v6.0.2] - 2024-12-16
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Trial name included in BrAPI import and field details page (https://github.com/PhenoApps/Field-Book/pull/1121)
 - Image EXIF tag metadata includes the device pitch, roll, and yaw at the time of capture (https://github.com/PhenoApps/Field-Book/pull/1115)
 - Setting added to reset preferences to default (https://github.com/PhenoApps/Field-Book/pull/1118)
@@ -157,6 +172,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v6.0.1] - 2024-12-09
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Accession number now included for germplasm imported via BrAPI (https://github.com/PhenoApps/Field-Book/pull/1093)
 - Option added at trait creation to keep keyboard closed when navigating to text traits (https://github.com/PhenoApps/Field-Book/pull/1102)
 - Proximity check added to disable GeoNav when away from field (https://github.com/PhenoApps/Field-Book/pull/1098)
@@ -177,6 +193,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v6.0.0] - 2024-12-02
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Fields list updated to include bulk actions and individual field pages
 - Data statistics added to each field
 - App-wide statistics added to main screen
@@ -197,6 +214,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v5.6.26] - 2024-11-06
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 - Updated Field Book documentation (https://github.com/PhenoApps/Field-Book/pull/1072)
@@ -208,6 +226,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v5.6] - 2024-10-02
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Trait Builder updated with new workflow approach
 - GeoNav logging can support both limited and full logging
 - Observation metadata can be viewed by long pressing the current value
@@ -230,6 +249,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v5.5] - 2023-11-30
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - GoPro trait
 - Setting to return to first trait when navigating entries
 - Progress bars added to Collect to indicate current entry and trait
@@ -250,6 +270,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v5.4] - 2023-07-20
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Repeated measures (beta)
 - Themes option to adjust app appearance
 - Summary view can be customized
@@ -270,6 +291,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v5.3] - 2022-09-07
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - USB camera trait
 - Text-to-speech setting for data input
 - Anonymous identifier added to profile for debugging
@@ -286,6 +308,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v5.2] - 2022-05-20
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Support for XLSX files
 - New sound for missing barcodes when scanning to navigate
 - Option to export ZIP bundle containing both data and media
@@ -308,6 +331,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v5.1] - 2021-11-01
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Field Book GeoNav to identify and navigate to nearest plot
 - Settings to adjust polling rate, angle, and GNSS device
 - Identify and load nearest field via location icon in fields list
@@ -323,6 +347,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v5.0] - 2021-09-27
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - BrAPI v2 support with page size and server timeout settings
 - GNSS trait
 - Setting to swap plot/trait arrows
@@ -349,6 +374,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v4.5] - 2020-09-28
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Setting to choose custom storage directory (Android 5.0+ only)
 - Setting for sound when navigating entries
 - Setting for sound when cycling traits
@@ -372,6 +398,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v4.4] - 2020-09-02
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Data can be collected via bottom toolbar in Collect using barcodes
 - BrAPI studies can be filtered by program and trial
 
@@ -387,6 +414,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v4.3] - 2020-06-23
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Added search widget to settings
 - Added translation link
 
@@ -407,6 +435,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v4.2] - 2020-03-10
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - New tutorial
 - Additional import sources
 - Default import/export source option
@@ -427,6 +456,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v4.1] - 2020-02-21
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - BrAPI integration
 - Label printer trait
 - Firebase Crashlytics
@@ -443,6 +473,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v4.0] - 2017-10-19
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - New field management
 - New Collect screen layout
 
@@ -459,6 +490,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v3.3.0] - 2017-02-19
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Location trait
 - Missing values button
 - Citation dialog
@@ -483,6 +515,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v3.2.0] - 2016-04-04
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Bengali translation
 
 ### Changed
@@ -507,6 +540,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v3.1.0] - 2015-12-08
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Multicategorical trait format
 - Export dialog includes option to overwrite previously exported files
 - Field name included in Collect navigation drawer
@@ -525,6 +559,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v3.0.0] - 2015-09-14
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Updated user interface
 - Added support for phones
 - Traits can be reordered with drag and drop
@@ -541,6 +576,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v2.4.1] - 2015-06-05
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - DataGrid (beta) 
 - Setting to open camera to scan barcodes for navigation
 - Setting to disable left, right, or both entry arrows if no data has been collected
@@ -563,6 +599,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v2.3.5] - 2015-05-28
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Rust Rating trait with customizable severity scale
 - Counter trait
 - Setting to disable the automatic file sharing
@@ -576,6 +613,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v2.3.4] - 2015-04-22
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - InfoBar text can be long pressed to see entire value
 
 ### Changed
@@ -594,6 +632,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v2.3] - 2015-03-01
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - New field import layout
 - New photo trait
 - Internal database can be imported/exported
@@ -610,6 +649,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v2.2] - 2014-09-11
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - New option to make sound when primary order changes
 - New option to go to navigate directly to specific unique ID
 - New option to go to next plot without data
@@ -644,6 +684,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v2.1.0] - 2014-08-19
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - New changelog
 - Exported files are shared
 - Fields dialog subdirectory support
@@ -667,6 +708,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v2.0.1] - 2014-05-19
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 - Initial GitHub release
 
 
