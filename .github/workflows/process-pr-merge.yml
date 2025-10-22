@@ -119,8 +119,13 @@ jobs:
 
       - name: Update changelog
         run: |
-          echo "Updating changelog under section: ${{ steps.extract-details.outputs.section }}"
-          sed -i "0,/${{ steps.extract-details.outputs.section }}/s@${{ steps.extract-details.outputs.section }}@${{ steps.extract-details.outputs.section }}\n- ${{ steps.extract-details.outputs.release_note }}@" CHANGELOG.md
+          section="${{ steps.extract-details.outputs.section }}"
+          note="${{ steps.extract-details.outputs.release_note }}"
+          pr_url="https://github.com/${{ github.repository }}/pull/${{ needs.determine-pr.outputs.pr_number }}"
+          release_note="${note} (${pr_url})"
+          
+          echo "Updating changelog under section: $section"
+          sed -i "/$section/a - $release_note" CHANGELOG.md
           cat CHANGELOG.md
 
       - name: Commit and push changelog update
