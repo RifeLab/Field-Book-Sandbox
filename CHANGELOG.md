@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -25,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -38,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - test change for release
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - this is another fix release note
@@ -50,6 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -61,6 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -72,6 +77,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -83,6 +89,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -94,6 +101,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -105,6 +113,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -117,6 +126,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Testing code change (https://github.com/RifeLab/Field-Book-Sandbox/pull/104)
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -129,6 +139,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Code change test (https://github.com/RifeLab/Field-Book-Sandbox/pull/103)
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -140,6 +151,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -151,6 +163,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -162,6 +175,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 
@@ -177,6 +191,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fields with different BrAPI study IDs can now have the same name (https://github.com/PhenoApps/Field-Book/pull/1095)
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Min and max values now correctly saved for BrAPI traits (https://github.com/PhenoApps/Field-Book/pull/1103)
@@ -201,6 +216,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved support for BrAPI servers not using https (https://github.com/PhenoApps/Field-Book/pull/1071)
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - "observation_time_stamp" and "last_synced_time" now correctly saved in DAO (https://github.com/PhenoApps/Field-Book/pull/1071)
@@ -223,6 +239,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - InfoBars updated to support wrapping and prefix replacement
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes and enhancements
@@ -237,6 +254,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated Field Book documentation (https://github.com/PhenoApps/Field-Book/pull/1072)
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Fix issue with importing traits (https://github.com/PhenoApps/Field-Book/pull/1074)
@@ -260,6 +278,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - DataGrid and BrAPI sorting improvements
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes and enhancements
@@ -283,6 +302,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Coordinate order swapped to match ISO
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Bug fixes and performance improvements
@@ -305,6 +325,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GNSS/GeoNav improvements
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes and enhancements
@@ -346,6 +367,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Quick GoTo can now use both primary/secondary ID
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes
@@ -363,6 +385,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Increased required minimum Android version to 5.1
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Move to unique identifier setting bug
@@ -388,6 +411,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Printing a label adds an observation record
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Fixed issue with special characters in file headers
@@ -413,6 +437,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Disable entry arrows setting adjustments
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Database settings bug
@@ -431,6 +456,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - BrAPI HTTP error handling improvements
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Zebra Label Print trait bug
@@ -449,6 +475,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Quick GoTo uses full keyboard
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Tutorial order corrected
@@ -477,6 +504,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Chinese and Italian translations updated
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Return key setting bug
@@ -495,6 +523,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Settings improvements
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes
@@ -507,6 +536,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New Collect screen layout
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes
@@ -514,6 +544,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v3.3.1] - 2017-03-07
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Bug fixes and performance enhancements
@@ -537,6 +568,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Numeric clear changed to backspace
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Spaces in column names bug
@@ -556,6 +588,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Internal database updated
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Several bugs causing crashes
@@ -565,6 +598,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v3.1.1] - 2015-12-12
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Multicat trait bug
@@ -585,6 +619,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dialogs updated with titles
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Audio and rust traits bug
@@ -605,6 +640,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Setup renamed to Profile
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Text trait cursor bug
@@ -628,6 +664,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated strings for clarity
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Numerous bug fixes
@@ -662,6 +699,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sample files updated
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Fixed issue with MediaContentScanner
@@ -681,6 +719,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - InfoBar prefixes can be selected from Collect
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Table export speed improved
@@ -702,6 +741,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changelog can be accessed from the About dialog
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Miscellaneous interface improvements
@@ -716,6 +756,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed ActionBarSherlock library
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - Fixed issue with field folders
@@ -739,6 +780,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed XLS support
 
 ### Fixed
+- Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
 - External hardware no longer moves to first entry
