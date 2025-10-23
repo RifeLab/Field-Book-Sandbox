@@ -114,7 +114,7 @@ jobs:
         id: process-changelog
         run: |
           # Get the contents under "Unreleased" section
-          unreleased_section=$(awk '/^## \[Unreleased\]/{flag=1; next} /^## /{flag=0} flag' CHANGELOG.md)
+          unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
 
           filtered_content=""
           current_section=""
