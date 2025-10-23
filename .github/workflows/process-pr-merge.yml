@@ -125,7 +125,11 @@ jobs:
           release_note="${note} (${pr_url})"
           
           echo "Updating changelog under section: $section"
-          sed -i "/$section/a - $release_note" CHANGELOG.md
+
+          # Find the first occurrence of the section
+          # Replace the section with itself and the release note after it
+
+          sed -i "0,/$section/s@$section@$section\n- $release_note@" CHANGELOG.md
           cat CHANGELOG.md
 
       - name: Commit and push changelog update
