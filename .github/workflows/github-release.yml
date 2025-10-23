@@ -171,11 +171,23 @@ jobs:
           # Remove unreleased section and everything under it
           sed -i '/## \[Unreleased\]/,/^## /{/^## \[Unreleased\]/d; /^## /!d;}' CHANGELOG.md
 
-          # Add new version section at the top
-          sed -i "1a\\$version_section" CHANGELOG.md
+          # Create temporary changelog file with version section
+          {
+            echo "## [Unreleased]"
+            echo ""
+            echo "### Added"
+            echo ""
+            echo "### Changed" 
+            echo ""
+            echo "### Fixed"
+            echo ""
+            echo "## [v$VERSION] - $today"
+            echo ""
+            echo "$filtered_content"
+            cat CHANGELOG.md
+          } > CHANGELOG_NEW.md
 
-          # Add back the Unreleased section template
-          sed -i "1a\\## [Unreleased]\n\n### Added\n\n### Changed\n\n### Fixed\n" CHANGELOG.md
+          mv CHANGELOG_NEW.md CHANGELOG.md
 
           REPO_URL="https://github.com/${{ github.repository }}/releases/tag"
           printf "\n[v$VERSION]: $REPO_URL/$VERSION" >> CHANGELOG.md
