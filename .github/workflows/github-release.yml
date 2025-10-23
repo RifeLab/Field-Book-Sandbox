@@ -119,6 +119,7 @@ jobs:
           filtered_content=""
           current_section=""
           in_section=false
+          section_header_added=false
 
           while IFS= read -r line; do
 
@@ -136,6 +137,7 @@ jobs:
               # Found a note under the current section
 
               if [[ "$section_header_added" == false ]]; then
+              
                 # First note found, section has some content
                 # Add the section header
                 # Set the section_header_added flag as true
@@ -162,8 +164,16 @@ jobs:
           echo "changelog_additions=$changelog_escaped" >> $GITHUB_OUTPUT
 
           today=$(date +'%Y-%m-%d')
-          sed -i "s/## \[Unreleased\]/## [v$VERSION] - $today/" CHANGELOG.md
-          sed -i '/## \[v'$VERSION'\]/i ## [Unreleased]\n\n### Added\n\n### Changed\n\n### Fixed\n' CHANGELOG.md
+          version_section="## [v$VERSION] - $today\n\n$filtered_content"
+
+          # Remove unreleased section and everything under it
+          sed -i '/## \[Unreleased\]/,/^## /{ /^## \[Unreleased\]/d; /^## /!d; }' CHANGELOG.md
+
+          # Add new version section at the top
+          sed -i "1a\\$version_section" CHANGELOG.md
+
+          # Add back the Unreleased section template
+          sed -i "1a\\## [Unreleased]\n\n### Added\n\n### Changed\n\n### Fixed\n" CHANGELOG.md
 
           REPO_URL="https://github.com/${{ github.repository }}/releases/tag"
           printf "\n[v$VERSION]: $REPO_URL/$VERSION" >> CHANGELOG.md
