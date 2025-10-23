@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix find first section (https://github.com/RifeLab/Field-Book-Sandbox/pull/117)
 - Fix getting unreleased section (https://github.com/RifeLab/Field-Book-Sandbox/pull/116)
 - Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
