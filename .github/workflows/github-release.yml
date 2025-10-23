@@ -167,7 +167,7 @@ jobs:
           version_section="## [v$VERSION] - $today\n\n$filtered_content"
 
           # Remove unreleased section and everything under it
-          sed -i '/## \[Unreleased\]/,/^## /{ /^## \[Unreleased\]/d; /^## /!d; }' CHANGELOG.md
+          sed -i '/## \[Unreleased\]/,/^## /{/^## \[Unreleased\]/d; /^## /!d;}' CHANGELOG.md
 
           # Add new version section at the top
           sed -i "1a\\$version_section" CHANGELOG.md
