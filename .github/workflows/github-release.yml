@@ -113,6 +113,8 @@ jobs:
       - name: Process CHANGELOG.md
         id: process-changelog
         run: |
+
+          set -x
           # Get the contents under "Unreleased" section
           unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
 
