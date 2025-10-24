@@ -267,7 +267,7 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           add: "version.properties CHANGELOG.md app/src/main/res/raw/changelog.xml"
-          message: "Bump ${{ env.BUMP_TYPE }} and update changelog for v${{ env.VERSION }}"
+          message: "Bump ${{ needs.check-changes.outputs.bump_type }} and update changelog for v${{ env.VERSION }}"
           token: ${{ secrets.ACTIONS_PAT }}
 
       - name: Push Changes
