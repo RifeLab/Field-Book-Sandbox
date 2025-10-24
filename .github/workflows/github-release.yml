@@ -229,6 +229,11 @@ jobs:
           echo "Generated release block:"
           echo -e "$RELEASE_BLOCK"
 
+      - name: Create local.properties
+        run: |
+          echo "NIX_LICENSE=${{ secrets.NIX_LICENSE }}" > local.properties
+          echo "sdk.dir=$ANDROID_HOME" >> local.properties
+
       - name: Set Up Build Environment
         uses: actions/setup-java@v3
         with:
