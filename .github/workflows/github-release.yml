@@ -231,7 +231,7 @@ jobs:
 
       - name: Create local.properties
         run: |
-          echo "NIX_LICENSE=${{ secrets.NIX_LICENSE }}" > local.properties
+          echo "NIX_LICENSE=" > local.properties
           echo "sdk.dir=$ANDROID_HOME" >> local.properties
 
       - name: Set Up Build Environment

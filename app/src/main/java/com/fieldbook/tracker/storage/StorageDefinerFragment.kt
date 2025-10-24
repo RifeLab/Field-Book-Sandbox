@@ -1,8 +1,8 @@
 package com.fieldbook.tracker.storage
 
 import android.app.Activity
+import android.content.Context
 import android.content.SharedPreferences
-import android.net.Uri
 import android.os.Bundle
 import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
@@ -50,8 +50,6 @@ class StorageDefinerFragment: PhenoLibStorageDefinerFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        advisor.initialize()
-
         //define directories that should be created in root storage
         context?.let { ctx ->
             val archive = ctx.getString(R.string.dir_archive)
@@ -63,8 +61,9 @@ class StorageDefinerFragment: PhenoLibStorageDefinerFragment() {
             val resources = ctx.getString(R.string.dir_resources)
             val trait = ctx.getString(R.string.dir_trait)
             val updates = ctx.getString(R.string.dir_updates)
+            val preferences = ctx.getString(R.string.dir_preferences)
             directories = arrayOf(archive, db, fieldExport, fieldImport,
-                geonav, plotData, resources, trait, updates
+                geonav, plotData, resources, trait, updates, preferences
             )
         }
 
@@ -113,10 +112,8 @@ class StorageDefinerFragment: PhenoLibStorageDefinerFragment() {
         return inflater.cloneInContext(contextThemeWrapper)
     }
 
-    override fun onResume() {
-        super.onResume()
-        if (prefs.getBoolean(GeneralKeys.FROM_INTRO_AUTOMATIC, false)) {
-            prefs.edit().putBoolean(GeneralKeys.FROM_INTRO_AUTOMATIC, false).apply()
-        } else activity?.finish()
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        advisor.initialize()
     }
 }

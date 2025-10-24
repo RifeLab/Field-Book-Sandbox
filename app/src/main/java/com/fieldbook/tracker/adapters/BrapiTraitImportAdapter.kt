@@ -19,7 +19,6 @@ import org.brapi.v2.model.pheno.BrAPIObservationVariable
 /**
  * Reference:
  * https://developer.android.com/guide/topics/ui/layout/recyclerview
- * Code change test
  */
 class BrapiTraitImportAdapter(private val loader: TraitLoader) :
     ListAdapter<CheckboxListAdapter.Model, BrapiTraitImportAdapter.ViewHolder>(CheckboxListAdapter.DiffCallback()) {

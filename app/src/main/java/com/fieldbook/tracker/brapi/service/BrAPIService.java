@@ -23,7 +23,7 @@ import com.fieldbook.tracker.brapi.model.BrapiTrial;
 import com.fieldbook.tracker.brapi.model.FieldBookImage;
 import com.fieldbook.tracker.brapi.model.Observation;
 import com.fieldbook.tracker.objects.TraitObject;
-import com.fieldbook.tracker.preferences.GeneralKeys;
+import com.fieldbook.tracker.preferences.PreferenceKeys;
 import com.fieldbook.tracker.utilities.Constants;
 import com.fieldbook.tracker.utilities.FailureFunction;
 import com.fieldbook.tracker.utilities.SuccessFunction;
@@ -48,7 +48,7 @@ public interface BrAPIService {
     // Helper functions for brapi configurations
     static Boolean isLoggedIn(Context context) {
 
-        String token = getPreferences(context).getString(GeneralKeys.BRAPI_TOKEN, "");
+        String token = getPreferences(context).getString(PreferenceKeys.BRAPI_TOKEN, "");
 
         return token != null && token != "";
     }
@@ -85,8 +85,8 @@ public interface BrAPIService {
     }
 
     static String getBrapiUrl(Context context) {
-        String baseURL = getPreferences(context).getString(GeneralKeys.BRAPI_BASE_URL, "");
-        String version = getPreferences(context).getString(GeneralKeys.BRAPI_VERSION, "");
+        String baseURL = getPreferences(context).getString(PreferenceKeys.BRAPI_BASE_URL, "");
+        String version = getPreferences(context).getString(PreferenceKeys.BRAPI_VERSION, "");
         String path;
         if (version.equals("V2"))
             path = Constants.BRAPI_PATH_V2;
@@ -118,29 +118,26 @@ public interface BrAPIService {
     }
 
     static Integer getTimeoutValue(Context context) {
-        return checkPreference(context, GeneralKeys.BRAPI_TIMEOUT, "120");
+        return checkPreference(context, PreferenceKeys.BRAPI_TIMEOUT, "120");
     }
 
     static int getChunkSize(Context context) {
-        return checkPreference(context, GeneralKeys.BRAPI_CHUNK_SIZE, "500");
+        return checkPreference(context, PreferenceKeys.BRAPI_CHUNK_SIZE, "500");
     }
 
     static boolean isConnectionError(int code) {
         return code == 401 || code == 403 || code == 404;
     }
 
-    static void handleConnectionError(Context context, int code) {
+    static boolean handleConnectionError(Context context, int code) {
         ApiErrorCode apiErrorCode = ApiErrorCode.processErrorCode(code);
         String toastMsg;
 
+        boolean returnVal = false;
         switch (apiErrorCode) {
             case UNAUTHORIZED:
-                // Start the login process
-                ((Activity) context).runOnUiThread(() -> {
-                    BrapiAuthDialogFragment brapiAuth = new BrapiAuthDialogFragment().newInstance();
-                    brapiAuth.show(((FragmentActivity) context).getSupportFragmentManager(), "BrapiAuthDialogFragment");
-                });
                 toastMsg = context.getString(R.string.brapi_auth_deny);
+                returnVal = true;
                 break;
             case FORBIDDEN:
                 toastMsg = context.getString(R.string.brapi_auth_permission_deny);
@@ -155,6 +152,8 @@ public interface BrAPIService {
         ((Activity)context).runOnUiThread(() -> {
             Toast.makeText(context.getApplicationContext(), toastMsg, Toast.LENGTH_LONG).show();
         });
+
+        return returnVal;
     }
 
     void postImageMetaData(FieldBookImage image, final Function<FieldBookImage, Void> function, final Function<Integer, Void> failFunction);

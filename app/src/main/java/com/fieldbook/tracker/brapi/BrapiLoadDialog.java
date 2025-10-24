@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -25,7 +23,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.arch.core.util.Function;
 import androidx.fragment.app.DialogFragment;
 
 import com.fieldbook.tracker.R;
@@ -53,6 +50,8 @@ public class BrapiLoadDialog extends DialogFragment {
     private Boolean plotLoadStatus = false;
     private Boolean traitLoadStatus = false;
     private BrapiPaginationManager paginationManager;
+
+    private static String EXTRA_FIELD_ID = "fieldId";
 
     // Creates a new thread to do importing
     private final Runnable importRunnable = new Runnable() {
@@ -327,7 +326,10 @@ public class BrapiLoadDialog extends DialogFragment {
             primary.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int index, long id) {
-                    selectedPrimary = studyDetails.getAttributes().get(index);
+                    List<String> attrs = studyDetails.getAttributes();
+                    if (attrs != null && !attrs.isEmpty() && index < attrs.size()) {
+                        selectedPrimary = attrs.get(index);
+                    }
                 }
 
                 @Override
@@ -341,7 +343,10 @@ public class BrapiLoadDialog extends DialogFragment {
             secondary.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int index, long id) {
-                    selectedSecondary = studyDetails.getAttributes().get(index);
+                    List<String> attrs = studyDetails.getAttributes();
+                    if (attrs != null && !attrs.isEmpty() && index < attrs.size()) {
+                        selectedSecondary = attrs.get(index);
+                    }
                 }
 
                 @Override
@@ -355,7 +360,10 @@ public class BrapiLoadDialog extends DialogFragment {
             sort.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int index, long id) {
-                    selectedSort = studyDetails.getAttributes().get(index);
+                    List<String> attrs = studyDetails.getAttributes();
+                    if (attrs != null && !attrs.isEmpty() && index < attrs.size()) {
+                        selectedSort = attrs.get(index);
+                    }
                 }
 
                 @Override
@@ -483,7 +491,7 @@ public class BrapiLoadDialog extends DialogFragment {
                 // Finish our BrAPI import activity
                 FieldObject field = (FieldObject) brapiControllerResponse.getData();
                 Intent returnIntent = new Intent();
-                returnIntent.putExtra("fieldId", field.getExp_id());
+                returnIntent.putExtra(EXTRA_FIELD_ID, field.getStudyId());
                 ((Activity) context).setResult(Activity.RESULT_OK, returnIntent);
                 ((Activity) context).finish();
             } else {
