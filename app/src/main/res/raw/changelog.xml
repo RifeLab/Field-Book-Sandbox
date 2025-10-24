@@ -1,5 +1,17 @@
 <changelog>
 
+    <release date="2025-10-24" versionCode="10202" versionName="v1.2.2">
+        <new>Don't add empty changelog sections in release</new>
+        <bugfix>Update all files to sync with fieldbook/main</bugfix>
+        <bugfix>Test release changelog</bugfix>
+        <bugfix>Bump minor version</bugfix>
+        <bugfix>Fix find first section</bugfix>
+        <bugfix>Fix getting unreleased section</bugfix>
+        <bugfix>Fix ordering of steps in workflow</bugfix>
+        <bugfix>fix filtered unreleased sections</bugfix>
+        <bugfix>Does this have a link?</bugfix>
+    </release>
+
     <release date="2025-10-20" versionCode="60302" versionName="v6.3.2">
         <bugfix>GoPro Hero 13 no longer causes a crash</bugfix>
         <bugfix>Reduced installer size by using a different ffmpeg library</bugfix>
