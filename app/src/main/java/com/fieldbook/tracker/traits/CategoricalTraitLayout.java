@@ -8,13 +8,16 @@ import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fieldbook.tracker.R;
 import com.fieldbook.tracker.activities.CollectActivity;
 import com.fieldbook.tracker.preferences.GeneralKeys;
+import com.fieldbook.tracker.preferences.PreferenceKeys;
 import com.fieldbook.tracker.utilities.CategoryJsonUtil;
+import com.fieldbook.tracker.utilities.Utils;
 import com.google.android.flexbox.AlignItems;
 import com.google.android.flexbox.FlexDirection;
 import com.google.android.flexbox.FlexWrap;
@@ -97,7 +100,7 @@ public class CategoricalTraitLayout extends BaseTraitLayout {
         super.afterLoadExists(act, value);
 
         //read the preferences, default to displaying values instead of labels
-        String labelValPref = getPrefs().getString(GeneralKeys.LABELVAL_CUSTOMIZE,"value");
+        String labelValPref = getPrefs().getString(PreferenceKeys.LABELVAL_CUSTOMIZE,"value");
 
         //read the json object stored in additional info of the trait object (only in BrAPI imported traits)
         ArrayList<BrAPIScaleValidValuesCategories> cats = getCategories();
@@ -128,8 +131,6 @@ public class CategoricalTraitLayout extends BaseTraitLayout {
                             getCollectInputView().setText(labelVal.getLabel());
 
                         }
-
-                        getCollectInputView().setTextColor(Color.parseColor(getDisplayColor()));
 
                     }
                 }
@@ -176,7 +177,7 @@ public class CategoricalTraitLayout extends BaseTraitLayout {
 
     private void setAdapter(ArrayList<BrAPIScaleValidValuesCategories> cats) {
 
-        String labelValPref = getPrefs().getString(GeneralKeys.LABELVAL_CUSTOMIZE,"value");
+        String labelValPref = getPrefs().getString(PreferenceKeys.LABELVAL_CUSTOMIZE,"value");
 
         FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(getContext());
         layoutManager.setFlexWrap(FlexWrap.WRAP);
@@ -309,12 +310,29 @@ public class CategoricalTraitLayout extends BaseTraitLayout {
 
     @Override
     public String decodeValue(String value) {
-        String labelValPref = getPrefs().getString(GeneralKeys.LABELVAL_CUSTOMIZE,"value");
+        String labelValPref = getPrefs().getString(PreferenceKeys.LABELVAL_CUSTOMIZE,"value");
         ArrayList<BrAPIScaleValidValuesCategories> scale = CategoryJsonUtil.Companion.decode(value);
         if (!scale.isEmpty()) {
             if (labelValPref.equals("value")) {
                 return scale.get(0).getValue();
             } else return scale.get(0).getLabel();
         } else return "";
+    }
+
+    @NonNull
+    @Override
+    public Boolean validate(String data) {
+
+        try {
+            ArrayList<BrAPIScaleValidValuesCategories> userChosenCats = CategoryJsonUtil.Companion.decode(data);
+            if (userChosenCats.isEmpty()) {
+                return true;
+            } else {
+                ArrayList<BrAPIScaleValidValuesCategories> cats = getCategories();
+                return CategoryJsonUtil.Companion.contains(cats, userChosenCats.get(0));
+            }
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
