@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Test release changelog (https://github.com/RifeLab/Field-Book-Sandbox/pull/119)
 - Bump minor version (https://github.com/RifeLab/Field-Book-Sandbox/pull/118)
 - Fix find first section (https://github.com/RifeLab/Field-Book-Sandbox/pull/117)
 - Fix getting unreleased section (https://github.com/RifeLab/Field-Book-Sandbox/pull/116)
