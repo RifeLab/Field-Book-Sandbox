@@ -7,9 +7,11 @@ import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.preference.PreferenceManager;
 
@@ -21,6 +23,7 @@ import com.fieldbook.tracker.interfaces.CollectController;
 import com.fieldbook.tracker.objects.RangeObject;
 import com.fieldbook.tracker.objects.TraitObject;
 import com.fieldbook.tracker.preferences.GeneralKeys;
+import com.fieldbook.tracker.preferences.PreferenceKeys;
 import com.fieldbook.tracker.views.CollectInputView;
 import com.fieldbook.tracker.views.RepeatedValuesView;
 
@@ -70,6 +73,15 @@ public abstract class BaseTraitLayout extends LinearLayout {
     public abstract void init(Activity act);
 
     /**
+     * validate is used in collect activity to check if the collected data is within the
+     * specification of the trait, such as min/max.
+     */
+    @NonNull
+    public Boolean validate(String data) {
+        return true;
+    }
+
+    /**
      * Override to block multi-measure navigation with specific condition
      */
     public boolean block() { return false; }
@@ -99,6 +111,19 @@ public abstract class BaseTraitLayout extends LinearLayout {
             toggleVisibility(View.GONE);
         } else {
             toggleVisibility(View.VISIBLE);
+        }
+
+        //hide soft input if it is not the text format
+        if (!type().equals(TextTraitLayout.type)) {
+
+            InputMethodManager imm =
+                    (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+
+            try {
+                imm.hideSoftInputFromWindow(getCollectInputView().getWindowToken(), 0);
+            } catch (Exception e) {
+                // Handle exception
+            }
         }
 
         CollectActivity act = (CollectActivity) getContext();
@@ -172,6 +197,8 @@ public abstract class BaseTraitLayout extends LinearLayout {
     }
 
     public void afterLoadExists(CollectActivity act, @Nullable String value) {
+        getCollectInputView().markObservationSaved();
+        getCollectInputView().setTextColor(Color.parseColor(getDisplayColor()));
         //lock data if frozen or locked state
         isLocked = act.isFrozen() || act.isLocked();
     }
@@ -198,7 +225,7 @@ public abstract class BaseTraitLayout extends LinearLayout {
             inputView.getRepeatView().userDeleteCurrentRep();
         }
         //check if sound on delete is enabled in preferences and play sound
-        if (getPrefs().getBoolean(GeneralKeys.DELETE_OBSERVATION_SOUND, false)) {
+        if (getPrefs().getBoolean(PreferenceKeys.DELETE_OBSERVATION_SOUND, false)) {
             controller.getSoundHelper().playDelete();
         }
     }
@@ -207,10 +234,6 @@ public abstract class BaseTraitLayout extends LinearLayout {
 
     public void refreshLock() {
         //((CollectActivity) getContext()).traitLockData();
-    }
-
-    public Map<String, String> getNewTraits() {
-        return ((CollectActivity) getContext()).getNewTraits();
     }
 
     public TraitObject getCurrentTrait() {
@@ -235,7 +258,7 @@ public abstract class BaseTraitLayout extends LinearLayout {
 
     public String getDisplayColor() {
         return String.format("#%06X", (0xFFFFFF & PreferenceManager.getDefaultSharedPreferences(getContext())
-                .getInt(GeneralKeys.SAVED_DATA_COLOR, resolveThemeColor(R.attr.fb_value_saved_color))));
+                .getInt(PreferenceKeys.SAVED_DATA_COLOR, resolveThemeColor(R.attr.fb_value_saved_color))));
     }
 
     public int getButtonTextColor() {
@@ -301,10 +324,12 @@ public abstract class BaseTraitLayout extends LinearLayout {
      */
     public void updateObservation(TraitObject trait, String value) {
         ((CollectActivity) getContext()).updateObservation(trait, value, null);
+
+        setCurrentValueAsEdited();
     }
 
-    public void removeTrait(String parent) {
-        ((CollectActivity) getContext()).removeTrait(parent);
+    public void removeTrait(TraitObject trait) {
+        ((CollectActivity) getContext()).removeTrait(trait);
     }
 
     public void triggerTts(String text) {
@@ -328,4 +353,9 @@ public abstract class BaseTraitLayout extends LinearLayout {
     }
 
     protected DataHelper getDatabase() { return controller.getDatabase(); }
+
+    protected void setCurrentValueAsEdited() {
+        getCollectInputView().markObservationEdited();
+        getCollectInputView().setTextColor(getTextColor());
+    }
 }
