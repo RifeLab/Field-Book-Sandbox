@@ -64,7 +64,7 @@ jobs:
           python3 .github/workflows/scripts/process_pr_merge.py "${{ github.repository }}" "${{ needs.determine-pr.outputs.pr_number }}"
 
       - name: Commit and push changelog update
-        if: steps.process-pr.outcome == 'success'
+        if: steps.process-pr.outputs.success == 'true'
         uses: EndBug/add-and-commit@v9
         with:
           add: 'CHANGELOG.md'
