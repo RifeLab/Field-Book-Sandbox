@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import re
-from utils import run_command, read_file, write_file, set_github_output
+from utils import run_command, read_file, write_file
 
 CHANGE_TYPE_MAPPING = {
     "ADDITION": "### Added",
@@ -34,8 +34,6 @@ def extract_release_note(pr_body):
 
     if not release_note:
         print("No release note found. Skipping changelog update.")
-        set_github_output("release_note", "")
-        set_github_output("section", "")
         sys.exit(0)
     
     return release_note
@@ -105,10 +103,6 @@ def main():
     
     print(f"Release Note: {release_note}")
     print(f"Section: {section}")
-    
-    # set outputs for GitHub Actions
-    set_github_output("release_note", release_note)
-    set_github_output("section", section)
     
     # update changelog
     update_changelog(section, release_note, pr_number, repo)
