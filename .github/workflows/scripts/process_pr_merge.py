@@ -64,7 +64,7 @@ def update_changelog(section, release_note, pr_number, repo):
     pr_url = f"https://github.com/{repo}/pull/{pr_number}"
     full_release_note = f"- {release_note} ({pr_url})"
     
-    print(f"Updating changelog under section: {section}")
+    print(f"Updating Unreleased changelog under section: {section}")
     
     content = read_file('CHANGELOG.md')
     lines = content.split('\n')

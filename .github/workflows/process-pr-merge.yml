@@ -64,11 +64,11 @@ jobs:
           python3 .github/workflows/scripts/process_pr_merge.py "${{ github.repository }}" "${{ needs.determine-pr.outputs.pr_number }}"
 
       - name: Commit and push changelog update
-        uses: EndBug/add-and-commit@v7
+        uses: EndBug/add-and-commit@v9
         with:
           add: 'CHANGELOG.md'
           message: "Update CHANGELOG.md with release note from PR #${{ needs.determine-pr.outputs.pr_number }}"
           author_email: git-action-bot@example.com
           author_name: Git Action Bot
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           push: true
