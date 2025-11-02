@@ -67,13 +67,20 @@ def update_changelog(section, release_note, pr_number, repo):
     print(f"Updating changelog under section: {section}")
     
     content = read_file('CHANGELOG.md')
+    lines = content.split('\n')
     
-    # find the first occurrence of the section and add the release note after it
-    pattern = f"({re.escape(section)})"
-    replacement = f"{section}\n{full_release_note}"
+    # find the first occurrence of the section (in unreleased)
+    for index, line in enumerate(lines):
+        if line.strip() == section:
+            # insert the release note after the section header
+            lines.insert(index + 1, full_release_note)
+            break
+    else:
+        print(f"Section '{section}' not found in changelog")
+        return
     
-    # replace only the first occurrence
-    updated_content = re.sub(pattern, replacement, content, count=1)
+    # write back the modified content
+    updated_content = '\n'.join(lines)
     
     write_file('CHANGELOG.md', updated_content)
     
