@@ -1,3 +1,10 @@
+# Changelog
+
+All notable changes to Field Book app will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
 ## [Unreleased]
 
 ### Added
@@ -19,13 +26,6 @@
 - Fix ordering of steps in workflow (https://github.com/RifeLab/Field-Book-Sandbox/pull/115)
 - fix filtered unreleased sections (https://github.com/RifeLab/Field-Book-Sandbox/pull/114)
 - Does this have a link? (https://github.com/RifeLab/Field-Book-Sandbox/pull/112)
-
-# Changelog
-
-All notable changes to Field Book app will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [v1.2.1] - 2025-01-27
 
