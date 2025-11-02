@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 - Update add-and-commit version (https://github.com/RifeLab/Field-Book-Sandbox/pull/124)
@@ -15,12 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fix writing diff to changelog (https://github.com/RifeLab/Field-Book-Sandbox/pull/123)
 - Fix string (https://github.com/RifeLab/Field-Book-Sandbox/pull/122)
-
-## [v1.2.2] - 2025-10-24
-
-### Added
-- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
-### Fixed
 - Update all files to sync with fieldbook/main (https://github.com/RifeLab/Field-Book-Sandbox/pull/120)
 - Test release changelog (https://github.com/RifeLab/Field-Book-Sandbox/pull/119)
 - Bump minor version (https://github.com/RifeLab/Field-Book-Sandbox/pull/118)
