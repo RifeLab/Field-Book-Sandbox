@@ -61,7 +61,7 @@ jobs:
       - name: Process PR and update changelog
         id: process-pr
         run: |
-          python3 .github/workflows/scripts/process_pr.py "${{ github.repository }}" "${{ needs.determine-pr.outputs.pr_number }}"
+          python3 .github/workflows/scripts/process_pr_merge.py "${{ github.repository }}" "${{ needs.determine-pr.outputs.pr_number }}"
 
       - name: Commit and push changelog update
         uses: EndBug/add-and-commit@v7
