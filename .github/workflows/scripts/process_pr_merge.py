@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import re
-from utils import run_command, read_file, write_file
+from utils import run_command, read_file, write_file, set_github_output
 
 CHANGE_TYPE_MAPPING = {
     "ADDITION": "### Added",
@@ -106,6 +106,9 @@ def main():
     
     # update changelog
     update_changelog(section, release_note, pr_number, repo)
+    
+    # set success = true to check in next steps
+    set_github_output("success", "true")
 
 if __name__ == "__main__":
     main()
