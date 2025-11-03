@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Don't add empty changelog sections in release (https://github.com/RifeLab/Field-Book-Sandbox/pull/113)
 
 ### Changed
 - Update add-and-commit version (https://github.com/RifeLab/Field-Book-Sandbox/pull/124)
