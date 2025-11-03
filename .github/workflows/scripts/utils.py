@@ -41,9 +41,13 @@ def write_file(file_path, content):
 def set_github_output(name, value):
     """ Set GitHub Actions output variable. """
     github_output = os.environ.get('GITHUB_OUTPUT')
-    if github_output:
-        with open(github_output, 'a', encoding='utf-8') as f:
-            f.write(f"{name}={value}\n")
+    try:
+        if github_output:
+            with open(github_output, 'a', encoding='utf-8') as f:
+                f.write(f"{name}={value}\n")
+    except Exception as e:
+        print(f"Error setting GitHub output '{name}': {e}")
+        sys.exit(0)
 
 def has_trailing_empty_lines(lines_list):
     """Check if list has empty lines at the end"""
