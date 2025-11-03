@@ -6,7 +6,7 @@ import sys
 import os
 import re
 from datetime import datetime
-from utils import read_file, write_file, set_github_output, remove_trailing_empty_lines, has_trailing_empty_lines
+from utils import read_file, write_file, set_multi_line_github_output, remove_trailing_empty_lines, has_trailing_empty_lines
 
 # insert this at the top of CHANGELOG.md while updating
 UNRELEASED_TEMPLATE = [
@@ -221,8 +221,8 @@ def main():
     
     # save outputs for next steps in GitHub Actions
     github_formatted = format_changelog_for_github(filtered_content)
-    set_github_output("changelog_additions", github_formatted)
-    set_github_output("filtered_content", filtered_content)
+    set_multi_line_github_output("changelog_additions", github_formatted)
+    set_multi_line_github_output("filtered_content", filtered_content)
     
     print("Changelog processing completed successfully")
 
