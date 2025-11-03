@@ -63,6 +63,7 @@ jobs:
         run: |
           python3 .github/workflows/scripts/process_pr_merge.py "${{ github.repository }}" "${{ needs.determine-pr.outputs.pr_number }}"
 
+      # steps below this should use the output from previous step if needed
       - name: Commit and push changelog update
         if: steps.process-pr.outputs.success == 'true'
         uses: EndBug/add-and-commit@v9

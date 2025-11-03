@@ -42,5 +42,15 @@ def set_github_output(name, value):
     """ Set GitHub Actions output variable. """
     github_output = os.environ.get('GITHUB_OUTPUT')
     if github_output:
-        with open(github_output, 'a') as f:
+        with open(github_output, 'a', encoding='utf-8') as f:
             f.write(f"{name}={value}\n")
+
+def has_trailing_empty_lines(lines_list):
+    """Check if list has empty lines at the end"""
+    return lines_list and not lines_list[-1].strip()
+
+def remove_trailing_empty_lines(lines_list):
+    """Remove trailing empty lines from a list of lines"""
+    while has_trailing_empty_lines(lines_list):
+        lines_list.pop()
+    return lines_list

@@ -2,7 +2,6 @@ name: do-github-release
 
 # This workflow automates the app release process and supports multiple triggers:
 # - Manual dispatch: Releases unconditionally with a specified version bump.
-# - Dispatch from `process-pr-merge`: Releases unconditionally using the version bump from `process-pr-merge`.
 # - Weekly schedule: Runs every Monday at 3:00 PM EST and performs a patch release if the app directory has changed since the last release.
 
 # Key steps:
@@ -110,129 +109,10 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_ENV
 
-      - name: Process CHANGELOG.md
+      - name: Process CHANGELOG.md and update changelog.xml
         id: process-changelog
         run: |
-
-          set -x
-          # Get the contents under "Unreleased" section
-          unreleased_section=$(sed -n '/## \[Unreleased\]/,/^## /p' CHANGELOG.md | sed '1,2d' | sed '$d')
-
-          filtered_content=""
-          current_section=""
-          in_section=false
-          section_header_added=false
-
-          while IFS= read -r line; do
-
-            if [[ "$line" =~ ^###[[:space:]]+(Added|Changed|Fixed) ]]; then
-
-              # Found a section header
-              # Remember it, do not add it yet
-
-              current_section="$line"
-              in_section=true
-              section_header_added=false
-
-            elif [[ "$line" =~ ^- ]] && [[ "$in_section" == true ]]; then
-
-              # Found a note under the current section
-
-              if [[ "$section_header_added" == false ]]; then
-              
-                # First note found, section has some content
-                # Add the section header
-                # Set the section_header_added flag as true
-
-                filtered_content+="$current_section"$'\n'
-                section_header_added=true
-              fi
-
-              # Add the note
-              filtered_content+="$line"$'\n'
-
-            fi
-
-          done <<< "$unreleased_section"
-
-          echo "New changelog contents: $filtered_content"
-
-          if [ -z "$filtered_content" ]; then
-            changelog_escaped="No release notes"
-          else
-            changelog_escaped=$(echo "$filtered_content" | sed 's/^- /✔ /g' | sed ':a;N;$!ba;s/\n/%0A/g')
-          fi
-
-          echo "changelog_additions=$changelog_escaped" >> $GITHUB_OUTPUT
-
-          today=$(date +'%Y-%m-%d')
-          version_section="## [v$VERSION] - $today\n\n$filtered_content"
-
-          # Remove unreleased section and everything under it
-          sed -i '/## \[Unreleased\]/,/^## /{/^## \[Unreleased\]/d; /^## /!d;}' CHANGELOG.md
-
-          # Create temporary changelog file with version section
-          {
-            echo "## [Unreleased]"
-            echo ""
-            echo "### Added"
-            echo ""
-            echo "### Changed" 
-            echo ""
-            echo "### Fixed"
-            echo ""
-            echo "## [v$VERSION] - $today"
-            echo ""
-            echo "$filtered_content"
-            cat CHANGELOG.md
-          } > CHANGELOG_NEW.md
-
-          mv CHANGELOG_NEW.md CHANGELOG.md
-
-          REPO_URL="https://github.com/${{ github.repository }}/releases/tag"
-          printf "\n[v$VERSION]: $REPO_URL/$VERSION" >> CHANGELOG.md
-
-          echo "filtered_content<<EOF" >> $GITHUB_OUTPUT
-          echo "$filtered_content" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
-      - name: Update changelog.xml
-        id: update-changelog-xml
-        run: |
-
-          filtered_content="${{ steps.process-changelog.outputs.filtered_content }}"
-
-          # Read the Unreleased section and process notes based on type
-          RELEASE_CONTENT="" CURRENT_TYPE=""
-          while IFS= read -r note; do
-            if [[ "$note" == "### Added"* ]]; then
-              CURRENT_TYPE="new"
-            elif [[ "$note" == "### Changed"* ]]; then
-              CURRENT_TYPE="info"
-            elif [[ "$note" == "### Fixed"* ]]; then
-              CURRENT_TYPE="bugfix"
-            elif [[ "$note" =~ ^- ]]; then
-              clean_note=$(echo "$note" | sed -E 's/^- //; s/ *\(.*\)//')
-              RELEASE_CONTENT+="        <${CURRENT_TYPE}>${clean_note}</${CURRENT_TYPE}>\n"
-              #pr_number=$(echo "$note" | grep -oP 'pull/\K[0-9]+' || echo "N/A")
-              #RELEASE_CONTENT+="        <${CURRENT_TYPE}>${clean_note} (#${pr_number})</${CURRENT_TYPE}>\n"
-              
-            fi
-          done <<< "$filtered_content"
-
-          # Generate, insert, and log the new release block
-          today=$(date +'%Y-%m-%d')
-          RELEASE_BLOCK="    <release date=\"$today\" versionCode=\"$VERSION_CODE\" versionName=\"v$VERSION\">\n"
-          RELEASE_BLOCK+="$RELEASE_CONTENT"
-          RELEASE_BLOCK+="    </release>"
-          sed -i "/<changelog>/a \\\n$RELEASE_BLOCK" app/src/main/res/raw/changelog.xml
-          echo "Generated release block:"
-          echo -e "$RELEASE_BLOCK"
-
-      - name: Create local.properties
-        run: |
-          echo "NIX_LICENSE=" > local.properties
-          echo "sdk.dir=$ANDROID_HOME" >> local.properties
+          python3 .github/workflows/scripts/github-release.py "${{ github.repository }}" "CHANGELOG.md" "app/src/main/res/raw/changelog.xml"
 
       - name: Set Up Build Environment
         uses: actions/setup-java@v3
@@ -269,11 +149,11 @@ jobs:
 
       - name: Commit Version and Changelog Changes
         if: ${{ success() }}
-        uses: EndBug/add-and-commit@v7
+        uses: EndBug/add-and-commit@v9
         with:
           add: "version.properties CHANGELOG.md app/src/main/res/raw/changelog.xml"
           message: "Bump ${{ needs.check-changes.outputs.bump_type }} and update changelog for v${{ env.VERSION }}"
-          token: ${{ secrets.ACTIONS_PAT }}
+          github_token: ${{ secrets.ACTIONS_PAT }}
 
       - name: Push Changes
         uses: ad-m/github-push-action@master
