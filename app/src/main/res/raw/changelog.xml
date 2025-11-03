@@ -1,5 +1,19 @@
 <changelog>
 
+    <release version="1.2.3" versionCode="10203" date="2025-11-03">
+        <info>Update add-and-commit version </info>
+        <bugfix>Fix writing diff to changelog </bugfix>
+        <bugfix>Fix string </bugfix>
+        <bugfix>Update all files to sync with fieldbook/main </bugfix>
+        <bugfix>Test release changelog </bugfix>
+        <bugfix>Bump minor version </bugfix>
+        <bugfix>Fix find first section </bugfix>
+        <bugfix>Fix getting unreleased section </bugfix>
+        <bugfix>Fix ordering of steps in workflow </bugfix>
+        <bugfix>fix filtered unreleased sections </bugfix>
+        <bugfix>Does this have a link? </bugfix>
+    </release>
+
     <release date="2025-10-24" versionCode="10202" versionName="v1.2.2">
         <new>Don't add empty changelog sections in release</new>
         <bugfix>Update all files to sync with fieldbook/main</bugfix>
