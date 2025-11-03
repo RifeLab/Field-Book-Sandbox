@@ -91,7 +91,6 @@ def filter_sections_with_content(unreleased_content):
     filtered_lines = remove_trailing_empty_lines(filtered_lines)
     
     filtered_joined = '\n'.join(filtered_lines)
-    print(f"Filtered sections with content:\n{filtered_joined}")
 
     return filtered_joined
 
@@ -188,8 +187,10 @@ def format_changelog_for_github(filtered_content):
         return "No release notes"
     
     # convert to GitHub-friendly format
+    print("Replacing '- ' with '✔ ' for GitHub formatting")
     formatted = filtered_content.replace('- ', '✔ ')
     # escape newlines for GitHub Actions
+    print("Replacing newlines with '%0A' for GitHub Actions output")
     formatted = formatted.replace('\n', '%0A')
     
     return formatted
