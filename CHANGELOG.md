@@ -10,9 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
-- Remove scheduled jobs and python installation (https://github.com/RifeLab/Field-Book-Sandbox/pull/130)
 
 ### Fixed
+
+## [v1.2.4] - 2025-12-10
+
+### Changed
+- Remove scheduled jobs and python installation (https://github.com/RifeLab/Field-Book-Sandbox/pull/130)
 
 ## [v1.2.3] - 2025-11-03
 
@@ -694,3 +698,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.2.1]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/1.2.1
 [v1.2.2]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/1.2.2
 [v1.2.3]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/1.2.3
+[v1.2.4]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/1.2.4

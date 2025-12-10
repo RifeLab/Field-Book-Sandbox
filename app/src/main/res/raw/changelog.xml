@@ -1,5 +1,9 @@
 <changelog>
 
+    <release version="1.2.4" versionCode="10204" date="2025-12-10">
+        <info>Remove scheduled jobs and python installation </info>
+    </release>
+
     <release version="1.2.3" versionCode="10203" date="2025-11-03">
         <info>Update add-and-commit version </info>
         <bugfix>Fix writing diff to changelog </bugfix>
