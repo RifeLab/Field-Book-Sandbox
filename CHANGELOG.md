@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+- Remove scheduled jobs and python installation (https://github.com/RifeLab/Field-Book-Sandbox/pull/130)
 
 ### Fixed
 
