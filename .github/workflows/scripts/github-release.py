@@ -155,7 +155,7 @@ def update_changelog_xml(filtered_content, changelog_xml_path):
         if line in CHANGELOG_XML_TYPE_MAP:
             current_type = CHANGELOG_XML_TYPE_MAP[line]
         elif line.startswith('- ') and current_type:
-            clean_note = re.sub(r'^\s*-\s*|s*\([^)]*\)\s*$', '', line)
+            clean_note = re.sub(r'^\s*-\s*|\s*\([^)]*\)\s*$', '', line)
             release_notes.append(f"        <{current_type}>{clean_note}</{current_type}>")
     
     xml_content = read_file(changelog_xml_path)
@@ -199,7 +199,7 @@ def format_changelog_for_github(filtered_content):
 def main():
     if len(sys.argv) != 4:
         print("Arguments required: <repo> <changelog_md_path> <changelog_xml_path>")
-        sys.exit(0)
+        sys.exit(1)
 
     github_repository = sys.argv[1]
     changelog_md_path = sys.argv[2]

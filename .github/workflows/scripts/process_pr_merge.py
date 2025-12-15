@@ -40,7 +40,7 @@ def extract_release_note(pr_body):
 
 def extract_change_type(pr_body):
     """Extract change type from PR body"""
-    pattern = r'- \[x\] \*\*`([A-Z]+)`\*\*'
+    pattern = r'- \[[xX]\] \*\*`([A-Z]+)`\*\*'
     match = re.search(pattern, pr_body)
     
     if not match:
@@ -87,7 +87,7 @@ def update_changelog(section, release_note, pr_number, repo):
 def main():
     if len(sys.argv) != 3:
         print("Arguments required: <repo> <pr_number>")
-        sys.exit(0)
+        sys.exit(1)
     
     repo = sys.argv[1]
     pr_number = sys.argv[2]
