@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+
+## [v1.3.1] - 2026-01-04
+
+### Fixed
 - Fix changelog.xml release version code prop (https://github.com/RifeLab/Field-Book-Sandbox/pull/132)
 
 ## [v1.2.5] - 2025-12-16
@@ -706,3 +710,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.2.3]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/1.2.3
 [v1.2.4]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/1.2.4
 [v1.2.5]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/1.2.5
+
+[v1.3.1]: https://github.com/RifeLab/Field-Book-Sandbox/releases/tag/1.3.1
