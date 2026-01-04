@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 ### Fixed
+- Fix changelog.xml release version code prop (https://github.com/RifeLab/Field-Book-Sandbox/pull/132)
 
 ## [v1.2.5] - 2025-12-16
 
