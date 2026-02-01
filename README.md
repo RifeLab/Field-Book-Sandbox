@@ -2,16 +2,16 @@
 
 # Field Book
 
-## Introduction to Field Book
+## Introduction
 
-Field Book is an open-source Android app used to collect data on field research plots.
+Test change. Field Book is an open-source Android app used to collect data on field research plots.
 When used in place of paper field books, it eliminates the need for data transcription and reduces the risk of errors.
 It runs on a wide range of inexpensive hardware, allowing consumer-grade technology to be used in environments where cost and inflexibility have been limiting factors.
 The source code for Field Book is available on [GitHub](https://github.com/PhenoApps/Field-Book).
 
 <figure class="image">
   <img class="screenshot" src="_static/images/collect/collect_framed.png" width="350px"> 
-  <figcaption class="screenshot-caption"><i>Field Book Collect screen</i></figcaption> 
+  <figcaption class="screenshot-caption"><i>Field Book collect screen</i></figcaption> 
 </figure>
 
 ## Getting Started
@@ -49,8 +49,12 @@ Navigate between these to:
 
  - Customize <img class="icon" src="_static/icons/home/cog.png"> [Settings](settings.md)
  
-  - View data <img class="icon" src="_static/icons/home/chart-bar.png"> [Statistics](statistics.md)
+ - View data <img class="icon" src="_static/icons/home/chart-bar.png"> [Statistics](statistics.md)
   
-  - Learn more <img class="icon" src="_static/icons/home/information.png"> [About](about.md) Field Book or check for updates
+ - Learn more <img class="icon" src="_static/icons/home/information.png"> [About](about.md) Field Book or check for updates
 
 The <img class="icon" src="_static/icons/home/history.png"> Changelog can be accessed from the top toolbar to see new features and additions to the app.
+
+## License
+
+All text, images, and presentations available as part of the documentation for Field Book can be reused under a CC BY-SA license.
