@@ -4,6 +4,7 @@
     <!-- GENERAL -->
     <!-- App -->
     <string name="field_book">Field Book test 1</string>
+    <string name="field_book_test_string">test 1</string>
 
     <!-- Dialog -->
     <string name="dialog_cancel">Cancel</string>
