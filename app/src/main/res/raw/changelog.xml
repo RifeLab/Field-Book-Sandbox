@@ -1,5 +1,9 @@
 <changelog>
 
+    <release date="2026-04-24" versionCode="10303 versionName="v1.3.3"">
+        <bugfix>Minor update</bugfix>
+    </release>
+
     <release date="2026-04-24" versionCode="10302 versionName="v1.3.2"">
         <bugfix>Minor update</bugfix>
     </release>
